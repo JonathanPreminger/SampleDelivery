@@ -1,0 +1,40 @@
+<%=flash[:notice]%>
+<table class="table">
+  <thead>
+    <tr class="categories">
+      <th>Name</th>
+      <th>Place</th>
+      <th>Line up</th>
+      <th>Number of DJ</th>
+      <th>Revenue figure</th>
+      <th>Total charge DJ</th>
+      <th>Charge Flyers</th>
+      <th>Charge Others</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @events.each do |event| %>
+      <tr>
+        <td><%= event.name %></td>
+        <td><%= event.place %></td>
+        <td><%= event.line_up %></td>
+        <td><%= event.number_of_dj %></td>
+        <td><%= event.revenue_figure %></td>
+        <td><%= event.total_charge_dj %></td>
+        <td><%= event.charge_flyers %></td>
+        <td><%= event.charge_others %></td>
+        <td><%= link_to 'Edit', edit_event_path(event) %></td>
+        <td><%= link_to 'Show', event %></td>
+        <td><%= link_to 'Delete', event_path(event), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<div>
+  <h4>Import that data !</h4>
+  <%= form_tag import_events_path, multipart: true do%>
+  <%= file_field_tag :file %>
+  <%= submit_tag 'Import CSV' %>
+  <% end %>
+</div>
