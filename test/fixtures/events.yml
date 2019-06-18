@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  revenue_figure: 1
+  total_charge_dj: 1
+  charge_communication: 1
+  charge_others: 1
+  charge_others_description: MyText
+  number_of_dj: 1
+  line_up: MyText
+  place: MyString
+  name: MyString
+
+two:
+  revenue_figure: 1
+  total_charge_dj: 1
+  charge_communication: 1
+  charge_others: 1
+  charge_others_description: MyText
+  number_of_dj: 1
+  line_up: MyText
+  place: MyString
+  name: MyString
