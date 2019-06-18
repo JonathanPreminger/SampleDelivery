@@ -1,36 +1,46 @@
 <%=flash[:notice]%>
 <table class="table">
-  <thead>
-    <tr class="categories">
-      <th>Name</th>
-      <th>Place</th>
-      <th>Line up</th>
-      <th>Number of DJ</th>
-      <th>Revenue figure</th>
-      <th>Total charge DJ</th>
-      <th>Charge Flyers</th>
-      <th>Charge Others</th>
+
+    <thead class="titre">
+
+      <tr class="elementoftitle">
+
+
+      <th class="element">Name</th>
+      <th class="element">Place</th>
+      <th class="element">Line up</th>
+      <th class="element">Number of DJ</th>
+      <th class="element">Revenue figure</th>
+      <th class="element">Total charge DJ</th>
+      <th class="element">Charge Flyers</th>
+      <th class="element">Charge Others</th>
+      <th class="element">Benefits</th>
+      <th class="element">Edit</th>
+      <th class="element">Show</th>
+      <th class="element">Delete</th>
     </tr>
+
   </thead>
-  <tbody>
+
+  <tbody class="content">
     <% @events.each do |event| %>
-      <tr>
-        <td><%= event.name %></td>
-        <td><%= event.place %></td>
-        <td><%= event.line_up %></td>
-        <td><%= event.number_of_dj %></td>
-        <td><%= event.revenue_figure %></td>
-        <td><%= event.total_charge_dj %></td>
-        <td><%= event.charge_flyers %></td>
-        <td><%= event.charge_others %></td>
-        <td><%= link_to 'Edit', edit_event_path(event) %></td>
-        <td><%= link_to 'Show', event %></td>
-        <td><%= link_to 'Delete', event_path(event), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      <tr class="elementofcontent">
+        <td class="element"><%= event.name %></td>
+        <td class="element"> <%= event.place %></td>
+        <td class="element"><%= event.line_up %></td>
+        <td class="element"><%= event.number_of_dj %></td>
+        <td class="element"><%= event.revenue_figure %></td>
+        <td class="element"><%= event.total_charge_dj %></td>
+        <td class="element"><%= event.charge_communication %></td>
+        <td class="element"><%= event.charge_others %></td>
+        <td class="element"><%= Event.get_benefits %></td>
+        <td class="element"><%= link_to 'Edit', edit_event_path(event) %></td>
+        <td class="element"><%= link_to 'Show', event %></td>
+        <td class="element"><%= link_to 'Delete', event_path(event), method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
-
 <div>
   <h4>Import that data !</h4>
   <%= form_tag import_events_path, multipart: true do%>

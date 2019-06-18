@@ -12,14 +12,19 @@
    def edit
      @event = Event.find(params[:id])
    end
+   def show
+     @event = Event.find(params[:id])
+   end
+   def benefits
+     @event = Event.find(params[:id])
+   end
 
    def update
-     @event = Event.find(params[:id])
-     if @event.update_attributes(event_params)
-       # Handle a successful update.
-     else
-       render 'edit'
-     end
+       @event = Event.find(params[:id])
+       @event.update_attributes(event_params)
+       flash[:notice] = "#{@event.name} was successfully updated."
+       redirect_to events_path
+
    end
 
    def destroy

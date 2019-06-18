@@ -6,7 +6,7 @@
 	<meta name="description" content="">
 	<meta name="author"      content="Sergey Pozhilov (GetTemplate.com)">
 
-	<title>Progressus - Free business bootstrap template by GetTemplate</title>
+	<!--<title>Progressus - Free business bootstrap template by GetTemplate</title>-->
 
 	<link rel="shortcut icon" href="assets/images/gt_favicon.png">
 
@@ -56,63 +56,63 @@
 	<!-- Header -->
 	<header id="head">
 		<div class="container">
-			<div class="row">
-				<h1 class="lead">Records Label since 2016</h1>
+			<div class="row" id="record-label">
+				<h1 class="lead"></h1>
 				<p class="tagline"></p>
-				<p><a class="btn btn-default btn-lg" role="button">SHOP</a> <a class="btn btn-action btn-lg" role="button">MANAGEMENT</a></p>
+				<p><!--<a class="btn btn-default btn-lg" role="button">SHOP</a> <a class="btn btn-action btn-lg" role="button">MANAGEMENT</a>--></p>
 			</div>
 		</div>
 	</header>
 	<!-- /Header -->
 
 	<!-- Intro -->
-	<div class="container text-center">
-		<br> <br>
-		<h2 class="thin">THE TEAM</h2>
-		<p class="text-muted">
-		The best team ever
-		</p>
+	<div class="container text-center" id="entre-image">
+
 	</div>
 	<!-- /Intro-->
 
 	<!-- Highlights - jumbotron -->
 	<div class="jumbotron top-space">
 		<div class="container">
-
-			<h3 class="text-center thin"></h3>
-
-			<div class="row">
+		<div class="pink">
+			<div class="row intrapink">
 				<div class="col-md-3 col-sm-6 highlight">
-					<div class="h-caption"><%= image_tag("antillais.jpg") %><h4>GC-1</h4></div>
-					<div class="h-body text-center">
-						<p>L'antillais</p>
+					<div class="h-caption photo"><%= image_tag("jessy.jpg")%>
+						</div>
+					<div class="h-body text-center textphoto">
+						<h4>GC-1</h4>
 					</div>
 				</div>
 				<div class="col-md-3 col-sm-6 highlight">
-					<div class="h-caption"><%= image_tag("lebelge.jpg") %><h4>DJ SUZMO</h4></div>
-					<div class="h-body text-center">
-						<p>Le belge </p>
+					<div class="h-caption photo"><%= image_tag("lebelge.jpg") %>
+					</div>
+					<div class="h-body text-center textphoto">
+						<h4>DJ SUZMO</h4>
 					</div>
 				</div>
 				<div class="col-md-3 col-sm-6 highlight">
-					<div class="h-caption"><%= image_tag("italien.jpeg") %><h4>SUN GUN</h4></div>
-					<div class="h-body text-center">
-						<p>L'italien</p>
+					<div class="h-caption photo"><%= image_tag("italien.jpeg") %>>
+					</div>
+					<div class="h-body text-center textphoto">
+						<h4>SUN GUN</h4
 					</div>
 				</div>
 				<div class="col-md-3 col-sm-6 highlight">
-					<div class="h-caption"><%= image_tag("babtou.jpeg") %><h4>DJ BIVOUL</h4></div>
+					<div class="h-caption" id="Bivoul"><%= image_tag("babtou.jpeg") %>
+					</div>
 					<div class="h-body text-center">
-						<p>Le Lyonnais</p>
+						<h4>DJ BIVOUL</h4>
 					</div>
 				</div>
 				<div class="col-md-3 col-sm-6 highlight">
-					<div class="h-caption"><%= image_tag("turk.jpeg") %><h4>LE BRIGAND & EZRA PREMINGER</h4></div>
+					<div class="h-caption" id="Mael"><%= image_tag("turk.jpeg") %>
+					</div>
 					<div class="h-body text-center">
-						<p>Les turques</p>
+						<h4>LE BRIGAND & EZRA PREMINGER</h4>
 					</div>
 				</div>
 			</div> <!-- /row  -->
+		</div>
 
 		</div>
 	</div>
@@ -121,9 +121,8 @@
 	<!-- container -->
 	<div class="container">
 
-		<h2 class="text-center top-space">THE TEAM</h2>
+		<h2>THE TEAM</h2>
 		<br>
-
 		<div class="row">
 			<div class="col-sm-6">
 				<h3>Which code editor would you recommend?</h3>

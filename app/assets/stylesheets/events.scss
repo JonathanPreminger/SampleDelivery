@@ -1,11 +1,85 @@
 // Place all the styles related to the Events controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-.table {
-  max-width: 900px;
+body {
+  overflow-x: hidden;
+  overflow-y: scroll;
+  font-family: 'Allerta Stencil', sans-serif!important;
+  color: rgba(46, 49, 49, 1);
+  background-image: url("SD02.jpg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: 90% 90%;
+  background-position: bottom 100%;
 }
-.categories {
-  display: flex;
-  justify-content: space-between;
+.table {
+  width: 1200px;
+  height: 1200px;
+  text-decoration: none;
+}
 
+.bandeau {
+  background-color: red;
+  height: 400px;
+}
+.titre {
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  background-color: rgb(90, 150, 110);
+  margin: 20px;
+  border-radius: 8px;
+
+}
+.content {
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+}
+.elementoftitle {
+    width: 1200px;
+    margin: 20px;
+  display: flex;
+  justify-content: space-around;
+  text-decoration: none;
+  border-top: 50px;
+}
+.elementofcontent {
+  width: 1200px;
+  margin-top: 20px;
+  margin-left: 40px;
+  display: flex;
+  justify-content: space-around;
+  text-decoration: none;
+  border-top: 50px;
+  background-color: rgba (0,0,0,0.1);
+}
+.element {
+  border: 50px;
+  margin: 5px;
+  background-color: rgba(218, 223, 225, 1);
+  width: 90px;
+  max-width: 90px;
+  height: 100px;
+  text-decoration: none;
+  border-radius: 8px;
+  box-shadow: 3px 3px rgba(50,50,50,0.2);
+}
+
+.crud {
+  width: 40px;
+  background-color: white;
+  text-decoration: none;
+}
+a {
+  color:black;
+}
+a:hover {
+  text-decoration: none;
+  color: white;
+}
+.form {
+  margin-top:7%;
+  margin-left: 10%;
+  margin-bottom: 7%;
 }
