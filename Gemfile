@@ -58,6 +58,7 @@ group :test do
   gem 'chromedriver-helper'
 end
 group :production do
+  gem 'rails_12factor', group: :production
   gem 'pg', '0.20.0'
 end
 

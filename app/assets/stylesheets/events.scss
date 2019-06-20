@@ -2,6 +2,7 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 body {
+  min-width: 100%;
   overflow-x: hidden;
   overflow-y: scroll;
   font-family: 'Allerta Stencil', sans-serif!important;
@@ -13,9 +14,11 @@ body {
   background-position: bottom 100%;
 }
 .table {
-  width: 1200px;
-  height: 1200px;
+  margin-top: 900px;
+  min-width: 100%;
+  height: 120px;
   text-decoration: none;
+  background-color: rgb(25,25,30)
 }
 
 .bandeau {
@@ -29,7 +32,7 @@ body {
   background-color: rgb(90, 150, 110);
   margin: 20px;
   border-radius: 8px;
-
+  box-shadow: 3px 3px rgb(10,10,10);
 }
 .content {
   display: flex;
@@ -52,32 +55,48 @@ body {
   justify-content: space-around;
   text-decoration: none;
   border-top: 50px;
-  background-color: rgba (0,0,0,0.1);
+  background-color: rgba (0,0,0);
 }
 .element {
   border: 50px;
   margin: 5px;
-  background-color: rgba(218, 223, 225, 1);
+  /*background-color: rgba(218, 223, 225, 1);*/
+  width: 90px;
+  max-width: 90px;
+  height: 100px;
+  text-decoration: none;
+  border-radius: 8px;
+  box-shadow: 3px 3px rgba(100,100,100,0.2);
+  color: rgb(150,150,150);
+}
+.element-title {
+  border: 50px;
+  margin: 5px;
+  /*background-color: rgba(218, 223, 225, 1);*/
   width: 90px;
   max-width: 90px;
   height: 100px;
   text-decoration: none;
   border-radius: 8px;
   box-shadow: 3px 3px rgba(50,50,50,0.2);
+  color: black;
 }
-
+.element-title:hover {
+  transform: translate(-3px, -3px);
+  box-shadow: 3px 3px 2px 2px rgba(20,20,20,0.2);
+  transition-duration: 0.5s;
+}
+.element:hover {
+  transform: translate(-3px, -3px);
+  box-shadow: 3px 3px 3px 3px rgba(0,0,0,0.2);
+  transition-duration: 0.5s;
+}
 .crud {
   width: 40px;
   background-color: white;
   text-decoration: none;
 }
-a {
-  color:black;
-}
-a:hover {
-  text-decoration: none;
-  color: white;
-}
+
 .form {
   margin-top:7%;
   margin-left: 10%;

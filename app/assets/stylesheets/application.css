@@ -15,7 +15,8 @@
  */
 
  html, body {
-   height: 100%
+   height: 100%;
+   overflow-x: hidden;
  }
  .full-height {
    height: 100%;
@@ -23,19 +24,17 @@
  }
  a {
    text-decoration: none;
- }
- .deadlink {
-  color: black!important;
-  cursor: not-allowed!important;
 
-  text-decoration: none!important;
-}
+   color:black;
+ }
+
+
  body {
  height: 100%;
  width: 100%;
  font-family: 'Inconsolata', monospace!important;
  font-size: 20px!important;
- background-image: image-url("SD02.jpg");
+ background-image: image-url("assets/images/SD02.jpg");
  background-repeat: no-repeat;
  background-attachment: fixed;
  background-size: 90% 90%;
@@ -63,7 +62,7 @@
  }
  .SD1:hover {
    text-transform: uppercase;
-   color: rgb(80,80,80);
+   color: rgb(0,0,0);
 
  }
  html {
