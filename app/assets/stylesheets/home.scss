@@ -25,20 +25,6 @@
 #entre-image{
   height:390px;
 }
-/*.textphoto .photo{
-  max-height: 80px;
-  max-width: 80px;
-  background-color: red;
-}*/
-
-
-
-
-.top-space {
-  background-image: image-url("SD01.jpg")!important;
-  width: 100%;
-}
-
 
 .tarace {
   height: 400px;
@@ -47,31 +33,4 @@
 .footer2 {
   position: sticky;
   margin-bottom: 0px;
-}
-.mynavbar {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  margin-left:40px;
-  margin-right:40px;
-  text-decoration: none;
-  margin-top: 40px;
-  height: 100px;
-  z-index: 1;
-}
-.SD1 {
-  margin-bottom: 5px;
-}
-.SD1:hover {
-  text-transform: uppercase;
-}
-html {
-  scroll-behavior: smooth;
-}
-a {
-  color:black;
-}
-a:hover {
-  text-decoration: none;
-  color: white;
 }

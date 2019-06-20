@@ -1,11 +1,7 @@
 <%=flash[:notice]%>
 <table class="table">
-
     <thead class="titre">
-
       <tr class="elementoftitle">
-
-
       <th class="element">Name</th>
       <th class="element">Place</th>
       <th class="element">Line up</th>
@@ -42,7 +38,6 @@
   </tbody>
 </table>
 <div>
-  <h4>Import that data !</h4>
   <%= form_tag import_events_path, multipart: true do%>
   <%= file_field_tag :file %>
   <%= submit_tag 'Import CSV' %>
