@@ -1,21 +1,25 @@
-<nav class="mynavbar">
-  <div>
-    <div>
-      <div class="SD1">
-        <p class="SD1"></p><br>
+<div class="double-nav">
+  <nav class="mynavbar">
+    <div class="navleft">
+        <div class="SD1 first-line">
+          <div  class="" id="blink">
+            <%= image_tag("rectangle.png")%>
+          </div>
+        </div>
+      <div class="second-line SD1">
+        <p class="SD1"><a href="/events">Desk</a></p>
       </div>
-      <div  class="SD1  isDisabled" id="blink">
-        <%= image_tag("rectangle.png")%>
+      <div >
+          <p class="third-line SD1">Booking</p>
       </div>
-    </div>
-    <div class="SD1">
-      <p class="SD1"><a href="/events">Desk</a></p>
-    </div>
-    <div >
-        <p class="SD1">Booking</p>
-    </div>
-    <div >
-        <p class="SD1">Events</p>
+      <div >
+          <p class="fourth-line SD1">Events</p>
+      </div>
+        </div>
+  </nav>
+  <div class="navright">
+    <div  class="email">
+       <%= image_tag("email.png")%>
     </div>
   </div>
-</nav>
+</div>

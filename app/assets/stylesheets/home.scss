@@ -21,6 +21,7 @@
  background-repeat: no-repeat;
  background-size: cover;
  opacity:0.6;
+
 }
 
 #entre-image{
@@ -34,4 +35,15 @@
 .footer2 {
   position: sticky;
   margin-bottom: 0px;
+}
+.prout {
+  z-index: 1;
+  position: -webkit-sticky; /* Safari */
+  position: sticky;
+  top: 8px;
+  display: flex;
+  justify-content: flex-end;
+  padding-bottom: 0px;
+  width:50px;
+  height:50px;
 }
