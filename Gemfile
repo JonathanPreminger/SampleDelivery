@@ -31,6 +31,11 @@ gem 'jbuilder', '~> 2.5'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
+gem 'bootstrap-sass', '~> 3.3', '>= 3.3.6'
+gem 'mail_form'
+gem 'jquery-rails', '~> 4.1', '>= 4.1.1'
+gem 'dotenv-rails', groups: [:development, :test]
+
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false
@@ -61,6 +66,7 @@ group :production do
   gem 'rails_12factor', group: :production
   gem 'pg', '0.20.0'
 end
+
 
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
