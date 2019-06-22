@@ -10,16 +10,23 @@
         <p class="SD1"><a href="/events">Desk</a></p>
       </div>
       <div >
-          <p class="third-line SD1">Booking</p>
+          <p class=" SD1"><%= link_to "Booking", "https://www.facebook.com/sampledeliveryrecords/"%></p>
       </div>
       <div >
-          <p class="fourth-line SD1">Events</p>
+
+          <p class=" SD1"><%= link_to "Events", "https://www.facebook.com/sampledeliveryrecords/"%></p>
       </div>
         </div>
   </nav>
   <div class="navright">
     <div  class="email">
-       <%= image_tag("email.png")%>
+       <%= link_to image_tag("email.png"), new_contact_path  %>
     </div>
+    <div class= "email">
+      <% if flash[:success] %>
+      <p class="success">
+        <%= flash[:success] %></p>
+            <% end %>
+          </div>
   </div>
 </div>
