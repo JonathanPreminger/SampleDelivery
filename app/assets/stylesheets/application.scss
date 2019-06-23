@@ -56,19 +56,20 @@ background-size: cover; /* version standardisée */
  .double-nav {
    display: flex;
    flex-direction: row;
-   width:90%;
+   width:100%;
  }
  .mynavbar {
    margin-left:40px;
    margin-right:40px;
    text-decoration: none;
    margin-top: 40px;
-   width: 40%;
+   width: 50%;
    z-index: 1;
  }
  .navright {
    width: 50%;
     margin-top: 40px;
+    margin-right: 40px;
  }
  .SD1 {
    margin-bottom: 5px;
@@ -104,11 +105,12 @@ background-size: cover; /* version standardisée */
 }
 .success {
   color: black;
-  width: 80%;
+  width:30%;
   height: 80%;
   border-radius: 8px;
   box-shadow: 4px 4px black;
   border: solid black;
+  background-color: white;
 }
 #text {
   margin-left: 10px;
