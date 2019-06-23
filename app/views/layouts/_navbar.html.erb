@@ -24,13 +24,12 @@
   </nav>
   <div class="navright">
       <% if flash[:success] %>
-      <div class="testouille">
+      <div class="sending">
         <%end%>
-
     <div  class="email">
        <%= link_to image_tag("email.png"), new_contact_path  %>
     </div>
-      </div>
+    </div>
     <% if flash[:success] %>
     <div id="hideMe">
       <div class= "email ">
