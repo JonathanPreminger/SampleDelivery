@@ -19,14 +19,24 @@
         </div>
   </nav>
   <div class="navright">
+      <% if flash[:success] %>
+      <div class="testouille">
+        <%end%>
+
     <div  class="email">
        <%= link_to image_tag("email.png"), new_contact_path  %>
     </div>
-    <div class= "email">
-      <% if flash[:success] %>
-      <p class="success">
-        <%= flash[:success] %></p>
-            <% end %>
-          </div>
+      </div>
+    <% if flash[:success] %>
+    <div id="hideMe">
+      <div class= "email ">
+        <div class="success">
+      <p id="text" >
+            <%= flash[:success] %>
+          </p>
+        </div>
+      </div>
+    </div>
+    <% end %>
   </div>
 </div>

@@ -87,12 +87,38 @@
 }
 .success {
   color: black;
-  width: 60px;
-  height: 50px;
+  width: 100px;
+  height: 90px;
   border-radius: 8px;
   box-shadow: 4px 4px black;
   border: solid black;
-  display:flex;
-  justify-content: flex-end;
-  background-color: pink;
+}
+#text {
+  margin-left: 10px;
+}
+@-webkit-keyframes magic {
+    0% {opacity:0;}
+    40% {opacity:0;}
+    45% {opacity:1;}
+    80% {opacity:1;}
+    100% {opacity:0;}
+}
+#hideMe {
+  animation: magic 4s;
+  animation-iteration-count: 1;
+  animation-fill-mode: both;
+}
+.testouille {
+  animation-iteration-count: 1;
+  animation-fill-mode: both;
+  -webkit-animation: send 4s ;/* Safari 4+ */
+  -moz-animation:    send  4s; /* Fx 5+ */
+  -o-animation:      send  4s; /* Opera 12+ */
+  animation: send 4s;
+}
+@-webkit-keyframes send {
+    0% {margin-right:0px;opacity:1;}
+    20% {opacity:1}
+    28% {opacity:0;}
+    100% {margin-right:600px;opacity:0;}
 }
