@@ -1,12 +1,58 @@
-
-<div class="form">
-
-<%= form_for @event do |f| %>
-  <div class="row-edit">
-    <p>
-    <%= f.text_field :name %><br>
-    </p>
+<div class="container-edit">
+  <div class="carreblanc">
+    <div class="form">
+      <%= form_for @event do |f| %>
+        <div class="row-edit">
+          <p>Name</p>
+          <p>
+          <%= f.text_field :name %><br>
+          </p>
+        </div>
+        <div class="row-edit">
+          <p>Place</p>
+          <p>
+          <%= f.text_field :place
+           %><br>
+          </p>
+        </div>
+        <div class="row-edit">
+          <p>Line up</p>
+          <p>
+          <%= f.text_field :line_up %><br>
+          </p>
+        </div>
+        <div class="row-edit">
+          <p>Number of dj</p>
+          <p>
+          <%= f.number_field :number_of_dj %><br>
+          </p>
+        </div>
+        <div class="row-edit">
+          <p>Revenue Figure </p>
+          <p>
+          <%= f.number_field :revenue_figure %><br>
+          </p>
+        </div>
+        <div class="row-edit">
+          <p>Total Charge Dj</p>
+          <p>
+          <%= f.number_field :total_charge_dj %><br>
+          </p>
+        </div>
+        <div class="row-edit">
+          <p>Charge Communication</p>
+          <p>
+          <%= f.number_field :charge_communication %><br>
+          </p>
+          </div>
+        <div class="row-edit">
+          <p>Charge Others</p>
+          <p>
+          <%= f.number_field :charge_others %><br>
+          </p>
+        </div>
+      <%= f.submit %>
+    </div>
+    <% end %>
   </div>
-  <%= f.submit %>
-<% end %>
 </div>
