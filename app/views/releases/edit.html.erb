@@ -1,0 +1,28 @@
+<div class="container-edit">
+  <div class="carreblanc">
+    <div class="form">
+      <%= form_for @release do |f| %>
+        <div class="row-edit">
+          <p>Name</p>
+          <p>
+          <%= f.text_field :name %><br>
+          </p>
+        </div>
+        <div class="row-edit">
+          <p>date</p>
+          <p>
+          <%= f.text_field :year
+           %><br>
+          </p>
+        </div>
+        <div class="row-edit">
+          <p>tracks</p>
+          <p>
+          <%= f.text_field :tracks %><br>
+          </p>
+        </div>
+      <%= f.submit %>
+    </div>
+    <% end %>
+  </div>
+</div>

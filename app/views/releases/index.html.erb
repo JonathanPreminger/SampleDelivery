@@ -1,0 +1,28 @@
+<%=flash[:notice]%>
+<table class="table">
+    <thead class="titre">
+      <tr class="elementoftitle">
+      <th class="element-title">Name</th>
+      <th class="element-title">date</th>
+      <th class="element-title">tracks</th>
+      <th class="element-title">edit</th>
+      <th class="element-title">show</th>
+      <th class="element-title">delete</th>
+
+    </tr>
+
+  </thead>
+
+  <tbody class="content">
+    <% @releases.each do |release| %>
+      <tr class="elementofcontent">
+        <td class="element"><%= release.name %></td>
+        <td class="element"> <%= release.year %></td>
+        <td class="element"><%= release.tracks %></td>
+        <td class="element"><%= link_to 'Edit', edit_release_path(release) %></td>
+        <td class="element"><%= link_to 'Show', release %></td>
+        <td class="element"><%= link_to 'Delete', release_path(release), method: :delete, data: { confirm: 'Are you sure to delete this release ?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
