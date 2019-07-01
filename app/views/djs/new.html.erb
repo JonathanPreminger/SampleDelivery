@@ -1,0 +1,28 @@
+<div class="container-edit">
+  <div class="carreblanc">
+    <div class="form">
+      <%= form_for @dj do |f| %>
+        <div class="row-edit">
+          <p>Name</p>
+          <p>
+          <%= f.text_field :name %><br>
+          </p>
+        </div>
+        <div class="row-edit">
+          <p>event_id</p>
+          <p>
+          <%= f.text_field :event_id
+           %><br>
+          </p>
+        </div>
+        <div class="row-edit">
+          <p>release_id</p>
+          <p>
+          <%= f.text_field :release_id %><br>
+          </p>
+        </div>
+      <%= f.submit %>
+    </div>
+    <% end %>
+  </div>
+</div>
