@@ -1,6 +1,5 @@
 class Event < ApplicationRecord
   require 'csv'
-  has_many :djs
   validates :line_up,  presence: true
   validates :charge_others_description,  presence: true
   validates :charge_others,  presence: true
