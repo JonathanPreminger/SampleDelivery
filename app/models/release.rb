@@ -1,3 +1,3 @@
 class Release < ApplicationRecord
-  has_one :dj
+  belongs_to :dj
 end
