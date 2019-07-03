@@ -3,8 +3,6 @@
     <thead class="titre">
       <tr class="elementoftitle">
       <th class="element-title">Name</th>
-      <th class="element-title">release_id</th>
-      <th class="element-title">events_id</th>
       <th class="element-title">edit</th>
       <th class="element-title">show</th>
       <th class="element-title">delete</th>
@@ -17,8 +15,7 @@
     <% @djs.each do |dj| %>
       <tr class="elementofcontent">
         <td class="element"><%= dj.name %></td>
-        <td class="element"> <%= dj.event_id %></td>
-        <td class="element"><%= dj.release_id %></td>
+
         <td class="element"><%= link_to 'Edit', edit_dj_path(dj) %></td>
         <td class="element"><%= link_to 'Show', dj %></td>
         <td class="element"><%= link_to 'Delete', dj_path(dj), method: :delete, data: { confirm: 'Are you sure to delete this release ?' } %></td>

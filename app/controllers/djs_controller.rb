@@ -45,6 +45,6 @@ end
   private
 
   def dj_params
-    params.require(:dj).permit(:name, :release_id, :event_id)
+    params.require(:dj).permit(:name)
   end
 end
