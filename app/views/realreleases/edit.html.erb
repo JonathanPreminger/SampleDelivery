@@ -1,7 +1,7 @@
 <div class="container-edit">
   <div class="carreblanc">
     <div class="form">
-      <%= form_for @release do |f| %>
+      <%= form_for @realrelease do |f| %>
         <div class="row-edit">
           <p>Name</p>
           <p>
@@ -9,7 +9,7 @@
           </p>
         </div>
         <div class="row-edit">
-          <p>date</p>
+          <p>year</p>
           <p>
           <%= f.text_field :year
            %><br>

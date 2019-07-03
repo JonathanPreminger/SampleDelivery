@@ -1,0 +1,2 @@
+class Realrelease < ApplicationRecord
+end
