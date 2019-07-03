@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_07_01_162247) do
+ActiveRecord::Schema.define(version: 2019_07_03_082057) do
 
   create_table "contacts", force: :cascade do |t|
     t.datetime "created_at", null: false
@@ -22,12 +22,8 @@ ActiveRecord::Schema.define(version: 2019_07_01_162247) do
 
   create_table "djs", force: :cascade do |t|
     t.text "name"
-    t.integer "release_id"
-    t.integer "event_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["event_id"], name: "index_djs_on_event_id"
-    t.index ["release_id"], name: "index_djs_on_release_id"
   end
 
   create_table "events", force: :cascade do |t|
