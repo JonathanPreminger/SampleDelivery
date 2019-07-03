@@ -1,0 +1,17 @@
+<%=flash[:notice]%>
+<div class="new-artist">
+  <div class="text-new-artist">
+    <%= link_to 'ADD NEW ARTIST', new_artist_path%>
+  </div>
+</div>
+<div class="artist">
+
+
+  <% @artists.each do |artist| %>
+  <div class="index-artist">
+    <div class="name-artist">
+    <%= link_to artist.name, artist %>
+  </div>
+  </div>
+  <% end %>
+</div>

@@ -1,0 +1,53 @@
+.artist {
+  background-color: white;
+  border-left: solid 5px;
+  border-top: solid 0.5px;
+  border-right: solid 0.5px;
+  border-bottom: solid 0.5px black;
+  border-radius: 8px;
+  padding: 50px;
+  margin: 50px;
+  width:25%;
+}
+
+.new-artist {
+  font-family: 'Zilla Slab', serif;
+  border: solid black 2px;
+  border-radius: 5px;
+  box-shadow: black 4px;
+  background-color: rgb(216,191,216);
+  height: 100px;
+  width: 300px;
+  margin: 10%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  &:hover {
+    background-color: rgb(230,230,250);
+  }
+  &:active {
+    background-color: pink;
+  }
+}
+.text-new-artist {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  &:hover {
+    animation: blinker 0.05s linear infinite;
+  }
+}
+
+@keyframes blinker {
+  50% {
+    opacity: 0;
+  }
+}
+.index_artist {
+font-family: 'Russo One', sans-serif!important;
+}
+.name-artist {
+  padding: 20px;
+  color: rgb(72,61,139);
+  font-family: 'Life Savers', cursive;
+}

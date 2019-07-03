@@ -36,7 +36,7 @@
  body {
  min-height: 100%;
  width: 100%;
- font-family: 'Inconsolata', monospace!important;
+
  font-size: 20px!important;
  background-repeat: no-repeat;
  background-attachment: fixed;
@@ -60,6 +60,7 @@ background-size: cover; /* version standardisée */
    margin-bottom: 30px;
  }
  .mynavbar {
+   font-family: 'Russo One', sans-serif;
    margin-left:40px;
    margin-right:40px;
    text-decoration: none;
