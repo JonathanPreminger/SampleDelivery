@@ -1,2 +1,2 @@
-class Release < ApplicationRecord
+class Release < ApplicationRecord 
 end
