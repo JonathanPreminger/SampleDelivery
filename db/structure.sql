@@ -4,7 +4,7 @@ CREATE TABLE IF NOT EXISTS "events" ("id" integer PRIMARY KEY AUTOINCREMENT NOT 
 CREATE TABLE sqlite_sequence(name,seq);
 CREATE TABLE IF NOT EXISTS "contacts" ("id" integer NOT NULL PRIMARY KEY, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "name" text DEFAULT NULL, "message" text, "email" text);
 CREATE TABLE IF NOT EXISTS "realreleases" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" text, "tracks" text, "year" text, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL);
-CREATE TABLE IF NOT EXISTS "artists" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "name" text);
+CREATE TABLE IF NOT EXISTS "artists" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "name" text, "number" varchar);
 CREATE TABLE IF NOT EXISTS "users" ("id" integer NOT NULL PRIMARY KEY, "email" varchar DEFAULT '' NOT NULL, "encrypted_password" varchar DEFAULT '' NOT NULL, "reset_password_token" varchar DEFAULT NULL, "reset_password_sent_at" datetime DEFAULT NULL, "remember_created_at" datetime DEFAULT NULL, "sign_in_count" integer DEFAULT 0 NOT NULL, "current_sign_in_at" datetime DEFAULT NULL, "last_sign_in_at" datetime DEFAULT NULL, "current_sign_in_ip" varchar DEFAULT NULL, "last_sign_in_ip" varchar DEFAULT NULL, "confirmation_token" varchar DEFAULT NULL, "confirmed_at" datetime DEFAULT NULL, "confirmation_sent_at" datetime DEFAULT NULL, "unconfirmed_email" varchar DEFAULT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL);
 CREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email");
 CREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token");
@@ -27,6 +27,7 @@ INSERT INTO "schema_migrations" (version) VALUES
 ('20190703141041'),
 ('20190703141139'),
 ('20190704110506'),
-('20190704143103');
+('20190704143103'),
+('20190704151516');
 
 
