@@ -13,3 +13,21 @@
     <% end %>
   </div>
 </div>
+
+
+<h1>Edit Artist</h1>
+<%= form_for @artist do |f| %>
+  <p>
+    Name: <%= f.text_field :name %>
+  </p>
+  <%= f.fields_for :realreleases, Realrelease.new do |realrelease_form| %>
+    <p>
+      release: <%= realrelease_form.text_field :name %>
+      <%= realrelease_form.check_box :_destroy %>
+      <%= realrelease_form.label :_destroy, "Remove Release" %>
+    </p>
+  <% end %>
+  <p>
+    <%= f.submit 'Update Project' %>
+  </p>
+<% end %>

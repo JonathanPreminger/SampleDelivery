@@ -2,6 +2,12 @@
   <div class="carreblanc">
     <div class="form">
       <%= form_for @realrelease do |f| %>
+      <div class="row-edit">
+        <p>Artist id</p>
+        <p>
+      <%= f.index_field :artist_id %>
+        </p>
+      </div>
         <div class="row-edit">
           <p>Name</p>
           <p>
@@ -26,3 +32,7 @@
     <% end %>
   </div>
 </div>
+<% @artists.each do |artist| %>
+<%= artist.name %>
+<%= artist.id %>
+<% end %>

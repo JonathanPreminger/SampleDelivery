@@ -13,3 +13,19 @@
     <% end %>
   </div>
 </div>
+
+
+<h1>New Artist</h1>
+<%= form_for @artist do |f| %>
+  <p>
+    Name: <%= f.text_field :name %>
+  </p>
+  <%= f.fields_for :realreleases, Realrelease.new do |realrelease_form| %>
+    <p>
+        Release: <%= realrelease_form.text_field :name %>
+    </p>
+  <% end %>
+  <p>
+    <%= f.submit 'Create Artist' %>
+  </p>
+<% end %>

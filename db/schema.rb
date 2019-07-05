@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_07_04_151516) do
+ActiveRecord::Schema.define(version: 2019_07_05_102335) do
 
   create_table "artists", force: :cascade do |t|
     t.datetime "created_at", null: false
@@ -48,6 +48,17 @@ ActiveRecord::Schema.define(version: 2019_07_04_151516) do
     t.text "year"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "artist_id"
+    t.index ["artist_id"], name: "index_realreleases_on_artist_id"
+  end
+
+  create_table "tracks", force: :cascade do |t|
+    t.text "name"
+    t.text "duration"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "realrelease_id"
+    t.index ["realrelease_id"], name: "index_tracks_on_realrelease_id"
   end
 
   create_table "users", force: :cascade do |t|

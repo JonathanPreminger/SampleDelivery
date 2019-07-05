@@ -27,3 +27,25 @@
     <% end %>
   </tbody>
 </table>
+
+<%=flash[:notice]%>
+<% if user_signed_in? %>
+<div class="new-artist">
+  <div class="text-new-artist">
+    <%= link_to 'ADD NEW release', new_realrelease_path%>
+    <% else %>
+
+    <% end %>
+  </div>
+</div>
+<div class="artist">
+
+
+  <% @realreleases.each do |realrelease| %>
+  <div class="index-artist">
+    <div class="name-artist">
+    <%= link_to realrelease.name, realrelease %>
+  </div>
+  </div>
+  <% end %>
+</div>

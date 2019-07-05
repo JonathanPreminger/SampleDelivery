@@ -13,6 +13,7 @@ end
 
   def new
     @realrelease = Realrelease.new(params[:realrelease])
+      @artists = Artist.all
   end
 
   def index
@@ -43,6 +44,6 @@ end
   private
 
   def realrelease_params
-    params.require(:realrelease).permit(:name, :tracks, :year)
+    params.require(:realrelease).permit(:name, :track, :year, :artist_id)
   end
 end
