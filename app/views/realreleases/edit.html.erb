@@ -1,28 +1,18 @@
-<div class="container-edit">
-  <div class="carreblanc">
-    <div class="form">
-      <%= form_for @realrelease do |f| %>
-        <div class="row-edit">
-          <p>Name</p>
-          <p>
-          <%= f.text_field :name %><br>
-          </p>
-        </div>
-        <div class="row-edit">
-          <p>year</p>
-          <p>
-          <%= f.text_field :year
-           %><br>
-          </p>
-        </div>
-        <div class="row-edit">
-          <p>tracks</p>
-          <p>
-          <%= f.text_field :tracks %><br>
-          </p>
-        </div>
-      <%= f.submit %>
-    </div>
-    <% end %>
-  </div>
-</div>
+<h1>Edit realrelease yes</h1>
+<%= form_for @realrelease do |f| %>
+  <p>
+    Name: <%= f.text_field :name %>
+    year <%= f.text_field :year %>
+  </p>
+  <%= f.fields_for :tracks do |track_form| %>
+    <p>
+      track: <%= track_form.text_field :name %>
+      <%= track_form.check_box :_destroy %>
+      <%= track_form.label :_destroy, "Remove track" %>
+    </p>
+  <% end %>
+  <p>yop</p>
+  <p>
+    <%= f.submit 'Update realrelease' %>
+  </p>
+<% end %>

@@ -1,5 +1,5 @@
-<div class="form">
-  <td class="element"><%= @realrelease.name %></td>
-  <td class="element"> <%=@realrelease.year %></td>
-  <td class="element"><%= @realrelease.tracks %></td>
-</div>
+<%= @realrelease.name %>
+<%= link_to 'Edit', edit_realrelease_path(@realrelease), class: "edit-style" %>
+<% for track in @realrelease.tracks %>
+<%= track.name %>
+<% end %>

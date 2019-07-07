@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_07_05_102335) do
+ActiveRecord::Schema.define(version: 2019_07_06_130135) do
 
   create_table "artists", force: :cascade do |t|
     t.datetime "created_at", null: false
@@ -44,7 +44,6 @@ ActiveRecord::Schema.define(version: 2019_07_05_102335) do
 
   create_table "realreleases", force: :cascade do |t|
     t.text "name"
-    t.text "tracks"
     t.text "year"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

@@ -44,6 +44,7 @@ end
   private
 
   def realrelease_params
-    params.require(:realrelease).permit(:name, :track, :year, :artist_id)
+    params.require(:realrelease).permit(:name, tasks_attributes: [:id, :name, :_destroy])
+
   end
 end
