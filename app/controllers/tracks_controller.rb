@@ -4,10 +4,10 @@ class TracksController < ApplicationController
   @track = Track.create(track_params)
   if @track.save
     flash[:success] = "bingo niga"
-    redirect_to tracks_path
+    redirect_to home_index_change_path  
   else
     flash[:error] = "failed niga"
-    redirect_to tracks_path
+    redirect_to artists_path
   end
 end
 

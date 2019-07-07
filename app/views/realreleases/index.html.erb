@@ -1,7 +1,7 @@
 <h1>realreleases</h1>
 
 <% for realrelease in @realreleases %>
-  <%= realrelease.name %>
+  <%= link_to realrelease.name, realrelease %>
   <% for track in realrelease.tracks %>
     <%= track.name %>
   <% end %>

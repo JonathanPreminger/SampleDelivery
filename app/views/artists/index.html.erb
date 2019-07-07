@@ -16,7 +16,7 @@
       <%= link_to artist.name, artist %>
     </div>
       <% for realrelease in artist.realreleases %>
-                               <%= realrelease.name %>
+                               <%= link_to realrelease.name, realrelease%>
                                <% end %>
                                <% end %>
   </div>
