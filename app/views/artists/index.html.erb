@@ -14,9 +14,9 @@
     <% for artist in @artists %>
     <div class="name-artist">
       <%= link_to artist.name, artist %>
-    </div>
+    </div>RELEASE :
       <% for realrelease in artist.realreleases %>
-                               <%= link_to realrelease.name, realrelease%>
+                               <%= link_to realrelease.name, realrelease%> |
                                <% end %>
                                <% end %>
   </div>

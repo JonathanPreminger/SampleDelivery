@@ -1,8 +1,21 @@
-<h1>realreleases</h1>
+<h1>Releases</h1>
 
-<% for realrelease in @realreleases %>
-  <%= link_to realrelease.name, realrelease %>
-  <% for track in realrelease.tracks %>
-    <%= track.name %>
-  <% end %>
-<% end %>
+
+
+<div class="artist">
+
+<div class="index-artist">
+  <% for realrelease in @realreleases %>
+  <div class="name-artist">
+    <%= link_to realrelease.name, realrelease %>
+  artist :    <%= realrelease.artist.name %>
+  </div>
+    Track list :
+    <% for track in realrelease.tracks %>
+ <%= track.name %> |
+
+                             <% end %>
+                             <% end %>
+</div>
+
+</div>
