@@ -10,8 +10,8 @@
       </div>
     </div>
     <div class="row1-right">
-      <div class="button-edit space-small-div">
-      <%= link_to 'Edit', edit_artist_path(@artist), class: "edit-style" %>
+      <div class="button-add space-small-div">
+      <%= link_to 'ADD RELEASE', edit_artist_path(@artist), class: "add-style" %>
       </div>
       <div class="button-delete space-small-div">
       <%= link_to 'Delete', artist_path(@artist), method: :delete, data: { confirm: 'Are you sure to delete this artist ?' },class: "delete-style" %>
@@ -19,18 +19,17 @@
     </div>
   </div>
 <div class="row">
-  <p>________________________________________________________________________________________________________</p>
 
 </div>
   <% for realrelease in @artist.realreleases %>
   <div class="row" id="row1">
     <div class="column1">
       <div class="space-small-div" >
-        <%= link_to realrelease.name, realrelease%>
+        <%= link_to realrelease.name, realrelease, class: "color"%>
       </div>
     </div>
     <div class=" column2" >
-      <div class="space-small-div" >
+      <div class="space-small-di  v" >
       <%= realrelease.year %>
       </div>
     </div>
@@ -42,3 +41,4 @@
   <% end %>
 
 </div>
+<p>________________________________________________________________________________________________________</p>

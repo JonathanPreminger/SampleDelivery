@@ -2,32 +2,20 @@
   <div class="carreblanc">
     <div class="form">
       <%= form_for @artist do |f| %>
+        <%= f.fields_for :realreleases, Realrelease.new do |realrelease_form| %>
         <div class="row-edit">
-          <p>Name</p>
+          <p>Add a release</p>
+          <p>for  <%= @artist.name %></p>
           <p>
-          <%= f.text_field :name %><br>
+            <%= realrelease_form.text_field :name %>
+
           </p>
         </div>
-      <%= f.submit %>
+        <% end %>
+
+        <%= f.submit 'Add release' %>
+
     </div>
     <% end %>
   </div>
 </div>
-
-
-<h1>Edit Artist</h1>
-<%= form_for @artist do |f| %>
-  <p>
-    Name: <%= f.text_field :name %>
-  </p>
-  <%= f.fields_for :realreleases, Realrelease.new do |realrelease_form| %>
-    <p>
-      release: <%= realrelease_form.text_field :name %>
-      <%= realrelease_form.check_box :_destroy %>
-      <%= realrelease_form.label :_destroy, "Remove Release" %>
-    </p>
-  <% end %>
-  <p>
-    <%= f.submit 'Update Project' %>
-  </p>
-<% end %>
