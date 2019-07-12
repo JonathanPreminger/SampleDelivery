@@ -1,20 +1,15 @@
 <%=flash[:notice]%>
-<% if user_signed_in? %>
 <div class="new-artist">
   <div class="text-new-artist">
       <%= link_to 'ADD NEW ARTIST', new_artist_path%>
-      <% else %>
-      <% end %>
+    
   </div>
 </div>
 
 <div class="index-artist column line-title">
     <% for artist in @artists %>
     <div class="double_line">
-      <%= link_to artist.name, artist, class: "color-white" %>
-      <div class="white-line">
-        <p>___________________________________</p>
-      </div>
+      <%= link_to artist.name, artist, class: "artist-name" %>
     </div>
     <% end %>
 </div>

@@ -3,6 +3,20 @@
     <div class="space-small-div">
       <%= @artist.name.upcase %>
     </div>
+    <div class="space-small-div">
+    <%= image_tag @artist.image if @artist.image.attached? %>
+  </div>
+
+    <div class="column-inside">
+      <div class="release-name">
+        <div>
+          RELEASE
+        </div>
+        <div>
+        YEAR
+        </div>
+      </div>
+    </div>
     <div class="column-inside">
       <% for realrelease in @artist.realreleases %>
       <div class="release-name">

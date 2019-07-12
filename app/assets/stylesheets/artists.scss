@@ -104,3 +104,10 @@ font-family: 'Russo One', sans-serif!important;
     background-color: rgb(170,130,150);
   }
 }
+.artist-name {
+  color: black;
+  &:hover {
+    text-shadow: black 2px 2px;
+    color:pink;
+  }
+}

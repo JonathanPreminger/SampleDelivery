@@ -7,8 +7,10 @@
           <p>Add a release</p>
           <p>for  <%= @artist.name %></p>
           <p>
-            <%= realrelease_form.text_field :name %>
-
+            <p>NAME</p>
+            <%= realrelease_form.text_field :name, :placeholder => "Name of the release" %>
+            <p>YEAR</p>
+            <%= realrelease_form.text_field :year,:placeholder =>  "Year of the release" %>
           </p>
         </div>
         <% end %>
