@@ -1,44 +1,27 @@
-
-
-
-<div class="index-artist column">
-
-  <div class="row" id="row1">
-    <div class="row1-left">
-      <div class="space-small-div">
-      <%= @artist.name.upcase %>
-      </div>
-    </div>
-    <div class="row1-right">
-      <div class="button-add space-small-div">
-      <%= link_to 'ADD RELEASE', edit_artist_path(@artist), class: "add-style" %>
-      </div>
-      <div class="button-delete space-small-div">
-      <%= link_to 'Delete', artist_path(@artist), method: :delete, data: { confirm: 'Are you sure to delete this artist ?' },class: "delete-style" %>
-      </div>
-    </div>
-  </div>
 <div class="row">
-
-</div>
-  <% for realrelease in @artist.realreleases %>
-  <div class="row" id="row1">
-    <div class="column1">
-      <div class="space-small-div" >
-        <%= link_to realrelease.name, realrelease, class: "color"%>
-      </div>
+  <div class="column" >
+    <div class="space-small-div">
+      <%= @artist.name.upcase %>
     </div>
-    <div class=" column2" >
-      <div class="space-small-di  v" >
-      <%= realrelease.year %>
+    <div class="column-inside">
+      <% for realrelease in @artist.realreleases %>
+      <div class="release-name">
+        <div>
+            <%= link_to realrelease.name, realrelease%>
+        </div>
+        <div>
+          <%=  realrelease.year%>
+        </div>
       </div>
+      <% end %>
     </div>
   </div>
-  <div class="row" id="white">
-
-
+  <div class="column">
+    <div class="button-add-release space-small-div">
+      <%= link_to 'ADD RELEASE', edit_artist_path(@artist), class: "add-release" %>
+    </div>
+    <div class="button-delete-release space-small-div">
+      <%= link_to 'DELETE ARTIST', artist_path(@artist), method: :delete, data: { confirm: 'Are you sure to delete this artist ? Every release and track associate will be remove as well' },class: "delete-artist " %>
+    </div>
   </div>
-  <% end %>
-
 </div>
-<p>________________________________________________________________________________________________________</p>

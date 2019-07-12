@@ -11,6 +11,14 @@ CREATE TABLE IF NOT EXISTS "tracks" ("id" integer PRIMARY KEY AUTOINCREMENT NOT 
 CREATE INDEX "index_tracks_on_realrelease_id" ON "tracks" ("realrelease_id");
 CREATE TABLE IF NOT EXISTS "realreleases" ("id" integer NOT NULL PRIMARY KEY, "name" text DEFAULT NULL, "year" text DEFAULT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "artist_id" integer DEFAULT NULL);
 CREATE INDEX "index_realreleases_on_artist_id" ON "realreleases" ("artist_id");
+CREATE TABLE IF NOT EXISTS "active_storage_blobs" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "key" varchar NOT NULL, "filename" varchar NOT NULL, "content_type" varchar, "metadata" text, "byte_size" bigint NOT NULL, "checksum" varchar NOT NULL, "created_at" datetime NOT NULL);
+CREATE UNIQUE INDEX "index_active_storage_blobs_on_key" ON "active_storage_blobs" ("key");
+CREATE TABLE IF NOT EXISTS "active_storage_attachments" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar NOT NULL, "record_type" varchar NOT NULL, "record_id" integer NOT NULL, "blob_id" integer NOT NULL, "created_at" datetime NOT NULL, CONSTRAINT "fk_rails_c3b3935057"
+FOREIGN KEY ("blob_id")
+  REFERENCES "active_storage_blobs" ("id")
+);
+CREATE INDEX "index_active_storage_attachments_on_blob_id" ON "active_storage_attachments" ("blob_id");
+CREATE UNIQUE INDEX "index_active_storage_attachments_uniqueness" ON "active_storage_attachments" ("record_type", "record_id", "name", "blob_id");
 INSERT INTO "schema_migrations" (version) VALUES
 ('20190617115626'),
 ('20190617123659'),
@@ -35,6 +43,7 @@ INSERT INTO "schema_migrations" (version) VALUES
 ('20190705100744'),
 ('20190705101937'),
 ('20190705102335'),
-('20190706130135');
+('20190706130135'),
+('20190712044021');
 
 

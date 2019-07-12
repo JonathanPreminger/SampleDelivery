@@ -54,20 +54,53 @@ font-family: 'Russo One', sans-serif!important;
 .line-title {
   background-color: black;
 }
-.color {
-  color: white;
+.add-release {
+  text-shadow: 1px 2px grey;
+  &:hover{
+    color: white;
+    text-shadow: 1px 2px red;
+  }
 }
 .white-line {
   background-color: white
 }
-.button-add {
+.button-add-release {
   border: solid 1px rgb(221,160,221);
   border-radius: 15px;
   background-color:rgb(148,0,211);
   width: 190px;
-
+}
+.button-delete-release {
+  border: solid 1px rgb(255,0,0);
+  border-radius: 15px;
+  background-color: black;
+  width: 190px;
+  &:hover {
+    background-color: rgb(220,20,60);
+  }
 }
 .add-style {
   color: white;
-  
+}
+.delete-artist {
+    color: red!important;
+    &:hover {
+      color: white!important;
+      text-shadow: 2px 3px black;
+    }
+}
+.color-white {
+  color:white;
+}
+.release-name{
+  display:flex;
+  flex-direction: row;
+  justify-content: space-between;
+  color: black;
+  padding: 5px;
+  &:hover{
+    border: solid 1px black;
+    border-radius: 5px;
+    background-color: rgb(170,130,150);
+  }
 }

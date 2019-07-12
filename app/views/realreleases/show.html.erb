@@ -1,5 +1,28 @@
-<%= @realrelease.name %>
-<%= link_to 'Edit', edit_realrelease_path(@realrelease), class: "edit-style" %>
-<% for track in @realrelease.tracks %>
-<%= track.name %>
-<% end %>
+
+<div class="row">
+  <div class="column" >
+    <div class="space-small-div">
+    <%= @realrelease.name %>
+    </div>
+    <div class="column-inside">
+      <% for track in @realrelease.tracks %>
+      <div class="release-name">
+        <div>
+          <%= track.name %>
+        </div>
+        <div>
+          <%= track.duration%>
+        </div>
+      </div>
+      <% end %>
+    </div>
+  </div>
+  <div class="column">
+    <div class="button-add-release space-small-div">
+      <%= link_to 'Edit', edit_realrelease_path(@realrelease), class: "edit-style" %>
+    </div>
+    <div class="button-delete-release space-small-div">
+      shit
+    </div>
+  </div>
+</div>
