@@ -49,6 +49,6 @@ end
   private
 
   def artist_params
-    params.require(:artist).permit(:name, :image, realreleases_attributes: [:id, :name, :year, :_destroy])
+    params.require(:artist).permit(:name, :image, realreleases_attributes: [:id, :name, :image, :year, :_destroy])
   end
 end

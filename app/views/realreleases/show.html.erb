@@ -4,6 +4,9 @@
     <div class="space-small-div">
     <%= @realrelease.name %>
     </div>
+    <div class="space-small-div">
+    <%= image_tag @realrelease.image if @realrelease.image.attached? %>
+    </div>
     <div class="column-inside">
       <% for track in @realrelease.tracks %>
       <div class="release-name">

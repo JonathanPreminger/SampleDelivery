@@ -44,7 +44,7 @@ end
   private
 
   def realrelease_params
-    params.require(:realrelease).permit(:name, tracks_attributes: [:id, :name, :_destroy])
+    params.require(:realrelease).permit(:name, :image, tracks_attributes: [:id, :name, :_destroy])
 
   end
 end
