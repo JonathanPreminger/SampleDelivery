@@ -14,26 +14,14 @@
  *= require_self
  */
  html {
-   height: 100%;
-   overflow-x: hidden;
-   scroll-behavior: smooth;
-
-   margin:0;
-  padding:0;
-  background: image-url("SD02.jpg") no-repeat center fixed;
-  -webkit-background-size: cover; /* pour anciens Chrome et Safari */
-  background-size: cover; /* version standardisée */
+   overflow-x: hidden;/*pour le petit bonhomme*/
  }
- .full-height {
-   height: 100%;
-   width: 100%;
- }
-
  a {
    text-decoration: none;
    color:black;
  }
  body {
+
  min-height: 100%;
  width: 100%;
 
