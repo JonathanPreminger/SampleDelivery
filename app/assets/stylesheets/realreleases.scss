@@ -1,11 +1,11 @@
+
 .main-title {
   width: 100%;
   display: flex;
   justify-content: center
 }
 .main-title h1 {
-  font-family: 'Sofachrome', sans-serif;
-  font-size: 38px;
+  font-family: 'Steps-Mono';
 }
 .title-row {
   width: 100%;
@@ -19,8 +19,8 @@
   justify-content: center;
 }
 .title-name h2 {
-  font-family: 'Sofachrome', sans-serif;
-  font-size: 18px;
+  font-family: 'Steps-Mono';
+  font-size: 32px;
 }
 .release-content {
   width: 100%;
@@ -28,8 +28,8 @@
   flex-direction: row;
 }
 .release-content p {
-  font-family: 'Life Savers', sans-serif;
-  font-size: 32px;
+  font-family: 'Steps-Mono';
+  font-size: 24px;
 
 }
 .release-column {
@@ -42,7 +42,8 @@
 }
 .release-column p {
   display: flex;
-  justify-content: center
+  justify-content: center;
+  font-family: 'Steps-Mono';
 }
 
 @media screen and (max-width:500px) {
@@ -50,11 +51,10 @@
     font-size: 24px;
   }
   .title-name h2 {
-    font-size: 8px;
+    font-size: 18px;
   }
   .release-content p {
-    font-family: 'Darker Grotesque', sans-serif;
-    color:#4a9e9a;
+
     font-size: 12px;
   }
 

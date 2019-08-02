@@ -1,27 +1,23 @@
 <div class="double-nav">
-  <nav class="mynavbar">
-    <div class="navleft">
-        <div class="SD1 first-line">
-          <div  class="" id="blink">
-            <%= image_tag("rectangle.png")%>
-          </div>
-        </div>
-      <div class="second-line SD1">
-        <p class="SD1"><%= link_to "Event comptability", events_path %></p>
-      </div>
-      <div >
+
+  <div class="nav">
+    <button class="toggle hamburger hamburger--arrow is-active" type="button"><label for="toggle">
+    <span class="hamburger-box">
+      <span class="hamburger-inner">  </span>
+    </span>
+    </label></button>
+        <input type="checkbox" id="toggle"/>
+        <div class="menu">
+          <%= link_to "Event comptability", events_path %>
           <p class=" SD1"><%= link_to "Release", realreleases_path %></p>
-
-        </div>
-        <div >
-            <p class=" SD1"><%= link_to "artist", artists_path %></p>
-
-          </div>
-      <div >
+          <p class=" SD1"><%= link_to "artist", artists_path %></p>
 
           <p class=" SD1"><%= link_to "Home", home_index_change_path%></p>
-      </div>
-  </nav>
+
+        </div>
+  </div>
+
+
   <div class="navright">
       <% if flash[:success] %>
       <div class="sending">
@@ -33,7 +29,7 @@
     <%= link_to "Se deconnecter", destroy_user_session_path, method: :delete %>
     <% else %>
     <div  class="email">
-    <%= link_to "Sign In", new_user_session_path  %>
+    <p><%= link_to "Sign In", new_user_session_path  %></p>
     <% end %>
     </div>
     </div>
@@ -49,4 +45,6 @@
     </div>
     <% end %>
   </div>
+
+
 </div>
