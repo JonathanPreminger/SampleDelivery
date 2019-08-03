@@ -1,50 +1,63 @@
-<div class="double-nav">
+<div class="nav">
 
-  <div class="nav">
-    <button class="toggle hamburger hamburger--arrow is-active" type="button"><label for="toggle">
-    <span class="hamburger-box">
-      <span class="hamburger-inner">  </span>
-    </span>
-    </label></button>
-        <input type="checkbox" id="toggle"/>
-        <div class="menu">
-          <%= link_to "Event comptability", events_path %>
-          <p class=" SD1"><%= link_to "Release", realreleases_path %></p>
-          <p class=" SD1"><%= link_to "artist", artists_path %></p>
+  <div class="nav-left">
+    <button class="toggle hamburger hamburger--arrow is-active" type="button">
+      <label for="toggle">
+        <span class="hamburger-box">
+          <span class="hamburger-inner">  </span>
+        </span>
+      </label>
+    </button>
+    <input type="checkbox" id="toggle"/>
+    <div class="menu">
+      <%= link_to "Event comptability", events_path %>
+      <p class=" SD1"><%= link_to "Release", realreleases_path %></p>
+      <p class=" SD1"><%= link_to "artist", artists_path %></p>
+      <p class=" SD1"><%= link_to "Home", home_index_change_path%></p>
+    </div>
 
-          <p class=" SD1"><%= link_to "Home", home_index_change_path%></p>
 
-        </div>
   </div>
 
 
-  <div class="navright">
-      <% if flash[:success] %>
-      <div class="sending">
-        <%end%>
-    <div  class="email">
-       <%= link_to image_tag("email.png"), new_contact_path  %>
-    </div>
+  <div class="nav-right">
+
     <% if user_signed_in? %>
-    <%= link_to "Se deconnecter", destroy_user_session_path, method: :delete %>
+
+    <div class="sign">
+      <p><%= link_to "Sign Out", destroy_user_session_path, method: :delete %></p>
+      </div>
     <% else %>
-    <div  class="email">
-    <p><%= link_to "Sign In", new_user_session_path  %></p>
+
+    <div  class="sign">
+      <p><%= link_to "SIGN IN", new_user_session_path  %></p>
+    </div>
+
     <% end %>
+
+    <div class="sending">
     </div>
+
+    <div  class="email">
+    <%= link_to image_tag("email.png"), new_contact_path  %>
     </div>
+
+
+
     <% if flash[:success] %>
+
     <div id="hideMe">
       <div class= "email ">
         <div class="success">
-      <p id="text" >
+          <p id="text" >
             <%= flash[:success] %>
           </p>
         </div>
       </div>
     </div>
-    <% end %>
-  </div>
 
+    <% end %>
+
+  </div>
 
 </div>
