@@ -3,12 +3,13 @@
   width: 100%;
   display: flex;
   justify-content: center;
-  margin-bottom: 30px;
+  margin-top: 40px;
+  margin-bottom: 50px;
 }
 .main-title h1 {
   font-family: 'Steps-Mono';
   text-decoration: line-through;
-
+  font-size: 40px;
 }
 .title-row {
   width: 100%;
@@ -33,7 +34,7 @@
 }
 .release-content p {
   font-family: 'Steps-Mono';
-  font-size: 24px;
+  font-size: 18px;
 
 }
 
@@ -62,5 +63,9 @@
 
     font-size: 12px;
   }
+
+}
+
+@media screen and (max-width:1000px) {
 
 }
