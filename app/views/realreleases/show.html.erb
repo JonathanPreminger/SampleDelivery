@@ -1,31 +1,49 @@
 
-<div class="row">
-  <div class="column" >
-    <div class="space-small-div">
-    <%= @realrelease.name %>
-    </div>
-    <div class="space-small-div">
-    <%= image_tag @realrelease.image if @realrelease.image.attached? %>
-    </div>
-    <div class="column-inside">
-      <% for track in @realrelease.tracks %>
-      <div class="release-name">
-        <div>
-          <%= track.name %>
-        </div>
-        <div>
-          <%= track.duration%>
-        </div>
-      </div>
-      <% end %>
-    </div>
+<div class="column" >
+  <div class="main-title" id="title-show-realrelease">
+    <h2><%= @realrelease.name %></h2>
   </div>
-  <div class="column">
-    <div class="button-add-release space-small-div">
-      <%= link_to 'Edit', edit_realrelease_path(@realrelease), class: "edit-style" %>
-    </div>
-    <div class="button-delete-release space-small-div">
-      shit
-    </div>
+  <div class="main-title" id="title-show-realrelease">
+    <h2>By </h2>
+  </div>
+  <div class="main-title" id="title-show-realrelease">
+    <h2><%= @realrelease.artist.name %></h2>
   </div>
 </div>
+
+
+<div class="column">
+  <div class="title-row">
+    <div class="title-name">
+      <h2>TrackList</h2>
+    </div>
+    <div class="title-name">
+      <h2>Duration</h2>
+    </div>
+  </div>
+
+  <div class="the-content">
+    <% for track in @realrelease.tracks %>
+    <div class="release-content">
+      <div class="release-column">
+        <p><%= track.name %></p>
+      </div>
+      <div class="release-column">
+        <p><%= track.duration %></p>
+      </div>
+    </div>
+    <% end %>
+  </div>
+</div>
+
+
+  <div class="column">
+    <div class="title-row">
+      <div class="button-add-release space-small-div">
+        <%= link_to 'Edit', edit_realrelease_path(@realrelease), class: "add-release" %>
+      </div>
+      <div class="button-delete-release space-small-div">
+        <%= link_to 'DELETE RELEASE', realrelease_path(@realrelease), method: :delete, data: { confirm: 'Are you sure to delete this release ? Every release and track associate will be remove as well' }, class: "delete-artist " %>
+      </div>
+    </div>
+  </div>

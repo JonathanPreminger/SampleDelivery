@@ -6,15 +6,21 @@
   margin-top: 40px;
   margin-bottom: 50px;
 }
-.main-title h1 {
+.main-title h1{
   font-family: 'Steps-Mono';
   text-decoration: line-through;
   font-size: 40px;
+}
+.main-title h2, p{
+  font-family: 'Steps-Mono';
+  font-size: 32px;
+  margin-right:10px;
 }
 .title-row {
   width: 100%;
   display: flex;
   flex-direction: row;
+  justify-content: space-between;
   margin-bottom: 10px;
 }
 .title-name {
@@ -31,6 +37,7 @@
   width: 100%;
   display: flex;
   flex-direction: row;
+  justify-content: space-between;
 }
 .release-content p {
   font-family: 'Steps-Mono';
@@ -45,13 +52,34 @@
   display: flex;
   flex-direction: column;
   word-wrap: break-word;
+  overflow: hidden;
 }
 .release-column p {
   display: flex;
   justify-content: center;
   font-family: 'Steps-Mono';
 }
-
+.add-release {
+  text-shadow: 1px 2px grey;
+  &:hover{
+    color: white;
+    text-shadow: 1px 2px red;
+  }
+}
+.button-add-release {
+  border: solid 1px rgb(221,160,221);
+  border-radius: 15px;
+  background-color:rgb(148,0,211);
+  width: 190px;
+}
+.release-img {
+  margin-left: 33%;
+  overflow: hidden;
+}
+.ter-img {
+  width: 80%;
+  height: auto;
+}
 @media screen and (max-width:500px) {
   .main-title h1 {
     font-size: 24px;
@@ -60,12 +88,46 @@
     font-size: 18px;
   }
   .release-content p {
-
+    font-size: 12px;
+    background-color: #fac3cf;
+  }
+  .the-content {
+  }
+  #title-show-realrelease {
+    max-height: 30px;
+    margin:0;
+  }
+  #title-show-realrelease h2{
     font-size: 12px;
   }
 
 }
+@media screen and (min-width:1000px) {
+  .main-title {
+    margin-bottom: 60px;
+  }
+    .title-row {
+      width: 60%;
+      margin-left: 20%;
+      margin-right: 20%;
+      display: flex;
+      flex-direction: row;
+      margin-bottom: 10px;
+    }
+    .title-name {
+      width: 30%;
+      margin: 1.66%;
+      display: flex;
+      justify-content: center;
+      margin-bottom: 40px;
+    }
 
-@media screen and (max-width:1000px) {
+    .release-content {
+      width: 60%;
+      margin-left: 20%;
+      margin-right: 20%;
+      display: flex;
+      justify-content: center;
+    }
 
-}
+  }

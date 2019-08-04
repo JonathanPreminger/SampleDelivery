@@ -252,10 +252,20 @@ background-size: cover; /* version standardisée */
 }
 .space-small-div {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
 }
-
+.space-small-div h2{
+  font-size: 24px;
+  text-shadow: #49393b 18px 16px;
+  margin-bottom: 30px;
+}
+.space-small-div h3{
+  font-size: 18px;
+  text-shadow:  #ff7e6b 1px 0 10px; ;
+  margin-bottom: 15px;
+}
 .flex-start {
   margin:50px;
 }
@@ -412,7 +422,7 @@ button {}
   #toggle:checked + .menu  {
     display: block;
     position: absolute;
-    background-color: #a9b18f;
+    background-color: #52454d;
     width: 100%;
     margin-top: 100px;
     left: 0px;

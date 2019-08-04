@@ -4,6 +4,9 @@
 
 <div class="title-row">
   <div class="title-name">
+    <h2></h2>
+  </div>
+  <div class="title-name">
     <h2>Name</h2>
   </div>
   <div class="title-name">
@@ -18,6 +21,17 @@
 
 <% for realrelease in @realreleases %>
 <div class="release-content">
+  <div class="release-column">
+     <%  if realrelease.image.attached?  %>
+    <div class="release-img">
+    <%= image_tag realrelease.image, class:"ter-img" %>
+    </div>
+    <% else %>
+    <div class="">
+      <p>pas prout</p>
+    </div>
+    <% end %>
+  </div>
   <div class="release-column">
     <p><%= link_to realrelease.name.upcase, realrelease %></p>
   </div>
