@@ -10,13 +10,15 @@
     </button>
     <input type="checkbox" id="toggle"/>
     <div class="menu">
-      <p><%= link_to "EVENT COMPTABILITY", events_path %></p>
-      <p><%= link_to "RELEASE", realreleases_path %></p>
-      <p><%= link_to "ARTIST", artists_path %></p>
-      <p><%= link_to "HOME", home_index_change_path%></p>
+      <div class="menu-link">
+      <p><%= link_to "COMPTABILITY", events_path %></p>  </div>
+      <div class="menu-link">
+      <p><%= link_to "RELEASE", realreleases_path %></p> </div>
+      <div class="menu-link">
+      <p><%= link_to "ARTIST", artists_path%></p> </div>
+      <div class="menu-link">
+      <p><%= link_to "HOME", home_index_change_path%></p> </div>
     </div>
-
-
   </div>
 
 
@@ -39,7 +41,7 @@
     </div>
 
     <div  class="email">
-    <%= link_to image_tag("email.png"), new_contact_path  %>
+    <%= link_to image_tag("email.png"), new_contact_path, id:"fast-blink"  %>
     </div>
 
 

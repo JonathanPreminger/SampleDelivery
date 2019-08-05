@@ -1,15 +1,21 @@
 <%=flash[:notice]%>
-<div class="new-artist">
-  <div class="text-new-artist">
-      <%= link_to 'ADD NEW ARTIST', new_artist_path%>
-    
-  </div>
-</div>
+<div class="artist-content">
 
-<div class="index-artist column line-title">
+  <div class="new-artist">
+    <div class="text-new-artist">
+        <p><%= link_to 'ADD NEW ARTIST', new_artist_path%></p>
+    </div>
+  </div>
+
+  <div class="artist-list-content">
     <% for artist in @artists %>
-    <div class="double_line">
-      <%= link_to artist.name, artist, class: "artist-name" %>
+    <div class="artist-list">
+      <%= image_tag "arrow-right.png", class:"arrow-right" %>
+      <div class="transition1">
+      <p><%= link_to artist.name, artist, class: "artist-name" %></p>
+      </div>
     </div>
     <% end %>
+  </div>
+
 </div>

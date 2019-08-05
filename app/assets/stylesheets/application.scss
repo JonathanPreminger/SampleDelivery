@@ -86,10 +86,10 @@ background-size: cover; /* version standardisée */
    border-bottom: black solid 2px;
  }
  .nav-right {
+   right:0;.
    width: 40%;
-   margin:20px;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
  }
  .nav-left {
    width: 40%;
@@ -102,6 +102,10 @@ background-size: cover; /* version standardisée */
   text-align: right;
   margin: 10px;
   font-size: 18px;
+  transition: box-shadow 0.8s ease-out;
+  &:hover {
+    box-shadow: -8px -8px black;
+  }
  }
 .sign p {
   font-family: 'Steps-Mono';
@@ -111,6 +115,7 @@ background-size: cover; /* version standardisée */
    font-family: 'Steps-Mono';
  }
  .email {
+   position: relative;
    display: flex;
    justify-content: flex-end;
    margin: 8px;
@@ -131,6 +136,13 @@ background-size: cover; /* version standardisée */
    z-index: 1;
   -webkit-animation: blink 1s step-end infinite;
           animation: blink 1s step-end infinite;
+}
+#fast-blink {
+  &:hover {
+    border: purple dashed 3px;
+    border-radius: 50%;
+    animation: blinker 0.01s infinite;
+    cursor: crosshair;}
 }
 @-webkit-keyframes blink {
     0% {opacity:1;}
@@ -161,52 +173,7 @@ background-size: cover; /* version standardisée */
   animation-iteration-count: 1;
   animation-fill-mode: both;
 }
-// animation mailer sending
-.sending {
-  animation-iteration-count: 1;
-  animation-fill-mode: both;
-  -webkit-animation: send 4s ;/* Safari 4+ */
-  -moz-animation:    send  4s; /* Fx 5+ */
-  -o-animation:      send  4s; /* Opera 12+ */
-  animation: send 4s;
-}
-@-webkit-keyframes send {
-    0% {margin-right:0px;opacity:1;}
-    20% {opacity:1}
-    28% {opacity:0;}
-    100% {margin-right:80%;opacity:0;}
-}
-// contact mailer and edit box
-.form {
-  margin-top:7%;
-  margin-left: 10%;
-  margin-bottom: 7%;
 
-}
-.container-edit {
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-  margin-bottom: 90px;
-  margin-top: 0px;}
-.carreblanc {
-  width: 33%;
-  height: 66%;
-  border-radius: 20px;
-  border: solid 3px black;
-  box-shadow:2px 2px 10px grey;
-  background-color: rgba(255,255,255,0.7);
-  -webkit-transition: transform 1s;
-  &:hover {
-    transform:scale(1.04);
-   -webkit-transition: transform 0.8s;
-
-  }
-}
-.text-mailer {
-  color: black
-}
 // end contact mailer and edit box
 .button-delete {
   border: solid 2px red;
@@ -418,6 +385,7 @@ button {}
     padding:0;
     color:white;
     text-shadow: #49393b 2px 2px 2px  ;
+
   }
   #toggle:checked + .menu  {
     display: block;
@@ -433,6 +401,17 @@ button {}
     position: relative;
     right: 5px;
 
+  }
+}
+@media only screen and (max-width: 500px) {
+  .nav-left {
+    width:20%;
+  }
+  .nav-right {
+    width : 80%;
+    display:flex;
+    align-items: center;
+    justify-content: center;
   }
 }
 @media only screen and (min-width: 768px) {
@@ -459,7 +438,37 @@ button {}
     padding-top: 30px;
 
   }
+  .menu {
+    position: absolute;
+    left:2%;
+    top:2%;
+    display: flex;
+    flex-direction: row;
+    max-height: 50px;
+  }
+  .menu p{
+    border: none;
+    font-size: 24px;
+  }
+  .menu-link {
+    margin-right: 10%;
+    width:30%;
+    transition: box-shadow 0.8s ease-out;
+    &:hover {
+      box-shadow: -8px -8px black;
+    }
+  }
 
+  .nav-left {
+    width:50%;
+    margin-left: 10%;
+  }
+  .nav-right {
+    width:30%;
+    display: flex;
+    flex-direction: row;
+    height:70px;
+  }
 }
 @media only screen and (min-width: 1000px) {
   .wrapper {

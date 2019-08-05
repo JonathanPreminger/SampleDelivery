@@ -1,3 +1,6 @@
+.artist-content {
+  width: 100%;
+}
 .artist {
   background-color: white;
   border-left: solid 5px;
@@ -11,13 +14,12 @@
 }
 
 .new-artist {
-  font-family: 'Zilla Slab', serif;
   border: solid black 2px;
   border-radius: 5px;
   box-shadow: black 4px;
   background-color: rgb(216,191,216);
   height: 100px;
-  width: 300px;
+  width: 80%;
   margin: 10%;
   display: flex;
   justify-content: center;
@@ -25,9 +27,18 @@
   &:hover {
     background-color: rgb(230,230,250);
   }
-  &:active {
+  &:focus {
     background-color: pink;
   }
+}
+.artist-list-content {
+  padding: 10%;
+
+  width:60%;
+  margin-left: 10%;
+  border: black solid 2px;
+  border-radius: 12px;
+  background-color: pink;
 }
 .text-new-artist {
   display: flex;
@@ -37,7 +48,9 @@
     animation: blinker 0.05s linear infinite;
   }
 }
-
+.text-new-artist p {
+  font-family: 'Steps-Mono-Thin';
+}
 @keyframes blinker {
   50% {
     opacity: 0;
@@ -110,4 +123,75 @@ font-family: 'Russo One', sans-serif!important;
     text-shadow: black 2px 2px;
     color:pink;
   }
+}
+
+.artist-list {
+  margin-bottom: 5%;
+  width:80%;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+.transition1 {
+  width: 100%;
+  border-right: rgba(123, 123, 64, 0) dashed 12px;
+  margin-left: 13px;
+  padding: 6px;
+  transition: width 2s ease-out;
+  &:hover {
+    width:70%;
+    border-right: rgba(234, 123, 64, 1) solid 12px;
+  }
+}
+.artist-list p {
+  font-family: 'Steps-Mono-Thin';
+  font-size: 16px;
+  margin-left: 10px;
+  margin-bottom: 12px;
+
+}
+.arrow-right {
+  width:15%;
+
+}
+.icon-arrow {
+  display: flex;
+  flex-direction: column;
+  background-color: red;
+}
+@media only screen and (min-width:500px) {
+    .transition1 {
+      margin-left: 8%;
+    }
+    .new-artist {
+      width: 60%;
+      margin-left: 20%;
+      margin-bottom: 5%;
+    }
+    .artist-list-content {
+      margin-left:20%;
+      padding: 10%;
+      width: 40%;
+    }
+    .artist-list p {
+      font-size: 24px;
+    }
+}
+@media only screen and (min-width:1000px) {
+    .transition1 {
+      margin-left: 8%;
+    }
+    .new-artist {
+      width: 50%;
+      margin-left: 25%;
+      margin-bottom: 5%;
+    }
+    .artist-list-content {
+      margin-left:25%;
+      padding: 10%;
+      width: 30%;
+    }
+    .artist-list p {
+      font-size: 24px;
+    }
 }
