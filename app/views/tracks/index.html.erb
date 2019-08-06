@@ -1,7 +1,12 @@
-<h1>tracks</h1>
+<div class="edit-realrelease-title">
+  <div class="title-name">
+    <h2>tracks</h2>
+  </div>
+  <% for track in @tracks %>
 
-<% for track in @tracks %>
-  <%=  track.name %>
-  <%= track.realrelease.artist.name %>  
+  <div class="small-column">
+    <p><%=  track.name %></p>
+  </div>
 
   <% end %>
+</div>

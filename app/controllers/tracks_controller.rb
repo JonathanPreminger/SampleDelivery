@@ -4,7 +4,7 @@ class TracksController < ApplicationController
   @track = Track.create(track_params)
   if @track.save
     flash[:success] = "bingo niga"
-    redirect_to home_index_change_path  
+    redirect_to home_index_change_path
   else
     flash[:error] = "failed niga"
     redirect_to artists_path
@@ -32,13 +32,16 @@ end
     @track = Track.find(params[:id])
     @track.update_attributes(track_params)
     flash[:notice] = "#{@track.name} was successfully updated."
-    redirect_to tracks_path
+
+
   end
 
   def destroy
+    @track =   Track.find(params[:id])
     Track.find(params[:id]).destroy
      flash[:success] = "track deleted"
-     redirect_to tracks_url
+
+     redirect_to realrelease_path(@track.realrelease.id)
   end
 
   private

@@ -99,17 +99,17 @@
 .small-row {
   display: flex;
   flex-direction: row;
-  margin-bottom: 20px;
 
 
 }
-.small-column p{
-  margin-bottom: 10px;
+.small-column p, h2{
+  margin-top: 10px;
+  margin-bottom: 20px;
+  font-family: 'Steps-Mono';
 }
 .release-edit-column p {
   font-size: 16px;
   margin-right: 10px;
-
 }
 .release-edit-column h3 {
   font-family: 'Steps-Mono-Thin';
@@ -119,6 +119,53 @@
 .edit-realrelease-title h2 {
   font-family: 'Steps-Mono';
 }
+.content-show {
+  width:100%;
+}
+.edit-destroy-block {
+  display: flex;
+  justify-content: center;
+  width: 70%;
+  margin-left: 0px;
+  background-color: rgb(200,200,220);
+  padding: 5%;
+  margin: 10%;
+  border: solid 2px black;
+
+}
+.selector-margin {
+  margin-right: 10px;
+}
+.title-name h3 {
+  font-size: 24px;
+  font-family: 'Steps-Mono';
+}
+.center {
+  display: flex;
+  justify-content: center;
+  }
+
+.border-square {
+  padding: 15px;
+  border: black solid 2px;
+  background-color: white;
+  transition: background-color 0.5s;
+  border-radius: 5px;
+  transition: all 0.5s;
+  &:hover {
+    transform: scale(0.90);
+    border: black solid 4px;
+    border-radius: 5px;
+    background-color: #03fc41;
+  }
+}
+.space-small-release {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width:50%;
+}
 @media screen and (max-width:500px) {
   .main-title h1 {
     font-size: 24px;
@@ -126,11 +173,13 @@
   .title-name h2 {
     font-size: 18px;
   }
+  .title-name h3 {
+    font-size: 18px;
+    font-family: 'Steps-Mono';
+  }
   .release-content p {
     font-size: 12px;
     background-color: #fac3cf;
-  }
-  .the-content {
   }
   #title-show-realrelease {
     max-height: 30px;
@@ -143,6 +192,35 @@
     display: flex;
     flex-direction:column;
   }
+  .delete-margin {
+    width: 30px;
+  }
+  .small-margin {
+    margin: 10%;
+  }
+  .small-row p {
+    font-size: 18px;
+  }
+  .small-row h3{
+    &:hover{
+    animation: blinker 1s infinite;}
+  }
+  .title-row {
+
+    justify-content: space-around;
+    margin-bottom: 0px;
+  }
+  .edit-destroy-block {
+    min-height:120px;
+  }
+}
+
+@media screen and (min-width:501px) {
+  .edit-destroy-block {
+    margin-left: 33%;
+    width:33%;
+  }
+
 }
 @media screen and (min-width:1000px) {
   .main-title {
@@ -155,6 +233,7 @@
       display: flex;
       flex-direction: row;
       margin-bottom: 10px;
+      margin-top: 60px;
     }
     .title-name {
       width: 30%;
@@ -171,5 +250,8 @@
       display: flex;
       justify-content: center;
     }
-
+    .edit-destroy-block {
+      margin-left: 33%;
+      width:33%;
+    }
   }
