@@ -166,7 +166,7 @@
   align-items: center;
   width:50%;
 }
-@media screen and (max-width:500px) {
+@media only screen and (max-width:500px) {
   .main-title h1 {
     font-size: 24px;
   }
@@ -200,10 +200,6 @@
   }
   .small-row p {
     font-size: 18px;
-  }
-  .small-row h3{
-    &:hover{
-    animation: blinker 1s infinite;}
   }
   .title-row {
 

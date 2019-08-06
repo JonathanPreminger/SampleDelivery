@@ -3,19 +3,26 @@
 
   <div class="new-artist">
     <div class="text-new-artist">
-        <p><%= link_to 'ADD NEW ARTIST', new_artist_path%></p>
+
     </div>
   </div>
 
-  <div class="artist-list-content">
+  <div class="artist-list-content" id='artist-list-content'>
     <% for artist in @artists %>
     <div class="artist-list">
       <%= image_tag "arrow-right.png", class:"arrow-right" %>
       <div class="transition1">
       <p><%= link_to artist.name, artist, class: "artist-name" %></p>
       </div>
+      <div class="delete-artist">
+        <%= link_to 'destroy', artist, method: :delete, id:"id-delete", remote: true %>
+      </div>
     </div>
     <% end %>
   </div>
 
+</div>
+<div class="new-link">
+
+<%= link_to 'ADD NEW ARTIST', new_artist_path, id:'id-link', remote: true%>
 </div>

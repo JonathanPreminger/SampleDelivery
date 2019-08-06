@@ -2,15 +2,16 @@ class ArtistsController < ApplicationController
 
   def create
   @artist = Artist.create(artist_params)
+  respond_to do |format|
   if @artist.save
-    flash[:success] = "bingo niga"
-    redirect_to artists_path
+    format.js
+    format.html { redirect_to @artist, notice: 'artist was successfully created.' }
+    format.json { render :show, status: :created, location: @artist }
   else
-    flash[:error] = "failed niga"
-    redirect_to artists_path
-
-
+    format.html { render :new }
+    format.json { render json: @artist.errors, status: :unprocessable_entity }
   end
+end
 end
 
   def new
@@ -42,8 +43,11 @@ end
 
   def destroy
     Artist.find(params[:id]).destroy
-     flash[:success] = "artist deleted"
-     redirect_to artists_url
+     respond_to do |format|
+      format.js
+      format.html { redirect_to artists_url, notice: 'artist was successfully destroyed.' }
+      format.json { head :no_content }
+    end
   end
 
   private
