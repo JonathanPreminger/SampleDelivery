@@ -1,12 +1,9 @@
-<%=flash[:notice]%>
+  <%=flash[:notice]%>
 <div class="artist-content">
+  <div class="new-link">
 
-  <div class="new-artist">
-    <div class="text-new-artist">
-
-    </div>
+  <%= link_to 'ADD NEW ARTIST', new_artist_path, id:'id-link', remote: true%>
   </div>
-
   <div class="artist-list-content" id='artist-list-content'>
     <% for artist in @artists %>
     <div class="artist-list">
@@ -15,14 +12,9 @@
       <p><%= link_to artist.name, artist, class: "artist-name" %></p>
       </div>
       <div class="delete-artist">
-        <%= link_to 'destroy', artist, method: :delete, id:"id-delete", remote: true %>
+        <%= link_to 'destroy', artist, method: :delete,  remote: true, id:"id-delete" %>
       </div>
     </div>
     <% end %>
   </div>
-
-</div>
-<div class="new-link">
-
-<%= link_to 'ADD NEW ARTIST', new_artist_path, id:'id-link', remote: true%>
 </div>

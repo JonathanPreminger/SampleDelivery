@@ -24,26 +24,26 @@ body {
   margin-top:7%;
   margin-left: 10%;
   margin-bottom: 7%;
-
 }
 .container-edit {
-  width: 100%;
+  min-width: 90%;
   display: flex;
   align-items: center;
   justify-content: space-around;
-  margin-bottom: 90px;
-  margin-top: 80px;}
+  margin-bottom: 5%;
+  margin-top: 5%;
+  background-color: red;
+}
+
 .carreblanc {
-  width: 80%;
+  min-width: 100%;
   height: 66%;
-  border-radius: 30px;
+  border-radius: 90px;
   border: solid 3px black;
   background-color: rgba(255,255,255,0.7);
   -webkit-transition: transform 1s;
   &:hover {
-
    box-shadow:2px 2px    10px grey;
-
   }
 }
 .btn-contact {
