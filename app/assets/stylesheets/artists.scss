@@ -159,6 +159,32 @@ font-family: 'Russo One', sans-serif!important;
   flex-direction: column;
   background-color: red;
 }
+.new-artist-form {
+  width: 70%;
+  margin-left: 10%;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  padding:5%;
+  border: black solid 2px;
+  border-radius: 8px;
+  transition: all 0.3s ease-out;
+  overflow: hidden;
+  &:hover {
+    box-shadow: black 5px 5px;
+    transform: translateX(-5px) translateY(-5px);
+  }
+}
+#text-field-new-artist {
+  width: 100%;
+  border: black dashed 2px;
+}
+.file-field-new-artist {
+  width:100%;
+  border: black solid 2px;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  cursor: cell;
+}
 @media only screen and (min-width:500px) {
     .transition1 {
       margin-left: 8%;
@@ -176,7 +202,13 @@ font-family: 'Russo One', sans-serif!important;
     .artist-list p {
       font-size: 24px;
     }
+    .new-artist-form {
+      width: 50%;
+      margin-left: 20%;
+      padding: 5%;
+    }
 }
+
 @media only screen and (min-width:1000px) {
     .transition1 {
       margin-left: 8%;
@@ -193,5 +225,10 @@ font-family: 'Russo One', sans-serif!important;
     }
     .artist-list p {
       font-size: 24px;
+    }
+    .new-artist-form {
+      width: 30%;
+      margin-left: 30%;
+      padding: 5%;
     }
 }
