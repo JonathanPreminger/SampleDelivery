@@ -3,6 +3,7 @@
   <div class="small-column small-margin" >
     <h2><%= @realrelease.name %></h2>
     <h2>By </h2>
+    <h2><%= @realrelease.artist.name %></h2>
   </div>
 
 
@@ -25,7 +26,7 @@
         <div class="release-column">
           <div class="small-row">
 
-              <h3><%= image_tag 'selector.png', class:'selector-margin'%></h3><p><%= track.name %>  <p><%= track.duration %></p></p>
+              <h3><%= image_tag 'selector.png', class:'selector-margin'%></h3><p><%= track.name %></p>
           </div>
         </div>
         <div class="release-column">
@@ -33,10 +34,8 @@
         </div>
 
         <div class="release-column">
-          <div class="delete-track">
 
-            <%= link_to track, method: :delete do %>
-          </div>
+          <%= link_to track, method: :delete do %>
           <div class="center">
 
             <%= image_tag 'delete.png', class:'delete-margin' %>
