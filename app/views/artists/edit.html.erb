@@ -2,6 +2,10 @@
   <div class="carreblanc">
     <div class="form">
       <%= form_for @artist do |f| %>
+        < <p>Image</p>
+          <p>
+          <%= f.file_field :image, class:"file-field-new-artist" %><br>
+          </p>
         <%= f.fields_for :realreleases, Realrelease.new do |realrelease_form| %>
         <div class="row-edit">
           <p>Add a release</p>
@@ -17,7 +21,7 @@
         </div>
         <% end %>
 
-        <%= f.submit 'Add release' %>
+        <%= image_submit_tag 'save.png' %>
 
     </div>
     <% end %>

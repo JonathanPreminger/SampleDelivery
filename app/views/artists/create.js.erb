@@ -1,0 +1,3 @@
+$('.new-artist-form').fadeOut(900, function(){ $(this).remove();});
+$('.ajax-add-new-artist').fadeIn(900);
+$('table#artists tbody').append("<%= j render @artist %>");

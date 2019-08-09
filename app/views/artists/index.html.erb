@@ -2,45 +2,25 @@
 <div class="artist-content">
   <div class="new-link">
     <div class="ajax-add-new-artist">
-
       <%= link_to 'ADD NEW ARTIST', new_artist_path, id:'ajax-add-new-artist', remote: true%>
     </div>
-
   </div>
   <div class="new-artist">
-
     <p>CREW</p>
   </div>
-
   <div class="artist-list-content">
-    <% for artist in @artists %>
-    <div class="small-row">
+    <table id="artists">
+      <thead>
+        <tr>
+        
+        </tr>
+      </thead>
 
-      <div class="artist-img">
-         <%  if artist.image.attached?  %>
-        <div class="div-image">
-        <%= image_tag artist.image, style: 'height:100%;width:auto;'%>
-        </div>
-        <% else %>
-        <div class="">
-          <p>pas prout</p>
-        </div>
-        <% end %>
-      </div>
-      <div class="destroy">
-        <%= link_to 'destroy', artist, method: :delete, data:{confirm:"sur?"} %>
-      </div>
-    </div>
+      <tbody>
+      <%= render partial: 'artist', collection: @artists %>
+      </tbody>
+    </table>
 
-    <div class="artist-list">
-      <%= image_tag "arrow-right.png", class:"arrow-right" %>
-      <div class="transition1">
-      <p><%= link_to artist.name, artist, class: "artist-name" %></p>
-      </div>
-
-
-    </div>
-    <% end %>
-  </div>
+</div>
 
 </div>

@@ -1,16 +1,13 @@
 <div class="new-artist-form">
 
-      <%= form_for @artist do |f| %>
+      <%= form_for @artist, remote: true  do |f| %>
 
           <p>Name</p>
           <p>
           <%= f.text_field :name, placeholder:"Name of artist...", id:"text-field-new-artist"%><br>
           </p>
 
-          <p>Image</p>
-          <p>
-          <%= f.file_field :image, class:"file-field-new-artist" %><br>
-          </p>
+        
 
       <%= f.submit class:"file-field-new-artist" %>
 
