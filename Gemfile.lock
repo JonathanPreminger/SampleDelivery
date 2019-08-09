@@ -200,6 +200,8 @@ GEM
     sassc (2.0.1)
       ffi (~> 1.9)
       rake
+    scrollreveal-rails (0.0.1)
+      railties (>= 3.1)
     selenium-webdriver (3.142.3)
       childprocess (>= 0.5, < 2.0)
       rubyzip (~> 1.2, >= 1.2.2)
@@ -262,6 +264,7 @@ DEPENDENCIES
   rails_12factor
   rspec-rails (~> 3.8)
   sass-rails (~> 5.0)
+  scrollreveal-rails
   selenium-webdriver
   shoulda-matchers (~> 3.0)
   spring
