@@ -18,6 +18,7 @@
 
   </thead>
 
+
   <tbody class="content">
     <% @events.each do |event| %>
       <tr class="elementofcontent">
@@ -32,7 +33,7 @@
         <td class="element"><%= Event.get_benefits %></td>
         <td class="element"><%= link_to 'Edit', edit_event_path(event), class:"icone-in-table" %></td>
         <td class="element"><%= link_to 'Show', event, class:"icone-in-table" %></td>
-        <td class="element"><%= link_to 'Delete', event_path(event), method: :delete, data: { confirm: 'Are you sure?' }, class:"icone-in-table" %></td>
+        <td class="element" id="icone-in-table"><%= link_to image_tag('delete.png', size: "32x32"), event_path(event), method: :delete, data: { confirm: 'Are you sure?' }, class:"icone-in-table", remote: true %></td>
       </tr>
     <% end %>
   </tbody>
