@@ -1,12 +1,8 @@
-<div class="edit-realrelease-title">
-  <div class="title-name">
-    <h2>tracks</h2>
-  </div>
-  <% for track in @tracks %>
-
-  <div class="small-column">
-    <p><%=  track.name %></p>
-  </div>
+<% for track in @tracks %>
+  <%=  track.name %>
+  <%= track.realrelease.artist.name %>
 
   <% end %>
-</div>
+   <p>bendo bendo test circle ci</p>
+
+
