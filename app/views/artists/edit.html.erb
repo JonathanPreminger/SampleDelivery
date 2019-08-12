@@ -2,6 +2,10 @@
   <div class="carreblanc">
     <div class="form">
       <%= form_for @artist do |f| %>
+        < <p>Image</p>
+          <p>
+          <%= f.file_field :image, class:"file-field-new-artist" %><br>
+          </p>
         <%= f.fields_for :realreleases, Realrelease.new do |realrelease_form| %>
         <div class="row-edit">
           <p>Add a release</p>
@@ -11,11 +15,13 @@
             <%= realrelease_form.text_field :name, :placeholder => "Name of the release" %>
             <p>YEAR</p>
             <%= realrelease_form.text_field :year,:placeholder =>  "Year of the release" %>
+            <p>COVER</p>
+            <%= realrelease_form.file_field :image %>
           </p>
         </div>
         <% end %>
 
-        <%= f.submit 'Add release' %>
+        <%= image_submit_tag 'save.png' %>
 
     </div>
     <% end %>

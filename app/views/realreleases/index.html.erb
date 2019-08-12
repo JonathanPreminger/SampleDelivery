@@ -1,21 +1,46 @@
-<h1>Releases</h1>
-
-
-
-<div class="artist">
-
-<div class="index-artist">
-  <% for realrelease in @realreleases %>
-  <div class="name-artist">
-    <%= link_to realrelease.name, realrelease %>
-  artist :    <%= realrelease.artist.name %>
-  </div>
-    Track list :
-    <% for track in realrelease.tracks %>
- <%= track.name %> |
-
-                             <% end %>
-                             <% end %>
+<div class="main-title">
+  <h1>Releases</h1>
 </div>
 
+<div class="title-row">
+  <div class="title-name">
+    <h2></h2>
+  </div>
+  <div class="title-name">
+    <h2>Name</h2>
+  </div>
+  <div class="title-name">
+    <h2>Artist</h2>
+  </div>
+  <div class="title-name">
+    <h2>Year</h2>
+  </div>
+</div>
+
+<div class="the-content">
+
+<% for realrelease in @realreleases %>
+<div class="release-content">
+  <div class="release-column">
+     <%  if realrelease.image.attached?  %>
+    <div class="release-img">
+    <%= image_tag realrelease.image, class:"ter-img" %>
+    </div>
+    <% else %>
+    <div class="">
+      <p>pas prout</p>
+    </div>
+    <% end %>
+  </div>
+  <div class="release-column">
+    <p><%= link_to realrelease.name.upcase, realrelease %></p>
+  </div>
+  <div class="release-column">
+    <p><%= realrelease.artist.name %></p>
+  </div>
+  <div class="release-column">
+    <p>  <%= realrelease.year %> </p>
+  </div>
+</div>
+<% end %>
 </div>

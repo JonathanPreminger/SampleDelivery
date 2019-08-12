@@ -5,9 +5,10 @@
    end
 
    def import
-     Event.import(params[:file])
-     redirect_to events_path, notice: "Activity Data imported!"
+    @event = Event.import(params[:file])
+    redirect_to events_path                                                                                           
    end
+
 
    def edit
      @event = Event.find(params[:id])
@@ -29,9 +30,13 @@
 
    def destroy
      Event.find(params[:id]).destroy
-      flash[:success] = "Event deleted"
-      redirect_to events_url
+     respond_to do |format|
+      format.js
+      format.html { redirect_to artists_url, notice: 'artist was successfully destroyed.' }
+      format.json { head :no_content }
     end
+  end
+
 
    private
 

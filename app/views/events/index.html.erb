@@ -2,21 +2,22 @@
 <table class="table">
     <thead class="titre">
       <tr class="elementoftitle">
-      <th class="element-title">Name</th>
-      <th class="element-title">Place</th>
-      <th class="element-title">Line up</th>
-      <th class="element-title">Number of DJ</th>
-      <th class="element-title">Revenue figure</th>
-      <th class="element-title">Total charge DJ</th>
-      <th class="element-title">Charge Flyers</th>
-      <th class="element-title">Charge Others</th>
-      <th class="element-title">Benefits</th>
-      <th class="element-title">Edit</th>
-      <th class="element-title">Show</th>
-      <th class="element-title">Delete</th>
-    </tr>
+        <th class="element-title"><p>Name</p><p>:</p></th>
+        <th class="element-title"><p>Place</p><p>:</p></th>
+        <th class="element-title"><p>Line up</p><p>:</p></th>
+        <th class="element-title"><p>Number of DJ</p><p>:</p></th>
+        <th class="element-title"><p>Revenue figure</p><p>:</p></th>
+        <th class="element-title"><p>Total charge DJ</p><p>:</p></th>
+        <th class="element-title"><p>Charge Flyers</p><p>:</p></th>
+        <th class="element-title"><p>Charge Others</p><p>:</p></th>
+        <th class="element-title"><p>Benefits</p><p>:</p></th>
+        <th class="element-title"><p>Edit</p><p>:</p></th>
+        <th class="element-title"><p>Show</p><p>:</p></th>
+        <th class="element-title"><p>Delete</p><p>:</p></th>
+      </tr>
 
   </thead>
+
 
   <tbody class="content">
     <% @events.each do |event| %>
@@ -30,16 +31,21 @@
         <td class="element"><%= event.charge_communication %></td>
         <td class="element"><%= event.charge_others %></td>
         <td class="element"><%= Event.get_benefits %></td>
-        <td class="element"><%= link_to 'Edit', edit_event_path(event) %></td>
-        <td class="element"><%= link_to 'Show', event %></td>
-        <td class="element"><%= link_to 'Delete', event_path(event), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td class="element"><%= link_to 'Edit', edit_event_path(event), class:"icone-in-table" %></td>
+        <td class="element"><%= link_to 'Show', event, class:"icone-in-table" %></td>
+        <td class="element" id="icone-in-table"><%= link_to image_tag('delete.png', size: "32x32"), event_path(event), method: :delete, data: { confirm: 'Are you sure?' }, class:"icone-in-table", remote: true %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
-<div>
-  <%= form_tag import_events_path, multipart: true do%>
-  <%= file_field_tag :file %>
-  <%= submit_tag 'Import CSV' %>
+<div class="add-event">
+  <p>Add an Event</p>
+  <div id="submit-column">
+    <%= form_tag import_events_path, multipart: true do%>
+
+
+    <div><p><%= file_field_tag :file %></p></div>
+    <div><p><%= image_submit_tag("save.png") %></p></div>
+  </div>
   <% end %>
 </div>

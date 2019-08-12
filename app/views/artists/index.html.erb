@@ -1,15 +1,26 @@
 <%=flash[:notice]%>
-<div class="new-artist">
-  <div class="text-new-artist">
-      <%= link_to 'ADD NEW ARTIST', new_artist_path%>
-    
+<div class="artist-content ">
+  <div class="new-link">
+    <div class="ajax-add-new-artist">
+      <%= link_to 'ADD NEW ARTIST', new_artist_path, id:'ajax-add-new-artist', remote: true%>
+    </div>
   </div>
+  <div class="new-artist">
+    <p>CREW</p>
+  </div>
+  <div class="artist-list-content">
+    <table id="artists">
+      <thead>
+        <tr>
+
+        </tr>
+      </thead>
+
+      <tbody>
+      <%= render partial: 'artist', collection: @artists %>
+      </tbody>
+    </table>
+
 </div>
 
-<div class="index-artist column line-title">
-    <% for artist in @artists %>
-    <div class="double_line">
-      <%= link_to artist.name, artist, class: "artist-name" %>
-    </div>
-    <% end %>
 </div>
