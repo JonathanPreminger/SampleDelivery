@@ -1,19 +1,50 @@
-<h1>Edit realrelease yes</h1>
-<%= form_for @realrelease do |f| %>
-  <p>
-    Name: <%= f.text_field :name %>
-    year <%= f.text_field :year %>
+<div class="edit-realrelease-title">
+  <h2>Edit <%= @realrelease.name%></h2>
+</div>
 
-  </p>
-  <%= f.fields_for :tracks, Track.new  do |track_form| %>
-    <p>
-    Add a track: <%= track_form.text_field :name %>
-      <%= track_form.check_box :_destroy %>
-      <%= track_form.label :_destroy, "Remove track" %>
-    </p>
-  <% end %>
-  <p>yop</p>
-  <p>
-    <%= f.submit 'submit' %>
+<%= form_for @realrelease do |f| %>
+<div class="release-edit-content">
+  <div class="release-edit-column">
+    <div class="small-column">
+
+      <div class="small-row">
+      <h3><%= image_tag "turntable.png"%></h3>
+      </div>
+      <div class="small-row">
+        <div class="small-column">
+          <p>Release Name</p>
+          <p>Year</p>
+        </div>
+        <div class="small-column">
+          <p><%= f.text_field :name %></p>
+          <p><%= f.text_field :year %></p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="release-edit-column">
+    <div class="small-column">
+      <%= f.fields_for :tracks, Track.new  do |track_form| %>
+      <div class="small-row">
+      <h3>Or add just Add a track:</h3>
+      </div>
+      <div class="small-row">
+        <div class="small-column">
+          <p>Track</p>
+          <p>Duration</p>
+        </div>
+        <div class="small-column">
+          <p><%= track_form.text_field :name %></p>
+          <p><%= track_form.text_field :duration %></p>
+        </div>
+      </div>
+      <% end %>
+      <div class="small-row">
+
+        <p><%= image_submit_tag("save.png") %></p>
+      </div>
+    </div>
     <% end %>
-  </p>
+  </div>
+
+</div>

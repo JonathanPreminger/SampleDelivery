@@ -32,7 +32,8 @@ end
     @realrelease = Realrelease.find(params[:id])
     @realrelease.update_attributes(realrelease_params)
     flash[:notice] = "#{@realrelease.name} was successfully updated."
-    redirect_to tracks_path
+      redirect_to realrelease_path(@realrelease.id)
+
   end
 
   def destroy
@@ -44,7 +45,7 @@ end
   private
 
   def realrelease_params
-    params.require(:realrelease).permit(:name, tracks_attributes: [:id, :name, :_destroy])
+    params.require(:realrelease).permit(:name, :image, tracks_attributes: [:id, :name, :duration, :_destroy])
 
   end
 end

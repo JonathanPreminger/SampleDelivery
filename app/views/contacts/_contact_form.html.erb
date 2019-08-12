@@ -4,19 +4,19 @@
       <%= form_for @contact do |f| %>
       <div class="text-mailer">
         <p>Name</p>
-        <%= f.text_field  :name, required: true, class: "contact-form-text-area" %>
+        <%= f.text_field  :name, required: true,  class: 'field-contact' %>
 
         <p>Email</p>
-        <%= f.text_field :email, required: true, class: "contact-form-text-area" %>
+        <%= f.text_field :email, required: true,  class: 'field-contact' %>
 
         <p>Message</p>
-        <%= f.text_area :message, rows: 8, cols: 40, required: true, class: "contact-form-text-area",
+        <%= f.text_area :message, rows: 8, cols: 40, required: true, class: "field-contact",
                         placeholder: "Send me a message"%></br>
 
-        <%= f.submit 'Send Message', class: 'btn btn-primary' %>
+        <%= f.submit 'Send Message', class: 'btn-contact' %>
       </div>
       <% end %>
 
-</div>
-</div>
+    </div>
+  </div>
 </div>

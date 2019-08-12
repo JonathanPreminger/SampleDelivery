@@ -1,100 +1,71 @@
 // Place all the styles related to the Events controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-body {
-  min-width: 100%;
-  overflow-x: hidden;
-  overflow-y: scroll;
-  font-family: 'Allerta Stencil', sans-serif!important;
-  color: rgba(46, 49, 49, 1);
-  background-image: image-url("SD02.jpg");
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-size: 90% 90%;
-  background-position: bottom 100%;
-}
-.table {
-  max-width: 90%;
-  margin-top: 900px;
-  min-width: 100%;
-  height: 120px;
-  text-decoration: none;
-  background-color: rgb(25,25,30)
-}
 
-.bandeau {
-  background-color: red;
-  height: 400px;
+.table {
+  margin-top: 5vh;
+  width:100%;
+  padding: 5%;
+
+
 }
-.titre {
-  max-width: 90%;
+.content, .table {
   display: flex;
-  flex-direction: column;
-  text-decoration: none;
-  background-color: rgb(90, 150, 110);
-  margin: 20px;
-  border-radius: 8px;
-  box-shadow: 3px 3px rgb(10,10,10);
+  flex-direction: row;
 }
 .content {
+
+}
+.elementoftitle, .elementofcontent {
   display: flex;
   flex-direction: column;
-  text-decoration: none;
-}
-.elementoftitle {
-  max-width: 90%;
-    margin: 20px;
-  display: flex;
-  justify-content: space-around;
-  text-decoration: none;
-  border-top: 50px;
 }
 .elementofcontent {
-  width: 1200px;
-  margin-top: 20px;
-  margin-left: 40px;
-  display: flex;
-  justify-content: space-around;
-  text-decoration: none;
-  border-top: 50px;
-  background-color: rgba (0,0,0);
+  border: black solid 1px;
+  margin-right: 35px;
+  min-width: 180px;
 }
-.element {
-  border: 50px;
-  margin: 5px;
-  /*background-color: rgba(218, 223, 225, 1);*/
-  width: 90px;
-  max-width: 90px;
-  height: 100px;
-  text-decoration: none;
-  border-radius: 8px;
-  box-shadow: 3px 3px rgba(100,100,100,0.2);
-  color: rgb(150,150,150);
+.content {
+  overflow-x: scroll;
 }
 .element-title {
-  border: 50px;
-  margin: 5px;
-  /*background-color: rgba(218, 223, 225, 1);*/
-  width: 90px;
-  max-width: 90px;
-  height: 100px;
-  text-decoration: none;
-  border-radius: 8px;
-  box-shadow: 3px 3px rgba(50,50,50,0.2);
-  color: black;
+  margin-bottom: 20px;;
+  height:30px;;
+  overflow-y: hidden;
+  display: flex;
+  justify-content: space-between;
 }
-.element-title:hover {
-  transform: translate(-3px, -3px);
-  box-shadow: 3px 3px 2px 2px rgba(20,20,20,0.2);
-  transition-duration: 0.5s;
+.elementoftitle p {
+  font-family: 'Steps-Mono';
+    font-size: 14px;
 }
-.element:hover {
-  transform: translate(-3px, -3px);
-  box-shadow: 3px 3px 3px 3px rgba(0,0,0,0.2);
-  transition-duration: 0.5s;
+.element {
+  margin-bottom:20px;
+  font-size: 18px;
+  height: 30px;
+  overflow: hidden;
 }
-.crud {
-  width: 40px;
-  background-color: white;
-  text-decoration: none;
+.add-event {
+  margin-top: 5vh;
+  display: flex;
+  flex-direction: row;
+  padding: 10px;
+  line-break: auto;
+}
+#submit-column {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+#submit-column p {
+  margin-bottom: 20px;
+}
+#icone-in-table {
+  display: flex;
+  justify-content: center;
+}
+.delete-event-icon {
+  width: 1vh;
+  height: auto;
 }

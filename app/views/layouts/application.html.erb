@@ -7,10 +7,7 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-    <link href="https://fonts.googleapis.com/css?family=Russo+One&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Zilla+Slab&display=swap" rel="stylesheet">
 
-<link href="https://fonts.googleapis.com/css?family=Life+Savers&display=swap" rel="stylesheet">
 
 
   </head>
@@ -20,5 +17,15 @@
     <p class="alert"> <%= alert %></p>
     <%= yield %>
     <%= render 'layouts/footer' %>
+    <script>
+      // Look for .hamburger
+      var hamburger = document.querySelector(".hamburger");
+      // On click
+      hamburger.addEventListener("click", function() {
+        // Toggle class "is-active"
+        hamburger.classList.toggle("is-active");
+        // Do something else, like open/close menu
+      });
+    </script>
   </body>
 </html>

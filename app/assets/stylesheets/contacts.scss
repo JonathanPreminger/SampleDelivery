@@ -9,3 +9,72 @@ body {
   margin: 0;
   padding: 0;
 }
+.contact-form-text-area {
+  width: 80%;
+}
+.form p {
+  margin-top: 20px;
+  font-family: 'Steps-Mono-Thin';
+  margin-bottom: 10px;
+  font-size: 18px;
+
+}
+// contact mailer and edit box
+.form {
+  margin-top:7%;
+  margin-left: 10%;
+  margin-bottom: 7%;
+
+}
+.container-edit {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  margin-bottom: 90px;
+  margin-top: 80px;}
+.carreblanc {
+  width: 80%;
+  height: 66%;
+  border-radius: 30px;
+  border: solid 3px black;
+  background-color: rgba(255,255,255,0.7);
+  -webkit-transition: transform 1s;
+  &:hover {
+
+   box-shadow:2px 2px    10px grey;
+
+  }
+}
+.btn-contact {
+  margin-top: 20px;
+  margin-bottom: 10px;
+  color: purple;
+  border: purple dashed 2px;
+  border-radius: 5px;
+  width: 90%;
+  height: 50px;
+  &:hover {
+    border: purple dashed 3px;
+    animation: blinker 0.01s infinite;
+    cursor: crosshair;
+    font-size: 18px;
+  }
+}
+.field-contact {
+  color: purple;
+  border: purple solid 2px;
+  border-radius: 5px;
+  width: 90%;
+
+}
+@media screen and (min-width:500px) {
+  .carreblanc {
+    width: 50%;
+  }
+}
+@media screen and (min-width:1000px) {
+  .carreblanc {
+    width: 30%;
+  }
+}
