@@ -1,5 +1,15 @@
 Rails.application.routes.draw do
 
+  get 'articles/index'
+  get 'articles/new'
+  get 'articles/create'
+  get 'articles/update'
+  get 'articles/destroy'
+  get 'artist/index'
+  get 'artist/new'
+  get 'artist/create'
+  get 'artist/update'
+  get 'artist/destroy'
   devise_for :users
   resources :events do
     collection {post :import}
