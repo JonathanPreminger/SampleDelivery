@@ -4,23 +4,23 @@
   <% @articles.each do |article| %>
   <div class="article-uniq">
     <h1><%= article.title %></h1>
+    <p id="date">Publier le <%= article.created_at%></p>
     <p id=content-article><%= article.content %></p>
-    <div class="line">
-
-    </div>
+    <% if user_signed_in? %>
     <div class="litle-row">
       <p id="edit-and-show"><%= link_to 'Edit', edit_article_path(article), class:"icone-in-table" %></p>
       <p id="edit-and-show">  <%= link_to 'Show', article, class:"icone-in-table" %></p>
-    <p id="edit-and-show"><%= link_to image_tag('delete.png', size: "32x32"), article_path(article), method: :delete, data: { confirm: 'Are you sure?' }, class:"icone-in-table" %></p>
+    <p id="bin"><%= link_to 'Delete', article_path(article), method: :delete, data: { confirm: 'Are you sure?' }, class:"icone-in-table" %></p>
     </div>
-    <div class="line">
+    <%end%>
 
-    </div>
   </div>
   <% end %>
+  <% if user_signed_in? %>
 
   <div class="new-articles">
-  <p id="edit-and-show">  <%= link_to 'New one', new_article_path %></p>
+  <p id="new-one">  <%= link_to 'New one', new_article_path %></p>
   </div>
+  <%end%>
 
 </div>

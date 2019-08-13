@@ -10,9 +10,12 @@
   box-shadow:8px 0 8px -10px #000000,-8px 0 8px -10px #000000;
 }
 .articles p {
-  font-size: 24px;
+font-size: 20px;
   line-height: 35px;
   margin-top: 10vh;
+  word-spacing: 1px;
+  letter-spacing: 1px;
+  font-family: 'Minipax-Regular';
 
 }
 .articles h1 {
@@ -27,15 +30,38 @@
 .litle-row {
   display: flex;
   flex-direction: row;
-
 }
 
 #edit-and-show {
-  width: 30%;
+  width: 25%;
+  border-right: gray solid 0.5px;
+  padding-left: 3%;
+  margin-left: 2%;
+  &:hover {
+    text-decoration: underline;
+  }
 }
+#bin {
+  width: 25%;
+  margin-left: 5%;
+  &:hover {
+    text-decoration: underline;
+  }
+}
+#date {
+  font-size: 12px;
+  font-style: italic;
+}
+#new-one {
+  width: 50%;
+  word-break: keep-all;
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
 .line {
   border-bottom: gray solid 1px;
-  margin-top: 5vh;
 }
 
 @media only screen and (max-width:500px) {
