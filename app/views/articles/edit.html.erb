@@ -1,0 +1,22 @@
+<div class="container-edit">
+  <div class="carreblanc">
+    <div class="form">
+      <%= form_for @article do |f| %>
+        <div class="row-edit">
+          <p>Title</p>
+          <p>
+          <%= f.text_field :title %><br>
+          </p>
+        </div>
+        <div class="row-edit">
+          <p>Content</p>
+          <p>
+          <%= f.text_field :content
+           %><br>
+          </p>
+        </div>
+      <%= f.submit %>
+    </div>
+    <% end %>
+  </div>
+</div>

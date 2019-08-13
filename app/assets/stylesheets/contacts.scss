@@ -35,7 +35,6 @@ body {
   margin-top: 80px;}
 .carreblanc {
   width: 80%;
-  height: 66%;
   border-radius: 30px;
   border: solid 3px black;
   background-color: rgba(255,255,255,0.7);
@@ -66,6 +65,36 @@ body {
   border: purple solid 2px;
   border-radius: 5px;
   width: 90%;
+
+}
+.notice {
+  display: flex;
+  flex-direction: column;
+  width: 40%;
+  margin-left: 26%;
+  padding: 2%;
+  box-shadow:8px 0 8px -10px #000000,-8px 0 8px -10px #000000;
+}
+@media only screen and (max-width:500px) {
+  .notice {
+    display: flex;
+    flex-direction: column;
+    width: 84%;
+    margin-left: 5%;
+    padding: 3%;
+    box-shadow:8px 0 8px -10px #000000,-8px 0 8px -10px #000000;
+  }
+  .line {
+    border-bottom: gray solid 1px;
+    margin-top: 5vh;
+  }
+  #small-notice {
+    font-size: 12px;
+  }
+  .container-edit {
+    margin-top: 5vh;
+    margin-bottom: 5vh;
+  }
 
 }
 @media screen and (min-width:500px) {

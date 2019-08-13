@@ -32,7 +32,7 @@ end
     @article = Article.find(params[:id])
     @article.update_attributes(article_params)
     flash[:notice] = "#{@article.name} was successfully updated."
-    redirect_to tracks_path
+    redirect_to articles_path
   end
 
   def destroy
@@ -44,7 +44,7 @@ end
   private
 
   def article_params
-    params.require(:article).permit(:name, tracks_attributes: [:id, :name, :_destroy])
+    params.require(:article).permit(:title, :content)
 
   end
 end
