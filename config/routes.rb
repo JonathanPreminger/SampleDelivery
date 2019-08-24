@@ -6,7 +6,7 @@ Rails.application.routes.draw do
       get :calendar
     end
   end
-  root 'articles#index'
+  root 'home#index_change'
   get 'home/index_change', to: 'home#index_change'
 
   get 'home/private'

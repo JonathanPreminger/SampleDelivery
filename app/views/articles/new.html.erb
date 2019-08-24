@@ -1,13 +1,18 @@
+<div class="articles">
+
 <h1>New article</h1>
 <%= form_for @article do |f| %>
-  <p>
-    Title: <%= f.text_field :title %>
+  <p>  Title<br>
+  <%= f.text_field :title, placeholder:"Titre de l'article...", class:'field' %>
   </p>
-    <p>
-      Content: <%= f.text_field :content %>
+  <p>
+  Content<br>
+
+      <%= f.text_field :content, placeholder:"Contenu de l'article...", class:'field-content'%>
 
     </p>
   <p>
-    <%= f.submit 'Create Article' %>
+    <%= f.submit 'Create Article', class:"submit" %>
   </p>
 <% end %>
+</div>

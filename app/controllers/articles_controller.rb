@@ -31,7 +31,7 @@ end
   def update
     @article = Article.find(params[:id])
     @article.update_attributes(article_params)
-    flash[:notice] = "#{@article.name} was successfully updated."
+    flash[:notice] = "#{@article.title} was successfully updated."
     redirect_to articles_path
   end
 

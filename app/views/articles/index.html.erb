@@ -6,13 +6,11 @@
     <h1><%= article.title %></h1>
     <p id="date">Publier le <%= article.created_at%></p>
     <p id=content-article><%= article.content %></p>
-    <% if user_signed_in? %>
     <div class="litle-row">
       <p id="edit-and-show"><%= link_to 'Edit', edit_article_path(article), class:"icone-in-table" %></p>
       <p id="edit-and-show">  <%= link_to 'Show', article, class:"icone-in-table" %></p>
     <p id="bin"><%= link_to 'Delete', article_path(article), method: :delete, data: { confirm: 'Are you sure?' }, class:"icone-in-table" %></p>
     </div>
-    <%end%>
 
   </div>
   <% end %>
