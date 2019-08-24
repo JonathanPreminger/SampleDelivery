@@ -1,0 +1,26 @@
+<div class="new-artist-form">
+
+      <%= form_for @event do |f| %>
+
+          <p>Name</p>
+          <p>
+          <%= f.text_field :name, placeholder:"Name of the event", id:"text-field-new-artist"%><br>
+          </p>
+
+          <p>Club</p>
+          <p>
+
+          </p><%= f.text_field :place, placeholder:"Name of the Club", id:"text-field-new-artist"%><br>
+
+
+          <p>Date</p>
+          <p>
+          <%= f.date_field :start, class:"file-field-new-artist" %><br>
+          </p>
+
+
+      <%= f.submit class:"file-field-new-artist" %>
+
+      <% end %>
+
+</div>

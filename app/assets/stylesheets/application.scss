@@ -12,6 +12,7 @@
  *
  *= require_tree .
  *= require_self
+ *= require simple_calendar
  */
 
  @font-face {
@@ -21,6 +22,9 @@
     src: url(asset-path('Steps-Mono-Thin.otf')) format("truetype");
     font-family: 'Steps-Mono';
     src: url(asset-path('Steps-Mono.otf')) format("truetype");
+    font-family: 'CothamSans';
+    src: url(asset-path('CothamSans.otf')) format("truetype");
+
  }
 html, body {
   height: 100%;
@@ -79,28 +83,8 @@ background-size: cover; /* version standardisée */
 
 
  }
- .nav {
-   width:100%;
-   display: flex;
-   flex-direction: row;
-   border-bottom: black solid 2px;
-   &:hover {
-     box-shadow: 0 5px 6px 0px gray;
-   }
- }
- .nav-right {
-   right:0;
-   width: 40%;
-  display: flex;
-  flex-direction: row;
- }
- .nav-left {
-   width: 40%;
-   z-index: 20;
-   margin: 20px;
 
-   overflow: visible;
- }
+
  .sign {
   text-align: right;
   margin: 10px;
@@ -111,11 +95,11 @@ background-size: cover; /* version standardisée */
   }
  }
 .sign p {
-  font-family: 'Steps-Mono';
+  font-family: 'CothamSans';
 }
 
  .email p {
-   font-family: 'Steps-Mono';
+   font-family: 'CothamSans';
  }
  .email {
    position: relative;
@@ -329,7 +313,7 @@ padding: 0;
   font-size: 16px;
   color: rgb(234, 45, 76);
   line-height: 32px;
-  font-family: 'Steps-Mono';
+  font-family: 'CothamSans';
 }
 
 .img-me {
@@ -337,12 +321,7 @@ padding: 0;
 }
 
 
-.menu {
-  position: relative;
-  top : 40px;
-  margin: 0 30px 0 0;
-  font-family: 'Steps-Mono';
-}
+
 .menu a {
   clear: right;
   text-decoration: none;
@@ -357,11 +336,7 @@ padding: 0;
              0 3px 0 rgba(250, 250, 250, 0.8);;
   }
 }
-.menu p {
-  border-bottom: white solid 4px;
-  background-color: black;
 
-}
 span {
   color: black;
 }
@@ -415,17 +390,7 @@ button {}
 
   }
 }
-@media only screen and (max-width: 500px) {
-  .nav-left {
-    width:20%;
-  }
-  .nav-right {
-    width : 80%;
-    display:flex;
-    align-items: center;
-    justify-content: center;
-  }
-}
+
 @media only screen and (min-width: 768px) {
   .img-banner {
     display: block;
@@ -451,36 +416,14 @@ button {}
 
   }
   .menu {
-    position: absolute;
-    left:2%;
-    top:2%;
     display: flex;
     flex-direction: row;
-    max-height: 50px;
   }
   .menu p{
     border: none;
     font-size: 24px;
   }
-  .menu-link {
-    margin-right: 10%;
-    width:30%;
-    transition: box-shadow 0.8s ease-out;
-    &:hover {
-      box-shadow: -8px -8px black;
-    }
-  }
 
-  .nav-left {
-    width:50%;
-    margin-left: 10%;
-  }
-  .nav-right {
-    width:30%;
-    display: flex;
-    flex-direction: row;
-    height:70px;
-  }
 }
 @media only screen and (min-width: 1000px) {
   .wrapper {

@@ -14,7 +14,7 @@ body {
 }
 .form p {
   margin-top: 20px;
-  font-family: 'Steps-Mono-Thin';
+  font-family: 'CothamSans';
   margin-bottom: 10px;
   font-size: 18px;
 
@@ -73,7 +73,6 @@ body {
   width: 40%;
   margin-left: 26%;
   padding: 2%;
-  box-shadow:8px 0 8px -10px #000000,-8px 0 8px -10px #000000;
 }
 @media only screen and (max-width:500px) {
   .notice {
@@ -82,7 +81,6 @@ body {
     width: 84%;
     margin-left: 5%;
     padding: 3%;
-    box-shadow:8px 0 8px -10px #000000,-8px 0 8px -10px #000000;
   }
   .line {
     border-bottom: gray solid 1px;

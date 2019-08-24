@@ -1,6 +1,5 @@
 <div class="nav">
 
-  <div class="nav-left">
     <button class="toggle hamburger hamburger--arrow is-active" type="button">
       <label for="toggle">
         <span class="hamburger-box">
@@ -9,39 +8,33 @@
       </label>
     </button>
     <input type="checkbox" id="toggle"/>
+
     <div class="menu">
-      <div class="menu-link">
+      <div class="">
       <p><%= link_to "COMPTABILITY", events_path %></p>  </div>
-      <div class="menu-link">
+      <div class="">
       <p><%= link_to "RELEASE", realreleases_path %></p> </div>
-      <div class="menu-link">
+      <div class="">
       <p><%= link_to "ARTIST", artists_path%></p> </div>
-      <div class="menu-link">
+      <div class="">
       <p><%= link_to "ARTICLES", articles_path %></p> </div>
+      <div class="">
+      <p><%= link_to "CALENDAR", calendar_events_path %></p> </div>
+      <% if user_signed_in? %>
+        <div class="">
+      <p><%= link_to "Sign Out", destroy_user_session_path, method: :delete %></p> </div>
+      <% else %>
+        <div class="">
+      <p><%= link_to "SIGNIN", new_user_session_path  %></p> </div>
+      <% end %>
+        <div class="">
+      <p><%= link_to "CONTACT", new_contact_path %></p> </div>
     </div>
-  </div>
-
-
-  <div class="nav-right">
-
-    <% if user_signed_in? %>
-
-    <div class="sign">
-      <p><%= link_to "Sign Out", destroy_user_session_path, method: :delete %></p>
-      </div>
-    <% else %>
-
-    <div  class="sign">
-      <p><%= link_to "SIGN IN", new_user_session_path  %></p>
-    </div>
-
-    <% end %>
 
     <div class="sending">
     </div>
 
     <div  class="email">
-    <%= link_to image_tag("email.png"), new_contact_path, id:"fast-blink"  %>
     </div>
 
 
@@ -59,7 +52,5 @@
     </div>
 
     <% end %>
-
-  </div>
 
 </div>

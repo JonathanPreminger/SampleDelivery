@@ -1,0 +1,12 @@
+<div class="calendar">
+
+<%= month_calendar events: @events do |date, events| %>
+  <%= date %>
+  <% events.each do |event| %>
+  <%= event.place%>
+  <% end%>
+
+<% end %>
+
+<%= link_to "Add event", new_event_path %>
+</div>

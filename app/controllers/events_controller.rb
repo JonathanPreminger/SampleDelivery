@@ -3,10 +3,22 @@
    def index
      @events = Event.all
    end
+   def new
+     @event = Event.new(params[:artist])
+   end
+   def create
+     @event = Event.create(event_params)
+     @event.save
+     redirect_to events_path
+   end
 
+
+   def calendar
+     @events = Event.all
+   end
    def import
     @event = Event.import(params[:file])
-    redirect_to events_path                                                                                           
+    redirect_to events_path
    end
 
 
@@ -42,6 +54,6 @@
 
      def event_params
        params.require(:event).permit(:revenue_figure, :total_charge_dj, :charge_flyers,
-                                    :charge_others, :number_of_dj, :line_up, :place, :name)
+                                    :charge_others, :number_of_dj, :line_up, :place, :name, :start)
      end
  end

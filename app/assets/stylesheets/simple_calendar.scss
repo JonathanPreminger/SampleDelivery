@@ -1,0 +1,14 @@
+
+.table-calendar {
+  display: flex;
+  flex-direction: column;
+}
+.thead-calendar {
+  width:100%;
+  display: flex;
+  justify-content: space-between;
+  background-color: red;
+}
+.days-title {
+  width: 160px;
+}
