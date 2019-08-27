@@ -30,3 +30,4 @@ class DjsetsController < ApplicationController
   def djset_params
     params.require(:djset).permit(:start, :club)
   end
+end
