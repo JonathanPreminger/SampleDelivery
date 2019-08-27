@@ -1,29 +1,31 @@
 <div class="block">
+  <%= form_for @artist do |f| %>
   <div class="just-column">
 
     <p class="artist-name"><%=@artist.name%></p>
     <div class="block2">
       <div class="just-column">
-        <%= form_for @artist do |f| %>
         <p>Profil picture</p>
-        <br>
+        <p><br></p>
         <p>
         <%= f.file_field :image, class:"file-field-new-artist", class:"submit" %><br>
         </p>
       </div>
+      <%= f.fields_for :djsets, Djset.new do |set| %>
       <div class="just-column border-left">
-        <p>Next set <br></p>
-        <br>
-        <p>The</p>
-        <p><%= f.fields_for :djsets, Djset.new do |set| %><br></p>
-        <p><%= set.date_field :start, class:"submit"%><br></p>
-        <p>At</p>
-        <p><%= set.text_field :club,:placeholder => "Name of the Club", class:"submit"%><br></p>
+        <p>Next set</p>
+        <p> <br></p>
+        <p>The <%= set.date_field :start, class:"submit"%></p>
+        <p><br></p>
+        <p>At <%= set.text_field :club,:placeholder => "Name of the Club", class:"submit"%></p>
+        <p><br></p>
 
-        <%end%>
+        <p><br></p>
+
       </div>
+      <%end%>
+      <%= f.fields_for :realreleases, Realrelease.new do |realrelease_form| %>
       <div class="just-column border-left">
-        <%= f.fields_for :realreleases, Realrelease.new do |realrelease_form| %>
         <p>Add a release for  <%= @artist.name %></p>
         <p><br></p>
         <p>Name <br> <%= realrelease_form.text_field :name, :placeholder => "Name of the release", class:"submit" %></p>
@@ -31,14 +33,14 @@
         <p>Year<br> <%= realrelease_form.text_field :year,:placeholder =>  "Year of the release", class:"submit" %></p>
 
         <p>Cover<%= realrelease_form.file_field :image, class:"submit" %></p>
-        <% end %>
       </div>
+      <% end %>
 
     </div>
     <div class="">
       <%= image_submit_tag 'save.png' %>
-      <% end %>
     </div>
     </div>
+    <% end %>
 
   </div>

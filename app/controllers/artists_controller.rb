@@ -37,7 +37,7 @@ protect_from_forgery
     @artist = Artist.find(params[:id])
     if @artist.update_attributes(artist_params)
       flash[:notice] = "#{@artist.name} was successfully updated."
-      redirect_to artists_path
+      redirect_to artist_path
     else
       flash[:notice] = "#{@artist.name} wasn't updated"
       render artists_path
