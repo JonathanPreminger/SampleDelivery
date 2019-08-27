@@ -11,6 +11,9 @@
         <%= f.file_field :image, class:"file-field-new-artist", class:"submit" %><br>
         </p>
       </div>
+      <%= image_submit_tag 'save.png' %>
+      <% end %>
+      <%= form_for @artist do |f| %>
       <%= f.fields_for :djsets, Djset.new do |set| %>
       <div class="just-column border-left">
         <p>Next set</p>
@@ -21,9 +24,12 @@
         <p><br></p>
 
         <p><br></p>
-
       </div>
       <%end%>
+      <%= image_submit_tag 'save.png' %>
+      <%end%>
+
+      <%= form_for @artist do |f| %>
       <%= f.fields_for :realreleases, Realrelease.new do |realrelease_form| %>
       <div class="just-column border-left">
         <p>Add a release for  <%= @artist.name %></p>
@@ -35,12 +41,12 @@
         <p>Cover<%= realrelease_form.file_field :image, class:"submit" %></p>
       </div>
       <% end %>
+      <%= image_submit_tag 'save.png' %>
+      <% end %>
 
     </div>
     <div class="">
-      <%= image_submit_tag 'save.png' %>
     </div>
     </div>
-    <% end %>
 
   </div>
