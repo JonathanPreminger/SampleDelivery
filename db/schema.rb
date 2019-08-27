@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_08_12_233902) do
+ActiveRecord::Schema.define(version: 2019_08_26_220005) do
 
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
@@ -55,6 +55,14 @@ ActiveRecord::Schema.define(version: 2019_08_12_233902) do
     t.text "email"
   end
 
+  create_table "djsets", force: :cascade do |t|
+    t.datetime "start"
+    t.integer "artist_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["artist_id"], name: "index_djsets_on_artist_id"
+  end
+
   create_table "events", force: :cascade do |t|
     t.integer "revenue_figure"
     t.integer "total_charge_dj"
@@ -68,6 +76,7 @@ ActiveRecord::Schema.define(version: 2019_08_12_233902) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "benefits"
+    t.datetime "start"
   end
 
   create_table "realreleases", force: :cascade do |t|

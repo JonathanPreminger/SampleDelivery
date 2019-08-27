@@ -20,6 +20,11 @@ CREATE UNIQUE INDEX "index_active_storage_attachments_uniqueness" ON "active_sto
 CREATE TABLE IF NOT EXISTS "tracks" ("id" integer NOT NULL PRIMARY KEY, "name" text DEFAULT NULL, "duration" text DEFAULT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "realrelease_id" integer DEFAULT NULL);
 CREATE INDEX "index_tracks_on_realrelease_id" ON "tracks" ("realrelease_id");
 CREATE TABLE IF NOT EXISTS "articles" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "content" text, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL);
+CREATE TABLE IF NOT EXISTS "djsets" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "start" datetime, "artist_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "club" text, CONSTRAINT "fk_rails_410caca4ee"
+FOREIGN KEY ("artist_id")
+  REFERENCES "artists" ("id")
+);
+CREATE INDEX "index_djsets_on_artist_id" ON "djsets" ("artist_id");
 INSERT INTO "schema_migrations" (version) VALUES
 ('20190617115626'),
 ('20190617123659'),
@@ -49,6 +54,8 @@ INSERT INTO "schema_migrations" (version) VALUES
 ('20190807114049'),
 ('20190807114253'),
 ('20190812233902'),
-('20190823152920');
+('20190823152920'),
+('20190826220005'),
+('20190827001603');
 
 

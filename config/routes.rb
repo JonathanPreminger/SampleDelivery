@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'dj_set_validates/valid'
+  get 'dj_sets/create'
   devise_for :users
   resources :events do
     collection do

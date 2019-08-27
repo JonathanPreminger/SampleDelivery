@@ -1,3 +1,4 @@
+
 .artist-content {
   width: 100%;
 }
@@ -276,6 +277,53 @@ td {
 #absolute2 {
   margin-left: 0;
 background-color: red}
+
+// Artist Edit Section
+.just-column {
+  display: flex;
+  flex-direction: column;
+}
+.large {
+  width: 100%;
+}
+.just-column p {
+  font-family: 'Steps-Mono';
+  font-size: 18px;
+}
+.artist-name {
+  color:#8e8e8e;
+  font-size: 38px!important;
+  font-family: 'sofachrome'!important;
+}
+.margin-bottom {
+  margin-bottom: 5%;
+}
+.block {
+  display: flex;
+  flex-direction: row;
+  margin-left: 15%;
+  margin-right: 15%;
+  margin-top: 5%;
+  padding: 0;
+}
+.border-left {
+  border-left: #5e5e5e solid 0.5px;
+  margin-left: 6%;
+  padding-left: 6%;
+}
+.block-width {
+  width: 30%;
+}
+.block2 {
+  display: flex;
+  flex-direction: row;
+  padding: 0;
+}
+// End Artist Edit Section
+
+@media only screen and (max-width:499px) {
+
+}
 
 @media only screen and (min-width:500px) {
     .transition1 {

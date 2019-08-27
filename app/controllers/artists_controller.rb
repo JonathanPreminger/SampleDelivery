@@ -58,6 +58,6 @@ protect_from_forgery
 
 
   def artist_params
-    params.require(:artist).permit(:name, :image, realreleases_attributes: [:id, :name, :image, :year, :_destroy])
+    params.require(:artist).permit(:name, :image, realreleases_attributes: [:id, :name, :image, :year, :_destroy], djsets_attributes: [:id, :start, :club, :destroy])
   end
 end

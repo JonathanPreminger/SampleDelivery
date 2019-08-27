@@ -1,0 +1,13 @@
+<div class="block">
+  <div class="calendar">
+
+    <%= month_calendar artists: @djsets_of_this_artist do |date, djsets| %>
+    <%= date %>
+    <% djsets.each do |djset| %>
+    <%= djset.artist.name%>
+    <%= djset.club%>
+
+    <% end%>
+    <% end %>
+  </div>
+</div>
