@@ -294,11 +294,23 @@ background-color: red}
   color:#8e8e8e;
   font-size: 38px!important;
   font-family: 'sofachrome'!important;
+  letter-spacing: 12px!important;
 }
 .margin-bottom {
   margin-bottom: 5%;
 }
+.small-margin-bottom {
+  margin-bottom: 4%;
+}
 .block {
+  display: flex;
+  flex-direction: row;
+  margin-left: 15%;
+  margin-right: 15%;
+  margin-top: 5%;
+  padding: 0;
+}
+.block3 {
   display: flex;
   flex-direction: row;
   margin-left: 15%;
@@ -319,9 +331,51 @@ background-color: red}
   flex-direction: row;
   padding: 0;
 }
+.red {
+  color:red!important;
+}
+.little-title {
+  font-size: 20px!important;
+  letter-spacing: 3px;
+  text-decoration: underline;
+}
 // End Artist Edit Section
 
 @media only screen and (max-width:499px) {
+  .block2 {
+    display: flex;
+    flex-direction: column;
+  }
+  .border-left {
+    border-left: #5e5e5e solid 0px;
+    border-top: #5e5e5e solid 0.5px;
+    margin-left: 0%;
+    padding-left: 0%;
+    margin-top: 6%;
+    padding-top: 6%;
+  }
+  .block3 {
+    display: flex;
+    flex-direction: row;
+    margin-left: 0%;
+    margin-right: 0%;
+    margin-top: 5%;
+    padding: 0%;
+    width:100%;
+  }
+  .block {
+    display: flex;
+    flex-direction: row;
+    margin-left: 2%;
+    margin-right: 0%;
+    margin-top: 15%;
+    padding: 0;
+  }
+  .calendar {
+    width: 400px;
+    margin-right: 0px;
+    margin-bottom: 100px;
+  }
 
 }
 

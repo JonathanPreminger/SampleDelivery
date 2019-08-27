@@ -10,24 +10,24 @@
     <input type="checkbox" id="toggle"/>
 
     <div class="menu">
-      <div class="">
+      <div class="part-menu">
       <p><%= link_to "COMPTABILITY", events_path %></p>  </div>
-      <div class="">
+      <div class="part-menu">
       <p><%= link_to "RELEASE", realreleases_path %></p> </div>
-      <div class="">
+      <div class="part-menu">
       <p><%= link_to "ARTIST", artists_path%></p> </div>
-      <div class="">
+      <div class="part-menu">
       <p><%= link_to "ARTICLES", articles_path %></p> </div>
-      <div class="">
+      <div class="part-menu">
       <p><%= link_to "CALENDAR", calendar_events_path %></p> </div>
       <% if user_signed_in? %>
         <div class="">
       <p><%= link_to "Sign Out", destroy_user_session_path, method: :delete %></p> </div>
       <% else %>
-        <div class="">
+        <div class="part-menu">
       <p><%= link_to "SIGNIN", new_user_session_path  %></p> </div>
       <% end %>
-        <div class="">
+        <div class="part-menu">
       <p><%= link_to "CONTACT", new_contact_path %></p> </div>
     </div>
 

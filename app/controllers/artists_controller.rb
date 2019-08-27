@@ -40,7 +40,7 @@ protect_from_forgery
       redirect_to artists_path
     else
       flash[:notice] = "#{@artist.name} wasn't updated"
-      render edit_artist_path
+      render artists_path
     end
   end
 
@@ -58,6 +58,6 @@ protect_from_forgery
 
 
   def artist_params
-    params.require(:artist).permit(:name, :image, realreleases_attributes: [:id, :name, :image, :year, :_destroy], djsets_attributes: [:id, :start, :club, :destroy])
+    params.require(:artist).permit(:name, :image, realreleases_attributes: [:id, :name, :image, :year, :_destroy], djsets_attributes: [:id, :start, :club, :_destroy])
   end
 end

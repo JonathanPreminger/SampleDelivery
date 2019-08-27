@@ -3,7 +3,7 @@
     <p class="artist-name margin-bottom"><%=@artist.name%></p>
     <div class="block2 margin-bottom">
       <div class="just-column block-width">
-        <p>Releases</p>
+        <p class="little-title small-margin-bottom">Releases</p>
         <p><br></p>
         <% for realrelease in @artist.realreleases %>
             <p>  <%= link_to realrelease.name, realrelease%></p>
@@ -18,10 +18,12 @@
         <%end %>
       </div>
       <div class="just-column border-left block-width">
-        <p>Prochain set :</p>
+        <p class="little-title small-margin-bottom">Next date</p>
         <p><% for dj_set in @artist.djsets %></p>
-        <p>  Le<%=  dj_set.start%></p>
-        <p>At</p>
+        <p>The</p>
+        <p class="red"> <%=  dj_set.start%></p>
+        <p>At</p><p class="red"> <%=  dj_set.club%></p>
+        <p><br></p>
         <% end %>
       </div>
     </div>
