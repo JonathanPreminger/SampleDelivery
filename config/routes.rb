@@ -15,6 +15,7 @@ Rails.application.routes.draw do
   resources :contacts, only: [:index, :new, :create]
   resources :realreleases
   resources :artists
+  resources :djsets 
   resources :tracks
   resources :articles
 

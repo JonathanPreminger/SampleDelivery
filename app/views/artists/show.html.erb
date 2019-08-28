@@ -12,7 +12,7 @@
             <p><%  if realrelease.image.attached?  %>
             <%= image_tag realrelease.image, style:('width:100%;height:auto;'),class:'background-artist-image' %></p>
             <% end %>
-            
+
             <p><br></p>
         <% end %>
       </div>
@@ -28,6 +28,16 @@
         <p>The</p>
         <p class="red"> <%=  dj_set.start%></p>
         <p>At</p><p class="red"> <%=  dj_set.club%></p>
+        <p>Status : </p>
+        <p>------> <%=  dj_set.confirmdjset.inspect%></p>
+
+        <% if dj_set.confirmdjset %>
+        <p>Date Confirmed</p>
+        <% elsif dj_set.confirmdjset.nil?  %>
+        <p>pending</p>
+        <% else   %>
+        <p>date rejected</p>
+        <%end%>
         <p><br></p>
         <% end %>
       </div>

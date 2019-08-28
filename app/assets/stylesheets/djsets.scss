@@ -1,0 +1,26 @@
+.just-row {
+  display:flex;
+  flex-direction: row;
+}
+.just-row p {
+  font-size: 20px;
+}
+.small-margin-bottom {
+  margin-bottom: 3%;
+}
+.info {
+  color: red;
+}
+.nicebutton {
+  border: solid grey 1px;
+  border-radius: 8px;
+  color: grey;
+  width:120px;
+  height: 40px;
+
+  &:hover {
+    color:white;
+    background-color: green;
+
+  }
+}

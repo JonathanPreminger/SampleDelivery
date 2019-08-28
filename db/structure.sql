@@ -20,10 +20,12 @@ CREATE UNIQUE INDEX "index_active_storage_attachments_uniqueness" ON "active_sto
 CREATE TABLE IF NOT EXISTS "tracks" ("id" integer NOT NULL PRIMARY KEY, "name" text DEFAULT NULL, "duration" text DEFAULT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "realrelease_id" integer DEFAULT NULL);
 CREATE INDEX "index_tracks_on_realrelease_id" ON "tracks" ("realrelease_id");
 CREATE TABLE IF NOT EXISTS "articles" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "content" text, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL);
-CREATE TABLE IF NOT EXISTS "djsets" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "start" datetime, "artist_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "club" text, CONSTRAINT "fk_rails_410caca4ee"
-FOREIGN KEY ("artist_id")
-  REFERENCES "artists" ("id")
+CREATE TABLE IF NOT EXISTS "djsetvalidates" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "valid" boolean, "djset_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, CONSTRAINT "fk_rails_fd387da0b6"
+FOREIGN KEY ("djset_id")
+  REFERENCES "djsets" ("id")
 );
+CREATE INDEX "index_djsetvalidates_on_djset_id" ON "djsetvalidates" ("djset_id");
+CREATE TABLE IF NOT EXISTS "djsets" ("id" integer NOT NULL PRIMARY KEY, "start" datetime DEFAULT NULL, "artist_id" integer DEFAULT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "club" text DEFAULT NULL, "confirmdjset" boolean);
 CREATE INDEX "index_djsets_on_artist_id" ON "djsets" ("artist_id");
 INSERT INTO "schema_migrations" (version) VALUES
 ('20190617115626'),
@@ -56,6 +58,10 @@ INSERT INTO "schema_migrations" (version) VALUES
 ('20190812233902'),
 ('20190823152920'),
 ('20190826220005'),
-('20190827001603');
+('20190827001603'),
+('20190827200900'),
+('20190828102145'),
+('20190828113606'),
+('20190828113739');
 
 

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_08_26_220005) do
+ActiveRecord::Schema.define(version: 2019_08_28_113739) do
 
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
@@ -60,7 +60,17 @@ ActiveRecord::Schema.define(version: 2019_08_26_220005) do
     t.integer "artist_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.text "club"
+    t.boolean "confirmdjset"
     t.index ["artist_id"], name: "index_djsets_on_artist_id"
+  end
+
+  create_table "djsetvalidates", force: :cascade do |t|
+    t.boolean "valid"
+    t.integer "djset_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["djset_id"], name: "index_djsetvalidates_on_djset_id"
   end
 
   create_table "events", force: :cascade do |t|

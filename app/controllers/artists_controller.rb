@@ -21,6 +21,8 @@ protect_from_forgery
     @artist = Artist.new(params[:artist])
   end
 
+
+
   def index
     @artists = Artist.all
   end
@@ -58,6 +60,6 @@ protect_from_forgery
 
 
   def artist_params
-    params.require(:artist).permit(:name, :image, realreleases_attributes: [:id, :name, :image, :year, :_destroy], djsets_attributes: [:id, :start, :club, :_destroy])
+    params.require(:artist).permit(:name, :image, realreleases_attributes: [:id, :name, :image, :year, :_destroy], djsets_attributes: [:id, :start, :club, :confirmdjset, :_destroy])
   end
 end
