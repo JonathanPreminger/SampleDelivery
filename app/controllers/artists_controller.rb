@@ -41,8 +41,9 @@ protect_from_forgery
       flash[:notice] = "#{@artist.name} was successfully updated."
       redirect_to artist_path
     else
-      flash[:notice] = "#{@artist.name} wasn't updated"
-      render artists_path
+      redirect_to edit_artist_path
+      flash[:notice] = "All the field must be filled"
+      puts '________________________________________________________________________'
     end
   end
 

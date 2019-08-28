@@ -1,7 +1,7 @@
 <div class="block">
   <div class="just-column margin-bottom">
     <% @djsets.each do |set| %>
-    <div class="just-row">
+    <div class="just-row cell">
       <div class="">
         <p> <%= image_tag 'arrow3.png' %></p>
       </div>
@@ -10,11 +10,8 @@
       <div class="just-column">
       <div class="block2">
         <div class="just-row small-margin-bottom">
-          <p class=''>For </p><p class='info'><%= set.artist.name.upcase%></p>
+          <p class=''>For </p><p><%= link_to set.artist.name.upcase, artist_path(set.artist.id), class:'info'  %></p>
 
-        </div>
-        <div class="just-row">
-          <p>Dj set number id:  </p><p class='info'><%= set.id %></p>
         </div>
         <div class="just-row">
           <p>At </p><p class='info'><%= set.club.upcase %></p>
@@ -30,8 +27,8 @@
             <p><%=s.check_box :confirmdjset %></p>
           </div>
           <div class="just-row small-margin-bottom">
-        
-            <p><%= s.submit 'Confirm Djset', class:'nicebutton' %></p>
+
+            <p><%= s.submit 'Confirm Djset', class:'nicebutton info' %></p>
           </div>
           <%end%>
         </div>
