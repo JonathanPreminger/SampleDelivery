@@ -9,3 +9,4 @@ private
 def djsetvalidates_params
   params.require(:djsetvalidate).permit(:valid, :parent)
 end
+end
