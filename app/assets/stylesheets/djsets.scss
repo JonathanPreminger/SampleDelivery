@@ -20,6 +20,9 @@
   color: red;
 }
 .nicebutton {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   border: solid grey 1.5px;
   border-radius: 3px;
   color: grey;
@@ -41,4 +44,30 @@
 }
 
 .notice {
+  position:fixed;
+  margin-left:0px;
+  left:0px;
+  height:200px;
+  width:10%;
+  margin-top:75px;
+  color:green;
+  font-family: 'CothamSans'!important;
+  font-size: 16px;
+  letter-spacing: 2px;
+  word-spacing: 8px;
+  line-height:24px;
+}
+#alert {
+  position:fixed;
+  margin-left:0px;
+  left:0px;
+  height:200px;
+  width:10%;
+  margin-top:75px;
+  color:red;
+  font-family: 'CothamSans'!important;
+  font-size: 16px;
+  letter-spacing: 2px;
+  word-spacing: 8px;
+  line-height:24px;
 }

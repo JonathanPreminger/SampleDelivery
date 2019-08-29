@@ -16,7 +16,12 @@
     <%= render 'layouts/navbarright' %>
 
     <p class="notice"> <%= notice %></p>
-    <p class="alert"> <%= alert %></p>
+    <% if flash[:alert] %>
+      <div id="alert">
+         <%= flash[:alert] %>
+      </div>
+<% end %>
+
     <%= yield %>
     <%= render 'layouts/footer' %>
     <script>

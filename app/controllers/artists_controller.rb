@@ -38,11 +38,11 @@ protect_from_forgery
   def update
     @artist = Artist.find(params[:id])
     if @artist.update_attributes(artist_params)
-      flash[:notice] = "#{@artist.name} was successfully updated."
-      redirect_to artist_path
+      flash.now[:notice] = "#{@artist.name.upcase} was successfully updated ! "
+      render :index
     else
-      redirect_to edit_artist_path
-      flash[:notice] = "All the field must be filled"
+      flash.now[:alert] = "All the field must be filled"
+      render :edit
       puts '________________________________________________________________________'
     end
   end

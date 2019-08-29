@@ -9,7 +9,7 @@ class DjsetsController < ApplicationController
       puts @djset.djsetvalidate.id
       redirect_to artists_path
     else
-      flash[:error] = "All the field must be filled"
+      flash[:alert] = "All the field must be filled"
       puts "faileeeeeeeeeeed whyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyy"
     end
   end
