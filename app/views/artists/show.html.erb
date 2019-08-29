@@ -1,46 +1,67 @@
 <div class="block">
   <div class="just-column large">
+    <div class="small-row-artist">
+
     <p class="artist-name margin-bottom"><%=@artist.name%></p>
-    <div class="block2 margin-bottom">
-      <div class="just-column block-width">
-        <p class="little-title small-margin-bottom">Releases</p>
+     <div class="just-column border-left block-width">
+          <br>
+          <%  if @artist.image.attached?  %>
+          <%= image_tag @artist.image, style:('width:100%;height:auto;'),class:'background-artist-image' %>
+          <%end %>
+        </div>
+      </div>
+
+    <div class="block2 margin-bottom height-max">
+      <div class="just-column">
+
+      <p class="little-title small-margin-bottom">Releases</p>
+      <div class="just-column-inside width100 overflow-vertical">
         <p><br></p>
         <% for realrelease in @artist.realreleases %>
+        <div class="just-column">
+
             <p>  <%= link_to realrelease.name, realrelease%></p>
             <p><%=  realrelease.year%></p>
 
             <p><%  if realrelease.image.attached?  %>
-            <%= image_tag realrelease.image, style:('width:100%;height:auto;'),class:'background-artist-image' %></p>
+            <%= image_tag realrelease.image, style:('width:190px;height:auto;'),class:'' %></p>
             <% end %>
+          </div>
 
             <p><br></p>
         <% end %>
       </div>
-      <div class="just-column border-left block-width">
-        <br>
-        <%  if @artist.image.attached?  %>
-        <%= image_tag @artist.image, style:('width:100%;height:auto;'),class:'background-artist-image' %>
-        <%end %>
-      </div>
-      <div class="just-column border-left block-width">
-        <p class="little-title small-margin-bottom">Next date</p>
-        <p><% for dj_set in @artist.djsets %></p>
-        <p>The</p>
-        <p class="red"> <%=  dj_set.start%></p>
-        <p>At</p><p class="red"> <%=  dj_set.club%></p>
-        <p>Status : </p>
-        <p>------> <%=  dj_set.confirmdjset.inspect%></p>
+    </div>
 
+
+
+
+
+      <div class="just-column border-left">
+        <p class="little-title small-margin-bottom">Next date</p>
+
+      <div class="just-column-inside  width100 overflow-vertical">
+        <p><% for dj_set in @artist.djsets %></p>
+        <div class="just-column">
+
+        <p>The</p>
+        <p class="red"> <%=  dj_set.start.strftime("%Y-%m-%d")%></p>
+        <p>At</p><p class="red"> <%=  dj_set.start.strftime("%I:%M%p")%></p>
+
+        <p>At</p><p class="red"> <%=  dj_set.club%></p>
         <% if dj_set.confirmdjset %>
-        <p>Date Confirmed</p>
+        <p class="pending date-confirmed">Date Confirmed :)</p>
         <% elsif dj_set.confirmdjset.nil?  %>
-        <p>pending</p>
+        <p class="pending">pending...</p>
         <% else   %>
-        <p>date rejected</p>
+        <p class="pending date rejected">date rejected :(</p>
         <%end%>
         <p><br></p>
+      </div>
+
         <% end %>
       </div>
+    </div>
     </div>
       <div class="">
         <%= link_to 'Delete the Artist', artist_path(@artist), method: :delete, data: { confirm: 'Are you sure to delete this artist ? Every related stuff, releases, sets, and tracks associate will be erased as well...' },class: "submit" %>

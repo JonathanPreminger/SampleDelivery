@@ -43,9 +43,7 @@ class DjsetsController < ApplicationController
     @djsets = Djset.all
   end
 
-  def startnice
-    @djset.Djset.find(params[:id])
-  end
+
 
 
   def destroy

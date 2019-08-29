@@ -279,7 +279,37 @@ td {
 background-color: red}
 
 // Artist Edit Section
+.date-confirmed {
+  color:green;
+}
+.date-rejected {
+  color:red;
+}
+.pending {
+  border:black solid 1px;
+  border-radius: 2px;
+  box-shadow: 2px 2px 1px grey;
+  width:70%;
+  display: flex;
+  justify-content: center;
+}
+.overflow-vertical {
+  overflow-y: scroll;
+}
+.height-max {
+  height:300px;
+  overflow: hidden;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+.width100 {
+  width: 300px;
+}
 .just-column {
+  display: flex;
+  flex-direction: column;
+}
+.just-column-inside {
   display: flex;
   flex-direction: column;
 }
@@ -295,6 +325,7 @@ background-color: red}
   font-size: 38px!important;
   font-family: 'sofachrome'!important;
   letter-spacing: 12px!important;
+  margin-top: 50px;
 }
 .margin-bottom {
   margin-bottom: 5%;
@@ -319,8 +350,6 @@ background-color: red}
   padding: 0;
 }
 .border-left {
-  border-left: #5e5e5e solid 0.5px;
-  margin-left: 6%;
   padding-left: 6%;
 }
 .border-bot {
@@ -355,12 +384,21 @@ p {
 }
 
 .red {
-  color:red!important;
+  color:#f2ba02;
+  font-weight: bold;
+}
+.scroll::-webkit-scrollbar-track {
+  color:black;
+  width:15px;
 }
 .little-title {
   font-size: 20px!important;
-  letter-spacing: 3px;
+  letter-spacing: 6px!important;
   text-decoration: underline;
+}
+.scrollbar {
+  width: 1px !important ;
+  color:black;
 }
 .bottom {
   margin-bottom: 5%;
@@ -410,6 +448,13 @@ p {
     width: 400px;
     margin-right: 0px;
     margin-bottom: 100px;
+  }
+  .just-column-inside {
+    display: flex;
+    flex-direction: row;
+  }
+  .overflow-vertical {
+    overflow-x: scroll;
   }
 
 }

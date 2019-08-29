@@ -39,7 +39,7 @@ protect_from_forgery
     @artist = Artist.find(params[:id])
     if @artist.update_attributes(artist_params)
       flash.now[:notice] = "#{@artist.name.upcase} was successfully updated ! "
-      render :index
+      render :show
     else
       flash.now[:alert] = "All the field must be filled"
       render :edit
@@ -55,6 +55,11 @@ protect_from_forgery
      format.html { redirect_to artists_url, notice: 'artist was successfully destroyed.' }
      format.json { head :no_content }
    end
+  end
+
+  def calendar
+    @artist = Artist.find(params[:id])
+
   end
 
   private
