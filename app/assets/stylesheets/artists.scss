@@ -280,21 +280,44 @@ background-color: red}
 
 // Artist Edit Section
 .date-confirmed {
-  color:green;
+  color:green!important;
 }
 .date-rejected {
-  color:red;
+  color:red!important;
 }
 .pending {
-  border:black solid 1px;
-  border-radius: 2px;
-  box-shadow: 2px 2px 1px grey;
+  border:#b2b5b1 solid 0.1px;
+  color: #767775;
+  border-radius: 4px;
+  box-shadow: 0.5px 0.5px 0.5px #767775;
   width:70%;
   display: flex;
   justify-content: center;
+  transition: 0.3s;
+
+  &:hover {
+    border:#5d5e5c solid 0.5px;
+    box-shadow: 3px 3px 2.5px #5d5e5c;
+    color: #5d5e5c;
+    background-color:#edfaff;
+
+  }
+}
+.hover-line {
+  background-color: transparent;
+  transition: 0.3s;
+  &:hover {
+    background-color:#fcfcfc;
+  }
 }
 .overflow-vertical {
   overflow-y: scroll;
+  background-color: #edfaff;
+  transition: 0.3s;
+
+  &:hover {
+    background-color: #e0f5fc;
+  }
 }
 .height-max {
   height:300px;
@@ -302,8 +325,13 @@ background-color: red}
   overflow-y: scroll;
   overflow-x: hidden;
 }
+
 .width100 {
-  width: 300px;
+  width:200px;
+}
+.width300 {
+  width: 700px;
+
 }
 .just-column {
   display: flex;
@@ -321,11 +349,22 @@ background-color: red}
   font-size: 18px;
 }
 .artist-name {
+  font-weight: bold;
   color:#8e8e8e;
   font-size: 38px!important;
-  font-family: 'sofachrome'!important;
   letter-spacing: 12px!important;
   margin-top: 50px;
+}
+.space-between {
+  display: flex;
+  justify-content: space-between;
+  width: 500px;
+
+}
+.image-overflow {
+  width: 40px;
+  height:40px;
+  overflow: hidden;
 }
 .margin-bottom {
   margin-bottom: 5%;
@@ -334,14 +373,6 @@ background-color: red}
   margin-bottom: 4%;
 }
 .block {
-  display: flex;
-  flex-direction: row;
-  margin-left: 15%;
-  margin-right: 15%;
-  margin-top: 5%;
-  padding: 0;
-}
-.block3 {
   display: flex;
   flex-direction: row;
   margin-left: 15%;
@@ -387,18 +418,10 @@ p {
   color:#f2ba02;
   font-weight: bold;
 }
-.scroll::-webkit-scrollbar-track {
-  color:black;
-  width:15px;
-}
+
 .little-title {
   font-size: 20px!important;
   letter-spacing: 6px!important;
-  text-decoration: underline;
-}
-.scrollbar {
-  width: 1px !important ;
-  color:black;
 }
 .bottom {
   margin-bottom: 5%;
@@ -414,50 +437,6 @@ p {
 }
 // End Artist Edit Section
 
-@media only screen and (max-width:499px) {
-  .block2 {
-    display: flex;
-    flex-direction: column;
-  }
-  .border-left {
-    border-left: #5e5e5e solid 0px;
-    border-top: #5e5e5e solid 0.5px;
-    margin-left: 0%;
-    padding-left: 0%;
-    margin-top: 6%;
-    padding-top: 6%;
-  }
-  .block3 {
-    display: flex;
-    flex-direction: row;
-    margin-left: 0%;
-    margin-right: 0%;
-    margin-top: 5%;
-    padding: 0%;
-    width:100%;
-  }
-  .block {
-    display: flex;
-    flex-direction: row;
-    margin-left: 2%;
-    margin-right: 0%;
-    margin-top: 15%;
-    padding: 0;
-  }
-  .calendar {
-    width: 400px;
-    margin-right: 0px;
-    margin-bottom: 100px;
-  }
-  .just-column-inside {
-    display: flex;
-    flex-direction: row;
-  }
-  .overflow-vertical {
-    overflow-x: scroll;
-  }
-
-}
 
 @media only screen and (min-width:500px) {
     .transition1 {
