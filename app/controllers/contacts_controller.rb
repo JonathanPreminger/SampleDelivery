@@ -11,10 +11,10 @@ class ContactsController < ApplicationController
     @contact = Contact.new(params[:contact])
     @contact.request = request
     respond_to do |format|
-      if @contact.deliver
+      if ContactMailerWorker.perform_async
         # re-initialize Conatact object for cleared form
         @contact = Contact.new
-        format.html { render home_index_change_path}
+        format.html { render 'new' }
         flash[:success] = "Bien envoyé !"
         format.js   { flash.now[:success] = @message = "Thank you for your message. I'll get back to you soon!" }
       else
