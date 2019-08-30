@@ -24,6 +24,8 @@ gem 'jbuilder', '~> 2.5'
 gem 'devise'
 gem "simple_calendar", "~> 2.0"
 gem 'bootstrap', '~> 4.3.1'
+gem 'sidekiq'
+gem 'redis-rails'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'
 # Use ActiveModel has_secure_password

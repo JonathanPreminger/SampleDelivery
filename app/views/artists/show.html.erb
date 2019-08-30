@@ -49,6 +49,8 @@
         <p>At</p><p class="red"> <%=  dj_set.start.strftime("%I:%M%p")%></p>
 
         <p>At</p><p class="red"> <%=  dj_set.club%></p>
+        <p>ID</p><p class="red"> <%=  dj_set.id%></p>
+
         <% if dj_set.confirmdjset %>
         <p class="pending date-confirmed">Date Confirmed :)</p>
         <% elsif dj_set.confirmdjset.nil?  %>

@@ -3,6 +3,7 @@ class RealreleasesController < ApplicationController
   def create
   @realrelease = Realrelease.create(realrelease_params)
   if @realrelease.save
+    puts '__________________________________________________release create'
     flash[:success] = "bingo niga"
     redirect_to realreleases_path
   else
@@ -31,6 +32,7 @@ end
   def update
     @realrelease = Realrelease.find(params[:id])
     @realrelease.update_attributes(realrelease_params)
+    puts '__________________________________________________release updates'
     flash[:notice] = "#{@realrelease.name} was successfully updated."
       redirect_to realrelease_path(@realrelease.id)
 
