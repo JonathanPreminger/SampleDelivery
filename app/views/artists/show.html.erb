@@ -4,8 +4,8 @@
 
     <p class="artist-name margin-bottom"><%=@artist.name.upcase%></p>
     <div class="just-row space-between-simple">
-      <%= link_to image_tag('edit.png'), edit_artist_path(@artist),  style:'height:35px;'%>
-      <%= link_to image_tag('delete2.png'), artist_path(@artist), method: :delete, data: { confirm: 'Are you sure to delete this artist ? Every related stuff, releases, sets, and tracks associate will be erased as well...' }, style:'height:35px;' %>
+      <%= link_to image_tag('edit.png'), edit_artist_path(@artist),  class:'background-grey box-shadow3', style:'height:35px'%>
+      <%= link_to image_tag('delete2.png'), artist_path(@artist), method: :delete, data: { confirm: 'Are you sure to delete this artist ? Every related stuff, releases, sets, and tracks associate will be erased as well...' },  class:'background-grey box-shadow3', style:'height:35px;' %>
     </div>
      <div class="just-column border-left block-width">
           <br>
@@ -19,7 +19,7 @@
 
       <div class="just-column ">
         <p class="little-title small-margin-bottom">Realeases</p>
-      <div class="just-column-inside  width100 overflow-vertical ">
+      <div class="just-column-inside border-radius  width100 overflow-vertical ">
         <p>        <% for realrelease in @artist.realreleases %></p>
         <div class="just-column hover-line ">
           <p><%  if realrelease.image.attached?  %>
@@ -33,7 +33,7 @@
 
       <div class="just-column border-left ">
         <p class="little-title small-margin-bottom">Next date</p>
-      <div class="just-column-inside  width300 overflow-vertical ">
+      <div class="just-column-inside border-radius  width300 overflow-vertical ">
         <p><% for dj_set in @artist.djsets %></p>
         <div class="just-column hover-line ">
           <p>The <%=  dj_set.start.strftime("%Y-%m-%d")%> At <%=  dj_set.start.strftime("%I:%M%p")%> at <%=  dj_set.club%></p>
