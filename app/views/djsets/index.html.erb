@@ -1,11 +1,19 @@
-<div class="block">
-  <div class="just-column margin-bottom">
-    <% @djsets.each do |set| %>
-    <div class="just-row cell">
-      <div class="">
-        <p> <%= image_tag 'arrow3.png' %></p>
-      </div>
+<div class="block" style="margin-top:125px;">
 
+  <% @djsets.each do |set| %>
+  <div class="just-column margin-bottom">
+    <div class="just-row cell">
+      <div style="padding-right:20px;margin-top:-4px;">
+        <% if set.confirmdjset? %>
+        <%= image_tag 'valid.png', class:'' %>
+
+        <%elsif set.confirmdjset.nil?%>
+        <%= image_tag 'new.png', class:'newpng' %>
+        <% else %>
+        <%= image_tag 'rejected.png', class:'' %>
+
+        <%end%>
+      </div>
     <div class="block2 margin-bottom ">
       <div class="just-column">
       <div class="block2">
@@ -17,18 +25,22 @@
           <p>At </p><p class='info'><%= set.club.upcase %></p>
         </div>
         <div class="just-row">
-          <p>The : </p><p class='info'><%= set.start%></p>
+          <p>The </p><p class='info'><%= set.start%></p>
         </div>
       </div>
+
         <div class="">
           <%= form_for(set) do |s| %>
-          <div class="just-row small-margin-bottom">
+          <div class="just-column small-margin-bottom">
+            <div class="just-row">
             <p>Confirm the DjSet ?</p>
             <p><%=s.check_box :confirmdjset %></p>
+            </div>
+            <p style="font-size:12px;">Leave the checkbox empty and save if you want to reject this date !</p>
           </div>
           <div class="just-row small-margin-bottom">
 
-            <p><%= s.submit 'Confirm Djset', class:'nicebutton info' %></p>
+            <p><%= s.submit 'Save', class:'nicebutton box-shadow2' %></p>
           </div>
           <%end%>
         </div>
@@ -39,4 +51,5 @@
     <%end%>
 
   </div>
+
 </div>

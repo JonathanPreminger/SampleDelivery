@@ -2,16 +2,15 @@
   <%= form_for @artist do |f| %>
   <div class="just-column">
     <div class="bottom small-row-artist">
-      <p class="artist-name bottom"><%=@artist.name%></p><p>EDIT PART</p>
+    <p class="artist-name bottom">  <%= link_to @artist.name.upcase, artist_path, style:'color:#8e8e8e;'%> </p> <!--<%= image_tag 'settings.png', style:"margin-left:30px;margin-bottom:-10px;width:50px;height:50px;"%></p>-->
     </div>
     <div class="just-column">
 
       <div class="just-column bottom border-bot">
-        <p>PROFIL PICTURE</p>
+        <p style="margin-bottom:20px;">ADD A PROFIL PICTURE</p>
 
           <p><%= f.file_field :image, class:"file-field-new-artist", class:"none-border" %></p>
-          <p><br></p>
-          <p><%= image_submit_tag 'save.png', style:"margin-left:-4px;margin-top:-10px;margin-top:0px;width:35px;" %></p>
+          <p><%= image_submit_tag 'save.png', class:"save", style:'margin-top:23px;'%></p>
         <p> <br></p>
       </div>
       <% end %>
@@ -19,20 +18,22 @@
       <%= f.fields_for :djsets, Djset.new do |set| %>
       <div class="just-column border-bot bottom">
         <p> <br></p>
-        <p>NEXT SET</p>
+        <p  style="margin-bottom:20px;">ADD A NEXT SET</p>
         <div class="small-row-artist">
 
-        <p>The <%=set.date_select :start, class:'submit'%></p>
+        <p style='margin-bottom:10px;'>The <%=set.date_select :start%></p>
         <p>at <%=set.time_select :start, :ignore_date => true%></p>
       </div>
-        <p>At</p>
-        <div class="block2 border">
+        <p style='margin-bottom:10px;'>At</p>
+        <div class="block2">
 
-          <p> <%= set.text_field :club,:placeholder => "Name of the Club", class:"submit"%></p>
+          <p style='margin-bottom:10px;'> <%= set.text_field :club,:placeholder => "Name of the Club", class:"submit"%></p>
           <%end%>
 
         </div>
-        <p><%= image_submit_tag 'save.png',style:"margin-left:-4px;padding-top:10px;margin-top:0px;width:35px;"%></p>
+        <div class="">
+        <%= image_submit_tag 'save.png', class:"save"%>
+      </div>
         <p> <br></p>
 
       </div>
@@ -42,17 +43,20 @@
       <%= f.fields_for :realreleases, Realrelease.new do |realrelease_form| %>
       <div class="just-column bottom-border bottom">
         <p> <br></p>
+        <div class="just-row">
 
-        <p>ADD A RELEASE FOR <%= @artist.name.upcase %></p>
-        <p>Name <br> <%= realrelease_form.text_field :name, :placeholder => "Name of the release", class:"submit" %></p>
+        <p  style="margin-bottom:20px;">ADD A RELEASE FOR </p><p class='info'><%= @artist.name.upcase %></p>
+      </div>
+        <p style='margin-bottom:10px;'>Name</p> <br> <p><%= realrelease_form.text_field :name, :placeholder => "Name of the release", class:"submit", style:'margin-bottom:10px;' %></p>
 
-        <p>Year<br> <%= realrelease_form.text_field :year,:placeholder =>  "Year of the release", class:"submit" %></p>
-        <p>Cover</p>
-          <div class="block2 border">
-        <p><%= realrelease_form.file_field :image, class:"" %></p>
+        <p style='margin-bottom:10px;'>Year</p>
+        <br> <p><%= realrelease_form.text_field :year,:placeholder =>  "Year of the release", class:"submit", style:'margin-bottom:10px;' %></p>
+        <p style='margin-bottom:10px;'>Cover</p>
+          <div class="block2">
+        <p style='margin-bottom:10px;'><%= realrelease_form.file_field :image %></p>
          <% end %>
          </div>
-         <p><%= image_submit_tag 'save.png', style:"margin-left:-4px;padding-top:10px;margin-top:0px;width:35px;"  %></p>
+         <p><%= image_submit_tag 'save.png', class:"save"%></p>
 
       </div>
       </div>

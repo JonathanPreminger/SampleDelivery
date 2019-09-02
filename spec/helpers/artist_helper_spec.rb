@@ -11,5 +11,5 @@ require 'rails_helper'
 #   end
 # end
 RSpec.describe ArtistHelper, type: :helper do
-  pending "add some examples to (or delete) #{__FILE__}"
+  #spending "add some examples to (or delete) #{__FILE__}"
 end

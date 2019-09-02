@@ -1,8 +1,12 @@
 <div class="block">
   <div class="just-column large">
-    <div class="small-row-artist">
+    <div class="small-row-artist space-between-simple">
 
     <p class="artist-name margin-bottom"><%=@artist.name.upcase%></p>
+    <div class="just-row space-between-simple">
+      <%= link_to image_tag('edit.png'), edit_artist_path(@artist),  style:'height:35px;'%>
+      <%= link_to image_tag('delete2.png'), artist_path(@artist), method: :delete, data: { confirm: 'Are you sure to delete this artist ? Every related stuff, releases, sets, and tracks associate will be erased as well...' }, style:'height:35px;' %>
+    </div>
      <div class="just-column border-left block-width">
           <br>
           <%  if @artist.image.attached?  %>
@@ -48,10 +52,7 @@
 
     </div>
 
-      <div class="">
-        <%= link_to 'Delete the Artist', artist_path(@artist), method: :delete, data: { confirm: 'Are you sure to delete this artist ? Every related stuff, releases, sets, and tracks associate will be erased as well...' },class: "submit" %>
-        <%= link_to 'Edit', edit_artist_path(@artist), class: "submit" %>
-      </div>
+
     </div>
   </div>
 

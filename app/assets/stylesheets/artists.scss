@@ -196,6 +196,7 @@ table #artist {
   width: 100%;
   height: 100%;
 }
+
 .ajax-add-new-artist {
   font-family: 'CothamSans';
   width: 70%;
@@ -278,7 +279,17 @@ td {
   margin-left: 0;
 background-color: red}
 
-// Artist Edit Section
+// Artist Edit and Show Section
+.nice-button {
+  padding: 5px;
+  width: 100px;
+  height: 70px;
+  border: black solid 0.5px;
+  border-radius: 5px;
+  box-shadow: 1px 1px 1px #767775;
+  font-family: 'CothamSans';
+
+}
 .date-confirmed {
   color:green!important;
 }
@@ -294,13 +305,11 @@ background-color: red}
   display: flex;
   justify-content: center;
   transition: 0.3s;
-
   &:hover {
     border:#5d5e5c solid 0.5px;
     box-shadow: 3px 3px 2.5px #5d5e5c;
     color: #5d5e5c;
     background-color:#edfaff;
-
   }
 }
 .hover-line {
@@ -343,6 +352,7 @@ background-color: red}
 }
 .large {
   width: 100%;
+  margin-top: 70px;
 }
 .just-column p {
   font-family: 'Steps-Mono';
@@ -353,13 +363,16 @@ background-color: red}
   color:#8e8e8e;
   font-size: 38px!important;
   letter-spacing: 12px!important;
-  margin-top: 50px;
 }
+
 .space-between {
   display: flex;
   justify-content: space-between;
   width: 500px;
-
+}
+.space-between-simple{
+  display: flex;
+  justify-content: space-between;
 }
 .image-overflow {
   width: 40px;
@@ -368,6 +381,9 @@ background-color: red}
 }
 .margin-bottom {
   margin-bottom: 5%;
+}
+.margin-small-bottom {
+  margin-bottom: 3%;
 }
 .small-margin-bottom {
   margin-bottom: 4%;
@@ -384,7 +400,7 @@ background-color: red}
   padding-left: 6%;
 }
 .border-bot {
-  border-bottom: #5e5e5e solid 0px;
+  border-bottom: #5e5e5e solid 1px;
   padding-bottom: 5%;
 }
 .block-width {
@@ -434,6 +450,26 @@ p {
 }
 .none-border {
   border:black solid 0px;
+}
+.save {
+  padding-top:3px;
+  margin-top:10px;
+  width:35px;
+  height:35px;
+  border:#798287 solid 1px;
+  border-radius:5px;
+  transition:0.25s;
+  &:hover{
+    box-shadow: 1.5px 1.5px 2px #798287;
+  }
+}
+.box-shadow {
+  border:#798287 solid 1px;
+  border-radius:5px;
+  transition:0.25s;
+  &:hover{
+    box-shadow: 1.5px 1.5px 2px #798287;
+  }
 }
 // End Artist Edit Section
 
