@@ -1,8 +1,19 @@
 require 'rails_helper'
 
 RSpec.describe Article, type: :model do
+  before :all do
+    Article.destroy_all
+  end
+
   it 'should persist an article' do
-    Article.create(title:'first')
+    @article = Article.create(title:"music")
     expect(Article.count).to eq(1)
+  end
+
+  it 'should delete an article' do
+    @article = Article.create(title:"music")
+    @total = Article.count
+    Article.first.destroy
+    expect(Article.count).to be < @total
   end
 end
