@@ -7,9 +7,36 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 require 'faker'
-
-10.times do
+Artist.destroy_all
+5.times do |i|
   Artist.create(
-    name: Faker::Music::RockBand.name
+    name: Faker::Music::RockBand.name,
+  )
+  puts "one more artist created #{i + 1}"
+end
+Realrelease.destroy_all
+45.times do |i|
+  Realrelease.create(
+    year: rand(1900..2019),
+    name: Faker::Music.album,
+    artist_id: rand(Artist.first.id..Artist.last.id),
+  )
+  puts "one more release created #{i + 1}"
+end
+Track.destroy_all
+145.times do |i|
+  Track.create(
+    name: Faker::String.random(length: 4),
+    duration: rand(0.00..9.40),
+    realrelease_id: rand(Realrelease.first.id..Realrelease.last.id)
+  )
+  puts "one more track created #{i + 1}"
+end
+Djset.destroy_all
+45.times do
+  Djset.create(
+    artist_id: rand(Artist.first.id..Artist.last.id),
+    club: Faker::Music.album,
+    start: Faker::Date.between(from: 1000.days.ago, to: Date.today)
   )
 end

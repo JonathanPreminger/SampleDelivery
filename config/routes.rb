@@ -8,14 +8,14 @@ Rails.application.routes.draw do
       get :calendar
     end
   end
-  root 'home#index_change'
+  root 'articles#index'
   get 'home/index_change', to: 'home#index_change'
 
   get 'home/private'
   resources :contacts, only: [:index, :new, :create]
   resources :realreleases
   resources :artists
-  resources :djsets 
+  resources :djsets
   resources :tracks
   resources :articles
 

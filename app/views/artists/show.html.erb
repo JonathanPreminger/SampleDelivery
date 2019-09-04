@@ -22,7 +22,7 @@
           <% for realrelease in @artist.realreleases %>
           <div class="just-column hover-line ">
             <p><%  if realrelease.image.attached?  %>
-            <%= image_tag realrelease.image, style:('width:40px;height:auto;')%> <%= link_to realrelease.name, realrelease%><%=  realrelease.year%></p>
+            <%=realrelease.id%><%= link_to realrelease.name, realrelease%><%= image_tag realrelease.image, style:('width:40px;height:auto;')%> <%=  realrelease.year%></p>
             <% end %>
             <p><br></p>
           </div>
