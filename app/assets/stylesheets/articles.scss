@@ -7,15 +7,15 @@
   width: 60%;
   margin-left: 6%;
   padding: 2%;
-
+  margin-top: 70px;
 }
 .articles h1 {
   font-weight: normal;
-  font-size: 56px;
+  font-size: 220%;
   font-family: 'CothamSans';
 }
 .articles p {
-  font-size: 20px;
+  font-size: 100%;
     line-height: 35px;
     margin-top: 10vh;
     word-spacing: 1px;
@@ -68,7 +68,6 @@ font-size: 20px;
   width: 75%;
 }
 .articles h1 {
-  font-size: 36px;
   font-family: 'CothamSans';
 }
 .article-uniq {
@@ -79,7 +78,6 @@ font-size: 20px;
 
 #edit-and-show {
   width: 25%;
-  border-right: gray solid 0.5px;
   padding-left: 3%;
   margin-left: 2%;
   &:hover {
@@ -94,13 +92,13 @@ font-size: 20px;
   }
 }
 #date {
-  font-size: 12px;
+  font-size: 50%;
   font-style: italic;
 }
 #new-one {
   width: 50%;
   word-break: keep-all;
-  font-size: 12px;
+  font-size: 100%;
   &:hover {
     text-decoration: underline;
   }

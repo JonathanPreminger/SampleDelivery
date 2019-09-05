@@ -40,3 +40,5 @@ Djset.destroy_all
     start: Faker::Date.between(from: 1000.days.ago, to: Date.today)
   )
 end
+Article.destroy_all
+Article.create(title:"Sample Delivery", content:"Sample Delivery est un collectif artistique et label de musique depuis 2016, elle compte dans ses membres fondateur Anton Hasendonck, Jessy Merciris, Medhy Kad, Theo Bivoul, Mael Lebriand et Jonathan Mete. ")
