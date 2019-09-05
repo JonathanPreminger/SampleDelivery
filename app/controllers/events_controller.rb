@@ -2,6 +2,7 @@
  class EventsController < ApplicationController
    def index
      @events = Event.all
+     
    end
    def new
      @event = Event.new(params[:artist])
@@ -27,9 +28,7 @@
    end
    def show
      @event = Event.find(params[:id])
-   end
-   def benefits
-     @event = Event.find(params[:id])
+     @benefits = @event.revenue_figure - @event.total_charge_dj - @event.charge_others - @event.charge_communication
    end
 
    def update

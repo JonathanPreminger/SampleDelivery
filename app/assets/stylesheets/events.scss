@@ -73,3 +73,30 @@
   margin-right: 70px;
   overflow: scroll;
 }
+// Show
+.data {
+  color :#bddbb3;
+  font-weight:bold;
+}
+.event-show {
+  margin-left: 10%;
+  margin-top: 70px;
+}
+.just-row {
+  width: 80%;
+  display: flex;
+  justify-content: space-between;
+  border-bottom: grey solid 0.5px;
+  
+}
+.event-show .just-row {
+  margin-bottom: 2%;
+}
+.event-show h1 {
+  margin-bottom: 2%;
+  font-family: 'CothamSans';
+}
+.event-show .just-row p {
+  margin-right: 5%;
+}
+// end Show
