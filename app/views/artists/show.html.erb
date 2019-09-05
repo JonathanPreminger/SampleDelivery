@@ -21,12 +21,15 @@
         <div class="just-column-inside border-radius  width100 overflow-vertical ">
           <% for realrelease in @artist.realreleases %>
           <div class="just-column hover-line ">
-            <p><%  if realrelease.image.attached?  %>
-            <%=realrelease.id%><%= link_to realrelease.name, realrelease%><%= image_tag realrelease.image, style:('width:40px;height:auto;')%> <%=  realrelease.year%></p>
-            <% end %>
+            <%= link_to realrelease.name, realrelease%>
+            <%=  realrelease.year%>
+        <%  if realrelease.image.attached?  %>
+            <%= image_tag realrelease.image, style:('width:40px;height:auto;')%>
+            <%end%>
+
             <p><br></p>
           </div>
-          <%end%>
+          <% end %>
         </div>
       </div>
 
