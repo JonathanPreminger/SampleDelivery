@@ -1,7 +1,6 @@
 class Event < ApplicationRecord
   require 'csv'
-
-
+validates :name, presence: true
 
     def self.import(file)
       CSV.foreach(file.path, headers: true) do |row|
@@ -9,7 +8,6 @@ class Event < ApplicationRecord
       end
     end
     def self.get_benefits
-      get_benefits =  "la moula"
     end
     def start_time
       self.start

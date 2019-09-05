@@ -6,7 +6,7 @@ class Djset < ApplicationRecord
   def headers
     {
       :subject => "Contact Form Inquiry",
-      :to => "jonathan.mete101514@gmail.com",
+      :to => "jonathan.mete@hotmail.fr",
       :from => %("#{club}" <#{start.to_s}>)
     }
   end
