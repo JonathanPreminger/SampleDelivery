@@ -91,7 +91,12 @@
   display: flex;
   justify-content: space-between;
   border-bottom: grey solid 0.5px;
-
+  margin-bottom: 15px;
+}
+.title-show-event {
+  width:80%;
+  display: flex;
+  justify-content: space-between;
 }
 .event-show .just-row {
   margin-bottom: 2%;
@@ -106,19 +111,54 @@
 // end Show
 // Index part
 .calcul {
-  font-size:110%;
-  font-weight: bold;
 
-  color:#0155c1;
+  color:#042a7c;
 }
 .negativ {
-  font-size:110%;
-  font-weight: bold;
+  font-size:100%;
   color:#ea0d09;
 }
 .positiv {
-  font-size:110%;
-  font-weight: bold;
-  color:#6ddd35;
+  font-size:100%;
+  color:#31aa31;
+}
+.save-button {
+  width:40px;
+  height:35px;
+  border-radius: 5px;
+  margin-top: -10px;
+  border: transparent solid 0.5px;
+  transition: 0.2s;
+  &:hover {
+    background-color: #ccedc2;
+    box-shadow: 5px 5px 2px grey;
+
+  }
+
+}
+.icon-button {
+  padding: 5px;
+  border-radius: 5px;
+  margin-top: -10px;
+  border: transparent solid 0.5px;
+  transition: 0.2s;
+  &:hover {
+    box-shadow: 5px 5px 2px grey;
+    background-color: #ccedc2;
+
+  }
+}
+.return-button {
+  height: 40px;
+  padding: 2px;
+  border-radius: 5px;
+  margin-top: 0px;
+  border: transparent solid 0.5px;
+  transition: 0.2s;
+  &:hover {
+    box-shadow: 5px 5px 2px grey;
+    background-color: #ccedc2;
+
+  }
 }
 // end Index

@@ -8,23 +8,43 @@ validates :name, presence: true
       end
     end
 
+    # the benefits for an event
     def benefits
       revenue_figure - total_charge_dj - charge_others - charge_communication
     end
 
+    # the benefits compare to the average benefits in percentage
     def benefits_rate
-   result = 100 * ((benefits / Event.average_benefits) - 1)
-   result.to_i
+     result = 100 * ((benefits / Event.average_benefits) - 1)
+     result.to_i
     end
 
-    def positiv
+    # the positivness of the benefits rate
+    def positiv_benefits_rate
        benefits_rate > 0
     end
 
-    def self.total_benefits
-      Event.sum(:revenue_figure) - Event.sum(:total_charge_dj) - Event.sum(:charge_others) - Event.sum(:charge_communication)
+    # total_charge
+    def self.total_charge
+      Event.sum(:total_charge_dj) + Event.sum(:charge_others) + Event.sum(:charge_communication)
     end
 
+    # the rate of return
+    def return_rate
+      (100 * benefits) / Event.total_charge
+    end
+
+    # the positivness of the return rate
+    def positiv_return_rate
+       return_rate > 0
+    end
+
+    # the total of the benefits of all the events
+    def self.total_benefits
+      Event.sum(:revenue_figure) - Event.total_charge
+    end
+
+    # the average benefits
     def self.average_benefits
       Event.total_benefits.to_f / Event.count
     end
