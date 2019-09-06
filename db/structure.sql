@@ -1,6 +1,5 @@
 CREATE TABLE IF NOT EXISTS "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY);
 CREATE TABLE IF NOT EXISTS "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL);
-CREATE TABLE IF NOT EXISTS "events" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "revenue_figure" integer, "total_charge_dj" integer, "charge_communication" integer, "charge_others" integer, "charge_others_description" text, "number_of_dj" integer, "line_up" text, "place" varchar, "name" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "benefits" varchar, "start" datetime);
 CREATE TABLE sqlite_sequence(name,seq);
 CREATE TABLE IF NOT EXISTS "contacts" ("id" integer NOT NULL PRIMARY KEY, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "name" text DEFAULT NULL, "message" text, "email" text);
 CREATE TABLE IF NOT EXISTS "artists" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "name" text, "number" varchar);
@@ -22,6 +21,7 @@ CREATE TABLE IF NOT EXISTS "djsets" ("id" integer NOT NULL PRIMARY KEY, "start" 
 CREATE INDEX "index_djsets_on_artist_id" ON "djsets" ("artist_id");
 CREATE TABLE IF NOT EXISTS "realreleases" ("id" integer NOT NULL PRIMARY KEY, "name" text DEFAULT NULL, "year" integer DEFAULT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "artist_id" integer DEFAULT NULL);
 CREATE INDEX "index_realreleases_on_artist_id" ON "realreleases" ("artist_id");
+CREATE TABLE IF NOT EXISTS "events" ("id" integer NOT NULL PRIMARY KEY, "revenue_figure" integer DEFAULT NULL, "total_charge_dj" integer DEFAULT NULL, "charge_communication" integer DEFAULT NULL, "charge_others" integer DEFAULT NULL, "charge_others_description" text DEFAULT NULL, "number_of_dj" integer DEFAULT NULL, "line_up" text DEFAULT NULL, "place" varchar DEFAULT NULL, "name" varchar DEFAULT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "start" datetime DEFAULT NULL);
 INSERT INTO "schema_migrations" (version) VALUES
 ('20190617115626'),
 ('20190617123659'),
@@ -59,6 +59,8 @@ INSERT INTO "schema_migrations" (version) VALUES
 ('20190828113606'),
 ('20190828113739'),
 ('20190904143232'),
-('20190904162729');
+('20190904162729'),
+('20190905191146'),
+('20190906101844');
 
 

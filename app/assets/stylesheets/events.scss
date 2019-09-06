@@ -21,8 +21,9 @@
   flex-direction: column;
 }
 .elementofcontent {
-  border: black solid 1px;
-  margin-right: 35px;
+  border-right: black solid 1px;
+  padding-right: 5%;
+  margin-right: 5%;
   min-width: 180px;
 }
 .content {
@@ -43,7 +44,13 @@
   margin-bottom:20px;
   font-size: 18px;
   height: 30px;
-  overflow: hidden;
+  display: flex;
+  justify-content: center;
+      white-space: nowrap;
+}
+.scroll-x {
+  overflow-x: scroll;
+  overflow-y: hidden;
 }
 .add-event {
   margin-top: 5vh;
@@ -61,10 +68,7 @@
 #submit-column p {
   margin-bottom: 20px;
 }
-#icone-in-table {
-  display: flex;
-  justify-content: center;
-}
+
 .delete-event-icon {
   width: 1vh;
   height: auto;
@@ -82,12 +86,12 @@
   margin-left: 10%;
   margin-top: 70px;
 }
-.just-row {
+.just-row2 {
   width: 80%;
   display: flex;
   justify-content: space-between;
   border-bottom: grey solid 0.5px;
-  
+
 }
 .event-show .just-row {
   margin-bottom: 2%;
@@ -100,3 +104,21 @@
   margin-right: 5%;
 }
 // end Show
+// Index part
+.calcul {
+  font-size:110%;
+  font-weight: bold;
+
+  color:#0155c1;
+}
+.negativ {
+  font-size:110%;
+  font-weight: bold;
+  color:#ea0d09;
+}
+.positiv {
+  font-size:110%;
+  font-weight: bold;
+  color:#6ddd35;
+}
+// end Index

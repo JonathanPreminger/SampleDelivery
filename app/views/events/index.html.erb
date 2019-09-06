@@ -8,42 +8,57 @@
         <th class="element-title"><p>Number of DJ</p><p>:</p></th>
         <th class="element-title"><p>Revenue figure</p><p>:</p></th>
         <th class="element-title"><p>Total charge DJ</p><p>:</p></th>
-        <th class="element-title"><p>Charge Flyers</p><p>:</p></th>
+        <th class="element-title"><p>Charge communication</p><p>:</p></th>
         <th class="element-title"><p>Charge Others</p><p>:</p></th>
         <th class="element-title"><p>Benefits</p><p>:</p></th>
+        <th class="element-title"><p>Benefits rate</p><p>:</p></th>
         <th class="element-title"><p>Edit</p><p>:</p></th>
         <th class="element-title"><p>Show</p><p>:</p></th>
         <th class="element-title"><p>Delete</p><p>:</p></th>
       </tr>
-
   </thead>
-
 
   <tbody class="content">
     <% @events.each do |event| %>
       <tr class="elementofcontent">
-        <td class="element"><%= event.name %></td>
+        <td class="element scroll-x"><%= event.name %></td>
         <td class="element"> <%= event.place %></td>
-        <td class="element"><%= event.line_up %></td>
+        <td class="element scroll-x"><%= event.line_up %></td>
         <td class="element"><%= event.number_of_dj %></td>
-        <td class="element"><%= event.revenue_figure %></td>
-        <td class="element"><%= event.total_charge_dj %></td>
-        <td class="element"><%= event.charge_communication %></td>
-        <td class="element"><%= event.charge_others %></td>
-        <td class="element"><%= @benefits%></td>
-        <td class="element"><%= link_to 'Edit', edit_event_path(event), class:"icone-in-table" %></td>
-        <td class="element"><%= link_to 'Show', event, class:"icone-in-table" %></td>
+        <td class="element"><%= event.revenue_figure %> $</td>
+        <td class="element"><%= event.total_charge_dj %> $</td>
+        <td class="element"><%= event.charge_communication %> $</td>
+        <td class="element"><%= event.charge_others %> $</td>
+        <td class="element calcul"><%= event.benefits %> $</td>
+        <td class="element">
+          <% if event.positiv %>
+          <p class = "positiv"><%= event.benefits_rate %> %</p>
+          <% else %>
+          <p class="negativ"><%= event.benefits_rate %>%</p>
+          <%end%>
+        </td>
+        <td class="element" id="icone-in-table"><%= link_to 'Edit', edit_event_path(event), class:"icone-in-table" %></td>
+        <td class="element" id="icone-in-table"><%= link_to 'Show', event, class:"icone-in-table" %></td>
         <td class="element" id="icone-in-table"><%= link_to image_tag('delete.png', size: "32x32"), event_path(event), method: :delete, data: { confirm: 'Are you sure?' }, class:"icone-in-table", remote: true %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
+<div class="just-row">
+
+<p>Benefice total : </p><p class="calcul"><%= Event.total_benefits %> $ </p>
+</div>
+
+<p><br></p>
+<div class="just-row">
+<p>Benfice moyen :</p><p class="calcul"><%= Event.average_benefits%> $ </p>
+
+</div>
+
 <div class="add-event">
   <p>Add an Event</p>
   <div id="submit-column">
     <%= form_tag import_events_path, multipart: true do%>
-
-
     <div><p><%= file_field_tag :file %></p></div>
     <div><p><%= image_submit_tag("save.png") %></p></div>
   </div>
