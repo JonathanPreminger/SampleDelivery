@@ -1,4 +1,5 @@
 class DjsetsController < ApplicationController
+    before_action :count_djset_without_response, only: [:index]
 
   def create
     @djset = Djset.create!(djset_params)
@@ -28,6 +29,16 @@ class DjsetsController < ApplicationController
   def index
     @djsets = Djset.all.order('created_at DESC')
   end
+
+  def count_djset_without_response
+    @djsets = Djset.all.order('created_at DESC')
+    puts "___________________________________________________________________________________"
+    @pending_dj_set = @djsets.select { |fuck| fuck.confirmdjset == nil }
+    puts @pending_dj_set.count
+    @djset_request_pending = @pending_dj_set.count
+    puts "_____________________________________________________________________________________"
+  end
+
 
 
   def destroy

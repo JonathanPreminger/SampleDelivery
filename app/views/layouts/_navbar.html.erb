@@ -14,21 +14,37 @@
       <div class="part-menu">
        </div>
       <div class="part-menu">
-      <p><%= link_to "EVENTS", events_path %></p>  </div>
+        <p><%= link_to "EVENTS", events_path %></p>
+      </div>
       <div class="part-menu">
-      <p><%= link_to "RELEASES", realreleases_path %></p> </div>
+        <p><%= link_to "RELEASES", realreleases_path %></p>
+      </div>
       <div class="part-menu">
-      <p><%= link_to "ARTIST", artists_path%></p> </div>
+        <p><%= link_to "ARTISTS", artists_path%></p>
+      </div>
       <div class="part-menu">
-      <p><%= link_to "ARTICLES", articles_path %></p> </div>
+        <p><%= link_to "ARTICLES", articles_path %></p>
+      </div>
+      <% if user_signed_in? %>
+        <% if current_user.admin? %>
+      <%= link_to djsets_path do %>
+      <div class="part-menu request">
+        <div class="number-of-request"><p> &nbsp; &nbsp;<%= @djset_request_pending %></p></div>
+        <p class="z-index10">DJ SETS </p>
+      </div>
+      <% end %>
+      <%end%>
+      <%end%>
       <div class="part-menu">
-      <p><%= link_to "CALENDAR", calendar_events_path %></p> </div>
+        <p><%= link_to "CALENDAR", calendar_events_path %></p>
+      </div>
       <% if user_signed_in? %>
         <div class="">
-      <p><%= link_to "SIGN OUT", destroy_user_session_path, method: :delete %></p> </div>
-      <% else %>
-        <div class="part-menu">
-      <p><%= link_to "SIGNIN", new_user_session_path  %></p> </div>
+          <p><%= link_to "SIGN OUT", destroy_user_session_path, method: :delete %></p> </div>
+        <% else %>
+          <div class="part-menu">
+            <p><%= link_to "SIGNIN", new_user_session_path  %></p>
+          </div>
       <% end %>
       <!-- Verify is the user is well connected and if he's an admin-->
       <% if user_signed_in? %>

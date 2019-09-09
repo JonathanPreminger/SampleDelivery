@@ -17,6 +17,7 @@
   flex-direction: row;
 }
 .menu p {
+  margin-top: 1%;
   margin-left: -10px;
 }
 .part-menu {
@@ -32,6 +33,36 @@
   border-radius: 50%;
   box-shadow: 6px 6px 1px #dce8d3;
   }
+}
+// Link to djsets index if admin
+.number-of-request {
+  position: relative;
+  z-index: 100;
+  width:15px;
+  height:15px;
+  background-color: red;
+  padding: 3px;
+  display: flex;
+  border-radius: 5px;
+  justify-content: center;
+  align-items: flex-end;
+  margin-left: 90px;
+  margin-bottom: -12px;
+  border:  black solid 0.2px;
 
 }
-.message-icon {}
+.number-of-request p {
+  margin-left: 2%;
+  line-height: 10px;
+  color: white;
+  font-size: 12px!important;
+  font-weight: bold;
+}
+.z-index10{
+  white-space: nowrap!important;
+  z-index: 10;
+}
+.request {
+  margin-top: 13px;
+}
+// end link djsets index if admin
