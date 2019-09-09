@@ -33,12 +33,20 @@ Track.destroy_all
   puts "one more track created #{i + 1}"
 end
 Djset.destroy_all
-45.times do
+45.times do |i|
   Djset.create(
     artist_id: rand(Artist.first.id..Artist.last.id),
     club: Faker::Music.album,
     start: Faker::Date.between(from: 1000.days.ago, to: Date.today)
   )
+  puts "one more djset created #{i + 1}"
+
 end
 Article.destroy_all
-Article.create(title:"Sample Delivery", content:"Sample Delivery est un collectif artistique et label de musique depuis 2016, elle compte dans ses membres fondateur Anton Hasendonck, Jessy Merciris, Medhy Kad, Theo Bivoul, Mael Lebriand et Jonathan Mete. ")
+Article.create(title:"Sample Delivery", content:"Sample Delivery est un collectif artistique et label de musique depuis 2016, il compte dans ses membres fondateurs Anton Haesendonck, Jessy Merciris, Medhy Kad, Theo Bivoul, Mael Lebriand et Jonathan Mete. ")
+puts "first article created"
+
+user = User.new(email: "jonathan.hemerling@gmail.com", password: "!NbvC123", password_confirmation: "!NbvC123", admin:true)
+user.skip_confirmation!
+user.save
+puts " first admin user created"

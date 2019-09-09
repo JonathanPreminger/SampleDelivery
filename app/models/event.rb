@@ -1,6 +1,7 @@
 class Event < ApplicationRecord
   require 'csv'
 validates :name, presence: true
+validates :revenue_figure, presence: true, allow_nil: true
 
     def self.import(file)
       CSV.foreach(file.path, headers: true) do |row|
@@ -10,7 +11,7 @@ validates :name, presence: true
 
     # the benefits for an event
     def benefits
-      revenue_figure - total_charge_dj - charge_others - charge_communication
+        revenue_figure.to_i - total_charge_dj.to_i - charge_others.to_i - charge_communication.to_i
     end
 
     # the benefits compare to the average benefits in percentage

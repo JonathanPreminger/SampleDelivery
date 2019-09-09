@@ -12,19 +12,25 @@
 .content, .table {
   display: flex;
   flex-direction: row;
+
 }
 .content {
-
+  border-top-right-radius:50px;
+  border-bottom-left-radius:50px;
+  background-color: #e8dfce;
 }
 .elementoftitle, .elementofcontent {
   display: flex;
   flex-direction: column;
 }
 .elementofcontent {
-  border-right: black solid 1px;
+  border-right: #b5aea1 solid 1px;
   padding-right: 5%;
   margin-right: 5%;
+  margin-top: 15px;
   min-width: 180px;
+  border-bottom-right-radius:50px;
+
 }
 .content {
   overflow-x: scroll;
@@ -34,11 +40,12 @@
   height:30px;;
   overflow-y: hidden;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
 }
 .elementoftitle p {
-  font-family: 'Steps-Mono';
     font-size: 14px;
+    color: white;
+
 }
 .element {
   margin-bottom:20px;
@@ -46,7 +53,8 @@
   height: 30px;
   display: flex;
   justify-content: center;
-      white-space: nowrap;
+  white-space: nowrap;
+  color: #7c786f;
 }
 .scroll-x {
   overflow-x: scroll;
@@ -112,7 +120,7 @@
 // Index part
 .calcul {
 
-  color:#042a7c;
+  color:#9cc1d8;
 }
 .negativ {
   font-size:100%;
@@ -123,14 +131,18 @@
   color:#31aa31;
 }
 .save-button {
-  width:40px;
-  height:35px;
+
   border-radius: 5px;
-  margin-top: -10px;
+  margin-top: -5px;
+  margin-left: -100px;
+  display: flex;
+  justify-content: center;
+  align-items: baseline;
+
   border: transparent solid 0.5px;
   transition: 0.2s;
   &:hover {
-    background-color: #ccedc2;
+    background-color: #f0f2d7;
     box-shadow: 5px 5px 2px grey;
 
   }
@@ -144,7 +156,7 @@
   transition: 0.2s;
   &:hover {
     box-shadow: 5px 5px 2px grey;
-    background-color: #ccedc2;
+    background-color: #f0f2d7;
 
   }
 }
@@ -160,5 +172,20 @@
     background-color: #ccedc2;
 
   }
+}
+.elementoftitle {
+  margin-top: 15px;
+}
+.titre {
+  background-color: #b5aea1;
+  border-top-left-radius: 50px;
+  border-bottom-left-radius: 50px;
+}
+
+.avenir {
+  color:#ccc4b5;
+}
+.pink {
+margin-left:20px;
 }
 // end Index

@@ -33,7 +33,6 @@ end
     it { is_expected.to have_db_column(:charge_others_description).of_type(:text) }
     it { is_expected.to have_db_column(:line_up).of_type(:text) }
     it { is_expected.to have_db_column(:place).of_type(:string) }
-    it { is_expected.to have_db_column(:benefits).of_type(:string) }
     it { is_expected.to have_db_column(:start).of_type(:datetime) }
     it { is_expected.to have_db_column(:name).of_type(:string) }
     it { is_expected.to have_db_column(:created_at).of_type(:datetime).with_options(null: false)}
@@ -41,7 +40,12 @@ end
   end
 
   describe 'Validations' do
-    # none for the moment
+    it { is_expected.to validate_presence_of(:name) }
+    it { is_expected.to validate_presence_of(:revenue_figure) }
+    it { is_expected.to validate_presence_of(:total_charge_dj) }
+    it { is_expected.to validate_presence_of(:charge_others) }
+    it { is_expected.to validate_presence_of(:charge_communication) }
+    it { should allow_value(nil).for(:revenue_figure) }
   end
 
   describe 'Associations' do

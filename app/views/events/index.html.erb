@@ -4,6 +4,7 @@
       <tr class="elementoftitle">
         <th class="element-title"><p>Name</p></th>
         <th class="element-title"><p>Place</p></th>
+        <th class="element-title"><p>start</p></th>
         <th class="element-title"><p>Line up</p></th>
         <th class="element-title"><p>Number of DJ</p></th>
         <th class="element-title"><p>Revenue figure</p></th>
@@ -24,13 +25,40 @@
       <tr class="elementofcontent">
         <td class="element scroll-x"><%= event.name %></td>
         <td class="element"> <%= event.place %></td>
+        <td class="element"> <%= event.start %></td>
         <td class="element scroll-x"><%= event.line_up %></td>
         <td class="element"><%= event.number_of_dj %></td>
+
+        <% if  event.revenue_figure.nil?  %>
+        <td class="element avenir">à venir </td>
+        <% else %>
         <td class="element"><%= event.revenue_figure %>$</td>
+        <%end%>
+
+        <% if  event.total_charge_dj.nil?  %>
+        <td class="element avenir">à venir </td>
+        <% else %>
         <td class="element"><%= event.total_charge_dj %>$</td>
+        <%end%>
+
+        <% if  event.charge_communication.nil?  %>
+        <td class="element avenir">à venir </td>
+        <% else %>
         <td class="element"><%= event.charge_communication %>$</td>
+        <%end%>
+
+        <% if  event.charge_others.nil?  %>
+        <td class="element avenir">à venir </td>
+        <% else %>
         <td class="element"><%= event.charge_others %>$</td>
+        <%end%>
+
+        <% if  event.charge_others.nil?  %>
+        <td class="element avenir">à venir </td>
+        <% else %>
         <td class="element calcul"><%= event.benefits %>$</td>
+        <%end%>
+
         <td class="element">
           <% if event.positiv_benefits_rate %>
           <p class = "positiv"><%= event.benefits_rate %>%</p>
@@ -38,6 +66,7 @@
           <p class="negativ"><%= event.benefits_rate %>%</p>
           <%end%>
         </td>
+
         <td class="element">
           <% if event.positiv_return_rate %>
           <p class = "positiv"><%= event.return_rate %>%</p>
@@ -45,6 +74,7 @@
           <p class="negativ"><%= event.return_rate %>%</p>
           <%end%>
         </td>
+
         <td class="element" id="icone-in-table"><%= link_to image_tag('edit.png', size: "32x32"), edit_event_path(event), class:"icone-in-table icon-button" %></td>
         <td class="element" id="icone-in-table"><%= link_to image_tag('eye.png', size: "32x32"), event, class:"icone-in-table icon-button" %></td>
         <td class="element" id="icone-in-table"><%= link_to image_tag('delete2.png', size: "32x32"), event_path(event), method: :delete, data: { confirm: 'Are you sure?' }, class:"icone-in-table icon-button", remote: true %></td>
@@ -52,22 +82,32 @@
     <% end %>
   </tbody>
 </table>
-<div class="just-row">
 
-<p>Benefice total : </p><p class="calcul"><%= Event.total_benefits %> $ </p>
-</div>
-
-<p><br></p>
-<div class="just-row">
-<p>Benefice moyen : </p><p class="calcul"><%= Event.average_benefits%> $ </p>
-
-</div>
-
-<div class="add-event">
-  <p>Add an Event</p>
-  <div id="submit-column">
-    <%= form_tag import_events_path, multipart: true do%>
-    <div class="just-row"><p><%= file_field_tag :file %></p> <p class="save-button"><%= image_submit_tag("save.png", width:"40px") %></p></div>
+<div class="just-column">
+  <div class="just-row">
+    <p>Benefice total : </p><p class="calcul"><%= Event.total_benefits %> $ </p>
   </div>
-  <% end %>
+
+  <p><br></p>
+
+  <div class="just-row">
+    <p>Benefice moyen : </p><p class="calcul"><%= Event.average_benefits.to_i%> $ </p>
+  </div>
+
+  <p><br></p>
+
+  <%= form_tag import_events_path, multipart: true do%>
+  <div class="just-row">
+    <p>Add an Event : </p>
+    <div id="submit-column">
+      <div class="just-row"><p><%= file_field_tag :file %></p></div>
+      <div class="just-row pink">
+      <p class="save-button"><%= image_submit_tag("add.png", width:"35px") %></p>
+      <p style="font-size:12px;">Ajouter le fichier CSV</p>
+      </div>
+    </div>
+  </div>
+
+
 </div>
+<% end %>
