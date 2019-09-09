@@ -6,24 +6,51 @@
  <div class="just-row2"><p>Club </p><p class="data"><%=@event.place%></p> </div>
  <div class="just-row2"><p>Line up </p><p class="data"><%= @event.line_up %></p></div>
  <div class="just-row2"><p>number of dj </p><p class="data"><%= @event.number_of_dj %></p></div>
- <div class="just-row2"><p>C.A. </p><p class="data"><%= @event.revenue_figure %>$</p></div>
- <div class="just-row2"><p>Charge DJ </p><p class="data"><%= @event.total_charge_dj %>$</p></div>
- <div class="just-row2"><p>Charge comunication </p><p class="data"><%= @event.charge_communication %></p></div>
- <div class="just-row2"><p>Charge Others </p><p class="data"><%= @event.charge_others %>$</p></div>
  <div class="just-row2"><p>Description </p><p class="data"><%= @event.charge_others_description %></p></div>
 
+ <% if @event.revenue_figure.nil? %>
+ <%else%>
+ <div class="just-row2"><p>C.A. </p><p class="data"><%= @event.revenue_figure %>$</p></div>
+ <%end%>
+
+ <% if @event.total_charge_dj.nil? %>
+ <%else%>
+ <div class="just-row2"><p>Charge DJ </p><p class="data"><%= @event.total_charge_dj %>$</p></div>
+ <%end%>
+
+ <% if @event.charge_communication.nil? %>
+ <%else%>
+ <div class="just-row2"><p>Charge comunication </p><p class="data"><%= @event.charge_communication %>$</p></div>
+ <%end%>
+
+ <% if @event.charge_others.nil? %>
+ <%else%>
+ <div class="just-row2"><p>Charge Others </p><p class="data"><%= @event.charge_others %>$</p></div>
+ <%end%>
+
+ <% if @event.benefits.nil? %>
+ <%else%>
 <div class="just-row2"><p>Benefits </p><p  class="calcul"> <%= @event.benefits %> $</p></div>
+<%end%>
+
+<% if @event.benefits.nil? %>
+<%else%>
 <div class="just-row2"><p>Benefits rate </p>
   <% if @event.positiv_benefits_rate %>
   <p class = "positiv"><%= @event.benefits_rate %>%</p>
   <% else %>
   <p class="negativ"><%= @event.benefits_rate %>%</p>
   <%end%></div>
+  <%end%>
+
+  <% if @event.return_rate.nil? %>
+  <%else%>
 <div class="just-row2"><p>Return rate </p>  <% if @event.positiv_return_rate %>
   <p class = "positiv"><%= @event.return_rate %>%</p>
   <% else %>
   <p class="negativ"><%= @event.return_rate %>%</p>
   <%end%></div>
+  <%end%>
 
 
 </div>

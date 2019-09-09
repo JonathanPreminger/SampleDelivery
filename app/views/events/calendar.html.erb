@@ -3,10 +3,23 @@
 <%= month_calendar events: @events do |date, events| %>
   <%= date %>
   <% events.each do |event| %>
-  <%= event.place%>
+  <%=link_to event_path(event.id) do %>
+  <p><%=  event.name.upcase %></p>
+  At
+  <p> <div class="">
+
+  <%= event.place.upcase%></div></p>
+  <%end%>
+
+
   <% end%>
 
 <% end %>
-
+<%if user_signed_in? %>
+<% if current_user.admin? %>
 <%= link_to "Add event", new_event_path %>
+<%else%>
+<%end%>
+<%else%>
+<%end%>
 </div>
