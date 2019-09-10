@@ -80,6 +80,6 @@ end
 
 
   def artist_params
-    params.require(:artist).permit(:name, :image, realreleases_attributes: [:id, :name, :image, :year, :_destroy], djsets_attributes: [:id, :start, :club, :confirmdjset, :_destroy])
+    params.require(:artist).permit(:name, :image, realreleases_attributes: [:id, :name, :image, :production_year, :_destroy], djsets_attributes: [:id, :start, :club, :confirmdjset, :_destroy])
   end
 end

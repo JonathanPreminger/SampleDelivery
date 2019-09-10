@@ -18,6 +18,7 @@ Realrelease.destroy_all
 45.times do |i|
   Realrelease.create(
     name: Faker::Music.album,
+    production_year: Faker::Number.between(from: 1990, to: 2020),
     artist_id: rand(Artist.first.id..Artist.last.id),
   )
   puts "one more release created #{i + 1}"
