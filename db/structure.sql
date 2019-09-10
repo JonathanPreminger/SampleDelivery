@@ -19,9 +19,9 @@ CREATE INDEX "index_tracks_on_realrelease_id" ON "tracks" ("realrelease_id");
 CREATE TABLE IF NOT EXISTS "articles" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "content" text, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL);
 CREATE TABLE IF NOT EXISTS "djsets" ("id" integer NOT NULL PRIMARY KEY, "start" datetime DEFAULT NULL, "artist_id" integer DEFAULT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "club" text DEFAULT NULL, "confirmdjset" boolean);
 CREATE INDEX "index_djsets_on_artist_id" ON "djsets" ("artist_id");
-CREATE TABLE IF NOT EXISTS "realreleases" ("id" integer NOT NULL PRIMARY KEY, "name" text DEFAULT NULL, "year" integer DEFAULT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "artist_id" integer DEFAULT NULL);
-CREATE INDEX "index_realreleases_on_artist_id" ON "realreleases" ("artist_id");
 CREATE TABLE IF NOT EXISTS "events" ("id" integer NOT NULL PRIMARY KEY, "revenue_figure" integer DEFAULT NULL, "total_charge_dj" integer DEFAULT NULL, "charge_communication" integer DEFAULT NULL, "charge_others" integer DEFAULT NULL, "charge_others_description" text DEFAULT NULL, "number_of_dj" integer DEFAULT NULL, "line_up" text DEFAULT NULL, "place" varchar DEFAULT NULL, "name" varchar DEFAULT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "start" datetime DEFAULT NULL);
+CREATE TABLE IF NOT EXISTS "realreleases" ("id" integer NOT NULL PRIMARY KEY, "name" text DEFAULT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "artist_id" integer DEFAULT NULL);
+CREATE INDEX "index_realreleases_on_artist_id" ON "realreleases" ("artist_id");
 INSERT INTO "schema_migrations" (version) VALUES
 ('20190617115626'),
 ('20190617123659'),
@@ -63,6 +63,7 @@ INSERT INTO "schema_migrations" (version) VALUES
 ('20190905191146'),
 ('20190906101844'),
 ('20190909115105'),
-('20190909115347');
+('20190909115347'),
+('20190910003545');
 
 
