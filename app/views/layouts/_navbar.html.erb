@@ -11,14 +11,15 @@
       <div class="part-menu logo-sd">
          <p><%= link_to image_tag('sampledelivery2.png'), articles_path, class:"logo-sd" %></p>
       </div>
-      <div class="part-menu">
-        <p><%= link_to "EVENTS", events_path, class:"menu-link" %></p>
-      </div>
+
       <div class="part-menu">
         <p><%= link_to "RELEASES", realreleases_path, class:"menu-link" %></p>
       </div>
       <div class="part-menu">
         <p><%= link_to "ARTISTS", artists_path, class:"menu-link"%></p>
+      </div>
+      <div class="part-menu">
+        <p><%= link_to "BOOKING", new_djset_path, class:"menu-link" %></p>
       </div>
       <!-- Display more link for Admin-->
       <% if user_signed_in? %>
@@ -29,12 +30,16 @@
         <p class="menu-link" class="z-index10">DJ SETS </p>
       </div>
       <% end %>
-      <%end%>
-      <%end%>
-      <!-- Display more link for Admin END-->
       <div class="part-menu">
         <p><%= link_to "CALENDAR", calendar_events_path, class:"menu-link" %></p>
       </div>
+      <div class="part-menu">
+        <p><%= link_to "EVENTS", events_path, class:"menu-link" %></p>
+      </div>
+      <%end%>
+      <%end%>
+      <!-- Display more link for Admin END-->
+
       <!-- Link for sign in sign out-->
       <% if user_signed_in? %>
         <div class="part-menu">

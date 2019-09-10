@@ -92,3 +92,67 @@
   animation-iteration-count: infinite;
   animation-direction: alternate;
 }
+// NEW
+
+.new-djset {
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
+}
+.new-djset h1 {
+  z-index: 1000;
+  color:white;
+  font-size: 32px;
+
+}
+.new-djset p {
+  z-index: 1000;
+
+  display: flex;
+  justify-content: center;
+  color:white;
+  font-size: 16px;
+}
+.text-field-club {
+
+
+  border: #554e60 solid 0.5px;
+  padding: 10px;
+  width:200px;
+  color:#7c786f;
+}
+.text-field-collection {
+  border: #554e60 solid 0.5px;
+  padding: 10px;
+  width:220px;
+  color:#7c786f;
+  background-color: white;
+
+}
+.text-field-book {
+  border: #554e60 solid 0.5px;
+  padding: 10px;
+  width:220px;
+  color:white;
+  background-color: black;
+  transition:0.2s;
+  &:hover {
+    background-color: #e8dfce;
+    color:black;
+
+  }
+}
+.all {
+  background-image:url('stars.jpg');
+background-size: cover; /* or contain depending on what you want */
+background-position: center center;
+background-repeat: no-repeat;
+text-align:center;
+margin:auto;
+padding:0;
+background-color:black;
+margin-top: -100px;
+width:100%;
+height:100%;}
+
+// END NEW

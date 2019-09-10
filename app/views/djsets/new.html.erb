@@ -1,0 +1,23 @@
+<div class="all">
+  <div class="back">
+
+</div>
+
+<div class="new-djset" style="margin-top:10%;margin-left:10%;width:80%;">
+<%= form_for @djset do |f| %>
+
+<h1 style="margin-top:100px;">Book an Artist for your club</h1><br />
+    <p>Artist :</p>
+    <p><%= f.collection_select :artist_id, Artist.all, :id, :name, {prompt: "The one you want"}, class:"text-field-collection" %></p>
+    <%= f.label :club %><br />
+    <p>Club :</p>
+    <p><%= f.text_field :club, placeholder: 'The place of the party', class:"text-field-club" %></p>
+    <%= f.label :start %><br />
+    <p>When :</p>
+    <p><%= f.date_field :start, class:"text-field-club" %></p><br />
+    <p><br></p>
+    <p><%= f.submit 'BOOK', class: 'text-field-book' %></p>
+<% end %>
+
+</div>
+</div>

@@ -4,7 +4,7 @@ class DjsetsController < ApplicationController
   def create
     @djset = Djset.create!(djset_params)
     if @djset.save
-      redirect_to
+      redirect_to artist_path(@djset.artist.id)
     else
       flash[:alert] = "All the field must be filled for the dj set"
     end
@@ -23,7 +23,6 @@ class DjsetsController < ApplicationController
 
   def new
     @djset = Djset.new(params[:djset])
-
   end
 
   def index
@@ -32,14 +31,9 @@ class DjsetsController < ApplicationController
 
   def count_djset_without_response
     @djsets = Djset.all.order('created_at DESC')
-    puts "___________________________________________________________________________________"
-    @pending_dj_set = @djsets.select { |fuck| fuck.confirmdjset == nil }
-    puts @pending_dj_set.count
+    @pending_dj_set = @djsets.select { |djset| djset.confirmdjset == nil }
     @djset_request_pending = @pending_dj_set.count
-    puts "_____________________________________________________________________________________"
   end
-
-
 
   def destroy
     @djset = Djset.find(params[:id])
@@ -48,6 +42,6 @@ class DjsetsController < ApplicationController
   private
 
   def djset_params
-    params.require(:djset).permit(:start, :club, :confirmdjset)
+    params.require(:djset).permit(:start, :club, :confirmdjset, :artist_id)
   end
 end

@@ -1,19 +1,30 @@
 <div class="block">
   <div class="just-column large">
+
+    <!-- First block -->
     <div class="small-row-artist space-between-simple">
       <p class="artist-name margin-bottom"><%=@artist.name.upcase%></p>
       <div class="just-column border-left block-width">
-         <br>
-         <%  if @artist.image.attached?  %>
-         <%= image_tag @artist.image,class:'background-artist-image', style:"width:50px;margin-top:-20px;" %>
-         <%end %>
-       </div>
-      <div class="just-row space-between-simple">
-        <%= link_to image_tag('edit.png'), edit_artist_path(@artist),  class:'background-grey box-shadow3', style:'height:35px'%>
-        <%= link_to image_tag('delete2.png'), artist_path(@artist), method: :delete, data: { confirm: 'Are you sure to delete this artist ? Every related stuff, releases, sets, and tracks associate will be erased as well...' },  class:'background-grey box-shadow3', style:'height:35px;' %>
+        <br>
+        <%  if @artist.image.attached?  %>
+          <%= image_tag @artist.image,class:'background-artist-image', style:"width:50px;margin-top:-20px;" %>
+        <%end %>
       </div>
+      <!-- If Admin -->
+      <% if user_signed_in? %>
+        <% if current_user.admin? %>
+          <div class="just-row space-between-simple">
+            <%= link_to image_tag('edit.png'), edit_artist_path(@artist),  class:'background-grey box-shadow3', style:'height:35px'%>
+            <%= link_to image_tag('delete2.png'), artist_path(@artist), method: :delete, data: { confirm: 'Are you sure to delete this artist ? Every related stuff, releases, sets, and tracks associate will be erased as well...' },  class:'background-grey box-shadow3', style:'height:35px;' %>
+          </div>
+        <%end%>
+      <%end%>
+      <!-- If Admin END -->
     </div>
+    <!-- First block END -->
 
+
+    <!-- Block2 -->
     <div class="block2 margin-bottom height-max bred">
       <div class="just-column ">
         <p class="little-title small-margin-bottom">Realeases</p>
@@ -60,11 +71,15 @@
             <%end%>
             <!-- If just date confirmed, then show it END-->
 
-            <p><br></p>
           </div>
           <% end %>
         </div>
       </div>
     </div>
+    <!-- Block 2 END -->
+
+  
+
+
   </div>
 </div>

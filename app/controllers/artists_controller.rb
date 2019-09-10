@@ -3,7 +3,6 @@ protect_from_forgery
 
   def create
   @artist = Artist.create(artist_params)
-
       respond_to do |format|
         if @artist.save
           format.js
@@ -19,6 +18,7 @@ protect_from_forgery
 
   def new
     @artist = Artist.new(params[:artist])
+    @djset = Djset.new(params[:djset])
   end
 
 
@@ -33,6 +33,7 @@ protect_from_forgery
 
   def show
      @artist = Artist.find(params[:id])
+     @artist_djset = @artist.djsets
   end
 
   def update
@@ -80,6 +81,6 @@ end
 
 
   def artist_params
-    params.require(:artist).permit(:name, :image, realreleases_attributes: [:id, :name, :image, :production_year, :_destroy], djsets_attributes: [:id, :start, :club, :confirmdjset, :_destroy])
+    params.require(:artist).permit(:name, :image, realreleases_attributes: [:id, :name, :image, :production_year, :_destroy], djsets_attributes: [:id, :start, :club, :confirmdjset, :_destroy, :_create])
   end
 end
