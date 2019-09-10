@@ -17,7 +17,6 @@ end
 Realrelease.destroy_all
 45.times do |i|
   Realrelease.create(
-    year: rand(1900..2019),
     name: Faker::Music.album,
     artist_id: rand(Artist.first.id..Artist.last.id),
   )
