@@ -1,5 +1,4 @@
 <div class="nav">
-
     <button class="toggle hamburger hamburger--arrow is-active" type="button">
       <label for="toggle">
         <span class="hamburger-box">
@@ -8,70 +7,63 @@
       </label>
     </button>
     <input type="checkbox" id="toggle"/>
-
     <div class="menu">
-
-      <div class="part-menu">
-       </div>
-      <div class="part-menu">
-        <p><%= link_to "EVENTS", events_path %></p>
+      <div class="part-menu logo-sd">
+         <p><%= link_to image_tag('sampledelivery2.png'), articles_path, class:"logo-sd" %></p>
       </div>
       <div class="part-menu">
-        <p><%= link_to "RELEASES", realreleases_path %></p>
+        <p><%= link_to "EVENTS", events_path, class:"menu-link" %></p>
       </div>
       <div class="part-menu">
-        <p><%= link_to "ARTISTS", artists_path%></p>
+        <p><%= link_to "RELEASES", realreleases_path, class:"menu-link" %></p>
       </div>
       <div class="part-menu">
-        <p><%= link_to "ARTICLES", articles_path %></p>
+        <p><%= link_to "ARTISTS", artists_path, class:"menu-link"%></p>
       </div>
+      <!-- Display more link for Admin-->
       <% if user_signed_in? %>
         <% if current_user.admin? %>
       <%= link_to djsets_path do %>
       <div class="part-menu request">
         <div class="number-of-request"><p> &nbsp; &nbsp;<%= @djset_request_pending %></p></div>
-        <p class="z-index10">DJ SETS </p>
+        <p class="menu-link" class="z-index10">DJ SETS </p>
       </div>
       <% end %>
       <%end%>
       <%end%>
+      <!-- Display more link for Admin END-->
       <div class="part-menu">
-        <p><%= link_to "CALENDAR", calendar_events_path %></p>
+        <p><%= link_to "CALENDAR", calendar_events_path, class:"menu-link" %></p>
       </div>
+      <!-- Link for sign in sign out-->
       <% if user_signed_in? %>
-        <div class="">
+        <div class="part-menu">
           <p><%= link_to "SIGN OUT", destroy_user_session_path, method: :delete %></p> </div>
         <% else %>
           <div class="part-menu">
             <p><%= link_to "SIGNIN", new_user_session_path  %></p>
           </div>
       <% end %>
-      <!-- Verify is the user is well connected and if he's an admin-->
+      <!-- Link for sign in sign out-->
+
+      <!-- Display logo admin if he's an admin-->
       <% if user_signed_in? %>
         <% if current_user.admin? %>
-          <p style="color:pink; font-size:16px;margin-top:25px;">ADMIN</p>
+          <p style="color:red; font-size:16px;margin-top:15px;">ADMIN</p>
         <%else %>
           <p>User normal</p>
         <%end%>
         <%else%>
           <p></p>
       <%end%>
-      <!-- End verifying part-->
-
-        <div class="part-menu">
-      <p style="margin-top: 15px;" class="message"><%= link_to image_tag('message.png'), new_contact_path %></p> </div>
+      <!-- Display logo admin if he's an admin END-->
+      <div class="part-menu message">
+        <p><%= link_to image_tag('message.png'), new_contact_path, class:"message-icon" %></p>
+      </div>
     </div>
 
-    <div class="sending">
-    </div>
-
-    <div  class="email">
-    </div>
-
-
-
+    <!-- Mailing success-->
     <% if flash[:success] %>
-
     <div id="hideMe">
       <div class= "email ">
         <div class="success">
@@ -81,7 +73,6 @@
         </div>
       </div>
     </div>
-
     <% end %>
-
+    <!-- Mailing success end-->
 </div>

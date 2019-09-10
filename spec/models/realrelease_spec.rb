@@ -19,7 +19,6 @@ end
   describe 'Database' do
     it { is_expected.to have_db_column(:id).of_type(:integer) }
     it { is_expected.to have_db_column(:name).of_type(:text) }
-    it { is_expected.to have_db_column(:year).of_type(:integer) }
     it { is_expected.to have_db_column(:artist_id).of_type(:integer) }
     it { is_expected.to have_db_column(:created_at).of_type(:datetime).with_options(null: false)}
     it { is_expected.to have_db_column(:updated_at).of_type(:datetime).with_options(null: false)}

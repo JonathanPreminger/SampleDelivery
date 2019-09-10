@@ -15,6 +15,9 @@
   overflow: hidden;
   display: flex;
   flex-direction: row;
+  height:50px;
+  overflow: visible;
+  background-color: #e8dfce;
 }
 .menu p {
   margin-top: 1%;
@@ -22,16 +25,20 @@
 }
 .part-menu {
   min-width:75px;
+  margin-top: -10px;
+}
+.menu-link {
+  color:#7c786f!important;
+
 }
 .message {
-  width:50px;
-  height:50px;
-  border-radius: 50%;
+  margin-top: 5px;
+  margin-left: -10px;
+  max-height: 50px;
+  max-width: 30px!important;
   transition:0.3s;
   &:hover {
-  background-color:#efefef;
-  border-radius: 50%;
-  box-shadow: 6px 6px 1px #dce8d3;
+    transform: scale(0.9);
   }
 }
 // Link to djsets index if admin
@@ -63,6 +70,15 @@
   z-index: 10;
 }
 .request {
-  margin-top: 13px;
+  margin-top: 2px;
 }
 // end link djsets index if admin
+.logo-sd {
+  top:40px;
+  left:40px;
+  transition: 0.3s;
+  overflow: visible;
+  &:hover {
+    transform: scale(0.9);
+  }
+}
