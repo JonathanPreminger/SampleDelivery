@@ -2,18 +2,12 @@ class ArtistsController < ApplicationController
 protect_from_forgery
 
   def create
+     '___________________________________________________before create'
+
   @artist = Artist.create(artist_params)
-      respond_to do |format|
-        if @artist.save
-          format.js
-          format.html { redirect_to @artist, notice: 'ARTIST was successfully created.' }
-          format.json { render :show, status: :created, location: @artist }
-        else
-          format.html { render :new }
-          format.json { render json: @artist.errors, status: :unprocessable_entity }
-          format.js
-        end
-      end
+      respond_to :js
+      '___________________________________________________ after create'
+
     end
 
   def new
@@ -24,6 +18,7 @@ protect_from_forgery
 
 
   def index
+    puts '_____________________________________________rechargement de la pagexxxxxxxxxxxxxxxxxxx'
     @artists = Artist.all
   end
 

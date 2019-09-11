@@ -1,11 +1,17 @@
   # encoding: utf-8
  class EventsController < ApplicationController
+ skip_before_action :verify_authenticity_token
+
    def index
+
      @events = Event.all
    end
 
    def new
+     puts '______________________________________before new'
+
      @event = Event.new(params[:artist])
+     puts '______________________________________after new'
    end
    def create
      @event = Event.create(event_params)
@@ -16,9 +22,10 @@
    def calendar
      @events = Event.all
    end
+
    def import
-    @event = Event.import(params[:file])
-    redirect_to events_path
+     @event = Event.import(params[:file])
+     redirect_to events_path
    end
 
    def edit

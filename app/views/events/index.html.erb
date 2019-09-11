@@ -21,65 +21,8 @@
   </thead>
 
   <tbody class="content">
-    <% @events.each do |event| %>
-      <tr class="elementofcontent">
-        <td class="element scroll-x"><%= event.name %></td>
-        <td class="element"> <%= event.place %></td>
-        <td class="element"> <%= event.start %></td>
-        <td class="element scroll-x"><%= event.line_up %></td>
-        <td class="element"><%= event.number_of_dj %></td>
+    <%= render partial: 'event', collection: @events %>
 
-        <% if  event.revenue_figure.nil?  %>
-        <td class="element avenir">à venir </td>
-        <% else %>
-        <td class="element"><%= event.revenue_figure %>$</td>
-        <%end%>
-
-        <% if  event.total_charge_dj.nil?  %>
-        <td class="element avenir">à venir </td>
-        <% else %>
-        <td class="element"><%= event.total_charge_dj %>$</td>
-        <%end%>
-
-        <% if  event.charge_communication.nil?  %>
-        <td class="element avenir">à venir </td>
-        <% else %>
-        <td class="element"><%= event.charge_communication %>$</td>
-        <%end%>
-
-        <% if  event.charge_others.nil?  %>
-        <td class="element avenir">à venir </td>
-        <% else %>
-        <td class="element"><%= event.charge_others %>$</td>
-        <%end%>
-
-        <% if  event.charge_others.nil?  %>
-        <td class="element avenir">à venir </td>
-        <% else %>
-        <td class="element calcul"><%= event.benefits %>$</td>
-        <%end%>
-
-        <td class="element">
-          <% if event.positiv_benefits_rate %>
-          <p class = "positiv"><%= event.benefits_rate %>%</p>
-          <% else %>
-          <p class="negativ"><%= event.benefits_rate %>%</p>
-          <%end%>
-        </td>
-
-        <td class="element">
-          <% if event.positiv_return_rate %>
-          <p class = "positiv"><%= event.return_rate %>%</p>
-          <% else %>
-          <p class="negativ"><%= event.return_rate %>%</p>
-          <%end%>
-        </td>
-
-        <td class="element" id="icone-in-table"><%= link_to image_tag('edit.png', size: "32x32"), edit_event_path(event), class:"icone-in-table icon-button" %></td>
-        <td class="element" id="icone-in-table"><%= link_to image_tag('eye.png', size: "32x32"), event, class:"icone-in-table icon-button" %></td>
-        <td class="element" id="icone-in-table"><%= link_to image_tag('delete2.png', size: "32x32"), event_path(event), method: :delete, data: { confirm: 'Are you sure?' }, class:"icone-in-table icon-button", remote: true %></td>
-      </tr>
-    <% end %>
   </tbody>
 </table>
 
@@ -95,19 +38,15 @@
   </div>
 
   <p><br></p>
+<div class="end-block">
 
-  <%= form_tag import_events_path, multipart: true do%>
-  <div class="just-row">
-    <p>Add an Event : </p>
-    <div id="submit-column">
-      <div class="just-row"><p><%= file_field_tag :file %></p></div>
-      <div class="just-row pink">
-      <p class="save-button"><%= image_submit_tag("add.png", width:"35px") %></p>
-      <p style="font-size:12px;">Ajouter le fichier CSV</p>
-      </div>
+  <div class="new-link-event">
+    <div class="hide-link">
+      <%= link_to 'ADD NEW EVENT', new_event_path, id:'ajax-add-new-event', remote: true%>
     </div>
   </div>
+</div>
+
 
 
 </div>
-<% end %>

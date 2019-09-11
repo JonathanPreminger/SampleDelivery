@@ -1,8 +1,8 @@
 <div class="form-import-csv-events">
 
-  <%= form_tag import_events_path, multipart: true, remote: true do%>
+  <%= form_tag import_events_path, multipart: true, remote:true do%>
   <div class="just-row">
-    <p>Add an Event : </p>
+    <p>Choose your event : </p>
     <div id="submit-column">
       <div class="just-row"><p><%= file_field_tag :file %></p></div>
       <div class="just-row pink">
@@ -11,6 +11,5 @@
       </div>
     </div>
   </div>
-  <% end %>
-
+  <%end%>
 </div>

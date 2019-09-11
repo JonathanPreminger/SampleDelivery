@@ -188,6 +188,27 @@
 .pink {
 margin-left:20px;
 }
+.hide-link {
+
+}
+#ajax-add-new-event {
+  color:black;
+  border: black solid 1px;
+  margin-bottom: 200px;
+  width:200px;
+  background-color: white;
+  padding: 15px;
+  display: flex;
+  justify-content: center;
+  transition:0.3s;
+  &:hover {
+    color:white;
+    background-color: black;
+  }
+}
+.end-block {
+  height:200px;
+}
 // end Index
 // Calendar
 .calendar p {

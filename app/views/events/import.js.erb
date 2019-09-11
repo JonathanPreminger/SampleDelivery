@@ -1,1 +1,2 @@
-$('table#events tbody').append("<%= j render @event %>");
+$('table#table tbody').append("<%= j render @event %>", dataType: 'js');
+$('.ajax-add-new-event').fadeIn(900);

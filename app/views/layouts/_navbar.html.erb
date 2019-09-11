@@ -21,7 +21,7 @@
       <div class="part-menu">
         <p><%= link_to "BOOKING", new_djset_path, class:"menu-link" %></p>
       </div>
-      <!-- Display more link for Admin-->
+      <!-- Display more link for Admin : Dj sets index with notifications, Calendar, Events(comptability)-->
       <% if user_signed_in? %>
         <% if current_user.admin? %>
       <%= link_to djsets_path do %>
