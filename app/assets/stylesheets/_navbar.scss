@@ -3,6 +3,7 @@
   display: flex;
   flex-direction: row;
   position: fixed;
+
 }
 .menu {
   position: fixed;
@@ -10,14 +11,13 @@
   max-width: 100%;
   font-family: 'CothamSans';
   display: flex;
-  background-color: white;
   letter-spacing: 6px;
-  overflow: hidden;
   display: flex;
   flex-direction: row;
   height:50px;
   overflow: visible;
   background-color: #e8dfce;
+  box-shadow: 0px 4px 15px white;
 }
 .menu p {
   margin-top: 1%;
@@ -27,9 +27,12 @@
   min-width:75px;
   margin-top: -10px;
 }
+
 .menu-link {
   color:#7c786f!important;
-
+  &:hover {
+    text-decoration: underline;
+  }
 }
 .message {
   margin-top: 5px;
@@ -45,32 +48,37 @@
 .number-of-request {
   position: relative;
   z-index: 100;
-  width:15px;
-  height:15px;
+  min-width:8px;
+  max-width: 13px;
+  height: 12px;
   background-color: red;
   padding: 3px;
   display: flex;
   border-radius: 5px;
   justify-content: center;
   align-items: flex-end;
-  margin-left: 90px;
-  margin-bottom: -12px;
+  margin-left: 8px;
+  margin-top: 5px;
   border:  black solid 0.2px;
-
+}
+.bell {
+  margin-top: -10px;
 }
 .number-of-request p {
+
   margin-left: 2%;
   line-height: 10px;
   color: white;
-  font-size: 12px!important;
+  font-size: 9px!important;
   font-weight: bold;
 }
-.z-index10{
+.z-index10-red{
   white-space: nowrap!important;
+
   z-index: 10;
 }
 .request {
-  margin-top: 2px;
+  margin-top: -2px;
 }
 // end link djsets index if admin
 .logo-sd {

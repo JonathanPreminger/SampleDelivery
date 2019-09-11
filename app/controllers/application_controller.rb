@@ -5,11 +5,8 @@ class ApplicationController < ActionController::Base
 
     def count_djset_without_response
       @djsets = Djset.all.order('created_at DESC')
-      puts "___________________________________________________________________________________"
-      @pending_dj_set = @djsets.select { |fuck| fuck.confirmdjset == nil }
-      puts @pending_dj_set.count
+      @pending_dj_set = @djsets.select { |i| i.confirmdjset == nil }
       @djset_request_pending = @pending_dj_set.count
-      puts "_____________________________________________________________________________________"
     end
 
   def configure_devise_parameters

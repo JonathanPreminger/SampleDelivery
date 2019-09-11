@@ -114,12 +114,15 @@
   font-size: 16px;
 }
 .text-field-club {
-
-
   border: #554e60 solid 0.5px;
   padding: 10px;
   width:200px;
   color:#7c786f;
+  transition:0.2s;
+
+  &:hover {
+     box-shadow:         inset 0 0 4px #000000;
+   }
 }
 .text-field-collection {
   border: #554e60 solid 0.5px;
@@ -127,6 +130,11 @@
   width:220px;
   color:#7c786f;
   background-color: white;
+  transition:0.2s;
+
+  &:hover {
+     box-shadow:         inset 0 0 4px #000000;
+   }
 
 }
 .text-field-book {
@@ -135,9 +143,11 @@
   width:220px;
   color:white;
   background-color: black;
-  transition:0.2s;
+  transition:0.3s;
   &:hover {
-    background-color: #e8dfce;
+    background-color: white;
+    box-shadow:         inset 0 0 3px #000000;
+    cursor: pointer;
     color:black;
 
   }
