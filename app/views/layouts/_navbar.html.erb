@@ -11,7 +11,6 @@
       <div class="part-menu logo-sd">
          <p><%= link_to image_tag('sampledelivery2.png'), articles_path, class:"logo-sd" %></p>
       </div>
-
       <div class="part-menu">
         <p><%= link_to "RELEASES", realreleases_path, class:"menu-link" %></p>
       </div>
@@ -26,8 +25,11 @@
         <% if current_user.admin? %>
       <%= link_to djsets_path do %>
       <div class="part-menu request">
+        <% if Djset.request_equal_zero %>
+        <%else%>
         <div class="number-of-request"><p> &nbsp; &nbsp;<%= @djset_request_pending %></p></div>
-        <p class="menu-link" class="z-index10">DJ SETS </p>
+        <%end%>
+        <p class="menu-link" class="z-index10">DJ SETS</p>
       </div>
       <% end %>
       <div class="part-menu">

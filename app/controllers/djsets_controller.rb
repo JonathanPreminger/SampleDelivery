@@ -29,11 +29,6 @@ class DjsetsController < ApplicationController
     @djsets = Djset.all.order('created_at DESC')
   end
 
-  def count_djset_without_response
-    @djsets = Djset.all.order('created_at DESC')
-    @pending_dj_set = @djsets.select { |djset| djset.confirmdjset == nil }
-    @djset_request_pending = @pending_dj_set.count
-  end
 
   def destroy
     @djset = Djset.find(params[:id])
