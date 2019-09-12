@@ -52,10 +52,10 @@
         <% if current_user.admin? %>
           <p style="color:red; font-size:16px;margin-top:15px;">ADMIN</p>
         <%else %>
-          <p>User normal</p>
+          <p  style='font-size:12px;color:green;' >USER : <%= current_user.remote_image_url%></p>
         <%end%>
         <%else%>
-          <p></p>
+          <p>not connected</p>
       <%end%>
       <!-- Display logo admin if he's an admin END-->
 
@@ -78,13 +78,19 @@
         <div class="part-menu message">
           <p><%= link_to image_tag('message.png'), new_contact_path, class:"message-icon" %></p>
         </div>
+        <div class="part-menu just-row fb-link">
+          <p style='font-size:12px;' class='signup-with'> Sign up with </p><p class='facebook-auth' > <%= link_to image_tag('facebook.png'), user_facebook_omniauth_authorize_path%></p>
+        </div>
         <!-- contact link -->
       <% end %>
 
 
 
 
-
+      <fb:login-button
+        scope="public_profile,email"
+        onlogin="checkLoginState();">
+      </fb:login-button>
 
 
     </div>

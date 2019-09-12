@@ -90,3 +90,17 @@
     transform: scale(0.9);
   }
 }
+// facebook if not signed in
+.signup-with {
+  position: relative;
+  
+  top:-4px;
+}
+.facebook-auth {
+  position: relative;
+  top:-12px;
+}
+.fb-link {
+  margin-top:15px;
+
+}

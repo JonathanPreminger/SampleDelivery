@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
   get 'dj_set_validates/valid'
   get 'dj_sets/create'
-  devise_for :users
+  devise_for :users, controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
+  
   resources :events do
     collection do
       post :import
