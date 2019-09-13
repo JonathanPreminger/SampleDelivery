@@ -354,13 +354,9 @@ button {}
   }
   .menu a {
     display: block;
-
     margin: 10px;
     color:rgba(200, 200, 200, 1);
-    height:100%;
     padding:0;
-    color:white;
-    text-shadow: black 2px 2px 2px  ;
 
   }
   #toggle:checked + .menu  {
@@ -380,7 +376,7 @@ button {}
   }
 }
 
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 501px) {
   .img-banner {
     display: block;
     width: 100%;
@@ -410,7 +406,7 @@ button {}
   }
   .menu p{
     border: none;
-    font-size: 24px;
+    font-size: 12px;
   }
 
 }

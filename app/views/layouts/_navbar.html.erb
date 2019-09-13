@@ -8,70 +8,72 @@
     </button>
     <input type="checkbox" id="toggle"/>
 
-
     <div class="menu">
       <div class="left-side">
+        <div class="part-menu logo-sd">
+           <p><%= link_to image_tag('sampledelivery2.png'), articles_path, class:"logo-sd" %></p>
+        </div>
 
+        <div class="part-menu">
+          <p><%= link_to "RELEASES", realreleases_path, class:"menu-link" %></p>
+        </div>
 
-      <div class="part-menu logo-sd">
-         <p><%= link_to image_tag('sampledelivery2.png'), articles_path, class:"logo-sd" %></p>
-      </div>
-      <div class="part-menu">
-        <p><%= link_to "RELEASES", realreleases_path, class:"menu-link" %></p>
-      </div>
-      <div class="part-menu">
-        <p><%= link_to "ARTISTS", artists_path, class:"menu-link"%></p>
-      </div>
-      <div class="part-menu">
-        <p><%= link_to "BOOKING", new_djset_path, class:"menu-link" %></p>
-      </div>
-      <div class="part-menu">
-        <p><%= link_to 'CONTACT', new_contact_path, class:"menu-link" %></p>
-      </div>
-      <!-- Display more link for Admin : Calendar, Events index-->
-      <% if user_signed_in? %>
-        <% if current_user.admin? %>
-      <div class="part-menu">
-        <p><%= link_to "CALENDAR", calendar_events_path, class:"menu-link" %></p>
-      </div>
-
-      <div class="part-menu">
-        <p><%= link_to "EVENTS", events_path, class:"menu-link" %></p>
-      </div>
+        <div class="part-menu">
+          <p><%= link_to "ARTISTS", artists_path, class:"menu-link"%></p>
+        </div>
+        <div class="part-menu">
+          <p><%= link_to "BOOKING", new_djset_path, class:"menu-link" %></p>
+        </div>
+        <div class="part-menu">
+          <p><%= link_to 'CONTACT', new_contact_path, class:"menu-link" %></p>
+        </div>
+        <!-- Display more link for Admin : Calendar, Events index-->
+        <% if user_signed_in? %>
+          <% if current_user.admin? %>
+        <div class="part-menu">
+          <p><%= link_to "CALENDAR", calendar_events_path, class:"menu-link" %></p>
+        </div>
+        <div class="part-menu">
+          <p><%= link_to "EVENTS", events_path, class:"menu-link" %></p>
+        </div>
+          <%end%>
         <%end%>
-      <%end%>
-      <!-- Display more link for Admin END-->
-
-            <!-- Display more link for Admin : Dj sets index with notifications OR contact link if not signed in-->
-            <% if user_signed_in? %>
-              <% if current_user.admin? %>
+        <!-- Display more link for Admin END-->
+        <!-- Display more link for Admin : Dj sets index with notifications-->
+        <% if user_signed_in? %>
+          <% if current_user.admin? %>
             <%= link_to djsets_path do %>
-            <div class="part-menu request logo-sd">
-              <% if Djset.request_equal_zero %>
-              <%else%>
-              <div class="number-of-request"><p> &nbsp; &nbsp;<%= @djset_request_pending %></p></div>
-              <%end%>
-              <div class='bell'><p class="menu-link" class="z-index10-red"><%= image_tag 'bell.png', style:'width:35px;'%></p></div>
-            </div>
+              <div class="part-menu request logo-sd">
+                <% if Djset.request_equal_zero %>
+                <%else%>
+                <div class="number-of-request"><p> &nbsp; &nbsp;<%= @djset_request_pending %></p></div>
+                <%end%>
+                <div class='bell'><p class="menu-link" class="z-index10-red"><%= image_tag 'bell.png', style:'width:35px;'%></p></div>
+              </div>
             <% end %>
-            <% end %>
-            <%else%>
-            <!-- END Display more link for Admin : Dj sets index with notifications OR contact link if not signed in-->
+          <% end %>
+        <%else%>
+        <%end%>
 
-    </div>
-    <div class="right-side">
 
-            <!-- Display logo admin if he's an admin-->
-            <% if user_signed_in? %>
-              <% if current_user.admin? %>
-                <p style="color:red; font-size:16px;margin-top:15px;">ADMIN</p>
-              <%else %>
-                <p  style='font-size:12px;color:green;' >USER : <%= current_user.name%></p>
-              <%end%>
-              <%else%>
-                <p></p>
-            <%end%>
-            <!-- Display logo admin if he's an admin END-->
+        <!-- END Display more link for Admin : Dj sets index with notifications -->
+      </div>
+
+    <div class="right-side just-row">
+      <!-- Display logo admin if he's an admin-->
+      <% if user_signed_in? %>
+          <% if current_user.admin? %>
+          <div class="part-menu">
+          <p   style="color:red; font-size:16px;margin-top:23px">ADMIN &nbsp;</p>
+        </div>
+          <%else %>
+          <div class="part-menu">
+          <p  style='font-size:12px;margin-top:23px' > <%= current_user.name%></p>
+        </div>
+          <%end%>
+
+      <%end%>
+      <!-- Display logo admin if he's an admin END-->
 
 
       <!-- Link for sign in sign out-->
@@ -82,19 +84,15 @@
           <div class="part-menu">
             <p><%= link_to "SIGNIN/SIGNUP", new_user_session_path, class:'menu-link'  %></p>
           </div>
+          <!-- facebook link -->
+          <div class="part-menu just-row fb-link">
+            <p style='font-size:12px;' class='signup-with'>  </p><p class='facebook-auth' > <%= link_to image_tag('facebook.png'), user_facebook_omniauth_authorize_path%></p>
+          </div>
+          <!-- facebook link -->
       <% end %>
       <!-- Link for sign in sign out-->
 
 
-
-
-        <!-- facebook link -->
-
-        <div class="part-menu just-row fb-link right-stick">
-          <p style='font-size:12px;' class='signup-with'>  </p><p class='facebook-auth' > <%= link_to image_tag('facebook.png'), user_facebook_omniauth_authorize_path%></p>
-        </div>
-        <!-- facebook link -->
-      <% end %>
 
 
             <fb:login-button
@@ -106,7 +104,8 @@
 
 
 
-    </div>
+  </div>
+
 
     <!-- Mailing success-->
     <% if flash[:success] %>
