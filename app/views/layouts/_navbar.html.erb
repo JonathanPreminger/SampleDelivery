@@ -10,6 +10,9 @@
 
 
     <div class="menu">
+      <div class="left-side">
+
+
       <div class="part-menu logo-sd">
          <p><%= link_to image_tag('sampledelivery2.png'), articles_path, class:"logo-sd" %></p>
       </div>
@@ -21,6 +24,9 @@
       </div>
       <div class="part-menu">
         <p><%= link_to "BOOKING", new_djset_path, class:"menu-link" %></p>
+      </div>
+      <div class="part-menu">
+        <p><%= link_to 'CONTACT', new_contact_path, class:"menu-link" %></p>
       </div>
       <!-- Display more link for Admin : Calendar, Events index-->
       <% if user_signed_in? %>
@@ -36,61 +42,68 @@
       <%end%>
       <!-- Display more link for Admin END-->
 
+            <!-- Display more link for Admin : Dj sets index with notifications OR contact link if not signed in-->
+            <% if user_signed_in? %>
+              <% if current_user.admin? %>
+            <%= link_to djsets_path do %>
+            <div class="part-menu request logo-sd">
+              <% if Djset.request_equal_zero %>
+              <%else%>
+              <div class="number-of-request"><p> &nbsp; &nbsp;<%= @djset_request_pending %></p></div>
+              <%end%>
+              <div class='bell'><p class="menu-link" class="z-index10-red"><%= image_tag 'bell.png', style:'width:35px;'%></p></div>
+            </div>
+            <% end %>
+            <% end %>
+            <%else%>
+            <!-- END Display more link for Admin : Dj sets index with notifications OR contact link if not signed in-->
+
+    </div>
+    <div class="right-side">
+
+            <!-- Display logo admin if he's an admin-->
+            <% if user_signed_in? %>
+              <% if current_user.admin? %>
+                <p style="color:red; font-size:16px;margin-top:15px;">ADMIN</p>
+              <%else %>
+                <p  style='font-size:12px;color:green;' >USER : <%= current_user.name%></p>
+              <%end%>
+              <%else%>
+                <p></p>
+            <%end%>
+            <!-- Display logo admin if he's an admin END-->
+
+
       <!-- Link for sign in sign out-->
       <% if user_signed_in? %>
         <div class="part-menu">
           <p><%= link_to "SIGN OUT", destroy_user_session_path, method: :delete, class:'menu-link' %></p> </div>
         <% else %>
           <div class="part-menu">
-            <p><%= link_to "SIGNIN", new_user_session_path, class:'menu-link'  %></p>
+            <p><%= link_to "SIGNIN/SIGNUP", new_user_session_path, class:'menu-link'  %></p>
           </div>
       <% end %>
       <!-- Link for sign in sign out-->
 
-      <!-- Display logo admin if he's an admin-->
-      <% if user_signed_in? %>
-        <% if current_user.admin? %>
-          <p style="color:red; font-size:16px;margin-top:15px;">ADMIN</p>
-        <%else %>
-          <p  style='font-size:12px;color:green;' >USER : <%= current_user.remote_image_url%></p>
-        <%end%>
-        <%else%>
-          <p>not connected</p>
-      <%end%>
-      <!-- Display logo admin if he's an admin END-->
 
 
-      <!-- Display more link for Admin : Dj sets index with notifications OR contact link if not signed in-->
-      <% if user_signed_in? %>
-        <% if current_user.admin? %>
-      <%= link_to djsets_path do %>
-      <div class="part-menu request logo-sd">
-        <% if Djset.request_equal_zero %>
-        <%else%>
-        <div class="number-of-request"><p> &nbsp; &nbsp;<%= @djset_request_pending %></p></div>
-        <%end%>
-        <div class='bell'><p class="menu-link" class="z-index10-red"><%= image_tag 'bell.png', style:'width:35px;'%></p></div>
-      </div>
-      <% end %>
-      <% end %>
-      <%else%>
-        <!-- contact link -->
-        <div class="part-menu message">
-          <p><%= link_to image_tag('message.png'), new_contact_path, class:"message-icon" %></p>
+
+        <!-- facebook link -->
+
+        <div class="part-menu just-row fb-link right-stick">
+          <p style='font-size:12px;' class='signup-with'>  </p><p class='facebook-auth' > <%= link_to image_tag('facebook.png'), user_facebook_omniauth_authorize_path%></p>
         </div>
-        <div class="part-menu just-row fb-link">
-          <p style='font-size:12px;' class='signup-with'> Sign up with </p><p class='facebook-auth' > <%= link_to image_tag('facebook.png'), user_facebook_omniauth_authorize_path%></p>
-        </div>
-        <!-- contact link -->
+        <!-- facebook link -->
       <% end %>
 
 
+            <fb:login-button
+              scope="public_profile,email"
+              onlogin="checkLoginState();">
+            </fb:login-button>
+    </div>
 
 
-      <fb:login-button
-        scope="public_profile,email"
-        onlogin="checkLoginState();">
-      </fb:login-button>
 
 
     </div>

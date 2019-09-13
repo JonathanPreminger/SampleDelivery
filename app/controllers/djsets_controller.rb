@@ -23,12 +23,6 @@ class DjsetsController < ApplicationController
 
   def new
     @djset = Djset.new(params[:djset])
-    puts '____________________________________________facebook'
-    puts current_user.inspect
-    puts '____________________________________________remote image'
-    puts current_user.remote_image_url.inspect
-
-    puts '____________________________________________facebook'
   end
 
   def index
