@@ -26,7 +26,7 @@ end
 Track.destroy_all
 45.times do |i|
   Track.create(
-    name: Faker::String.random(length: 4),
+    name: Faker::Music.album,
     duration: rand(0.00..9.40),
     realrelease_id: rand(Realrelease.first.id..Realrelease.last.id)
   )
