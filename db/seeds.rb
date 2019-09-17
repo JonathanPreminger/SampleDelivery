@@ -8,14 +8,14 @@
 
 require 'faker'
 Artist.destroy_all
-5.times do |i|
+3.times do |i|
   Artist.create(
     name: Faker::Music::RockBand.name,
   )
   puts "one more artist created #{i + 1}"
 end
 Realrelease.destroy_all
-45.times do |i|
+15.times do |i|
   Realrelease.create(
     name: Faker::Music.album,
     production_year: Faker::Number.between(from: 1990, to: 2020),
@@ -24,7 +24,7 @@ Realrelease.destroy_all
   puts "one more release created #{i + 1}"
 end
 Track.destroy_all
-145.times do |i|
+45.times do |i|
   Track.create(
     name: Faker::String.random(length: 4),
     duration: rand(0.00..9.40),
@@ -33,7 +33,7 @@ Track.destroy_all
   puts "one more track created #{i + 1}"
 end
 Djset.destroy_all
-45.times do |i|
+10.times do |i|
   Djset.create(
     artist_id: rand(Artist.first.id..Artist.last.id),
     club: Faker::Music.album,
