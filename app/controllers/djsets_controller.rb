@@ -5,8 +5,8 @@ class DjsetsController < ApplicationController
     if user_signed_in?
       @djset = Djset.create!(djset_params)
       if @djset.save
-        DjsetMailer.request_to_admin(@djset).deliver!
-        DjsetMailer.acknowledge_receipt(@djset).deliver!
+        DjsetMailer.request_to_admin(@djset).deliver_later
+        DjsetMailer.acknowledge_receipt(@djset).deliver_later
 
 
         redirect_to artist_path(@djset.artist.id)
@@ -29,7 +29,7 @@ end
         @djset.update_attributes(djset_params)
         @artist_id = @djset.artist.id
         puts "____________________________________ deliver djset update mailer"
-        DjsetMailer.dj_set_request_status_updated(@djset).deliver!
+        DjsetMailer.dj_set_request_status_updated(@djset).deliver_later
         puts "____________________________________ deliver djset update mailer"
       else
         flash[:alert] = "you're not connected as admin"
