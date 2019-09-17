@@ -37,7 +37,8 @@ Djset.destroy_all
   Djset.create(
     artist_id: rand(Artist.first.id..Artist.last.id),
     club: Faker::Music.album,
-    start: Faker::Date.between(from: 1000.days.ago, to: Date.today)
+    start: Faker::Date.between(from: 1000.days.ago, to: Date.today),
+    emailforrequest: Faker::Music.album
   )
   puts "one more djset created #{i + 1}"
 
