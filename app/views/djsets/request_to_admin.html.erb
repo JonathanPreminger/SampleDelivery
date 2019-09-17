@@ -1,0 +1,11 @@
+<!-- The mailer do not detect template who are not in the view/djsets folder-->
+
+
+<div class="all">
+  <div class="new-djset" style="margin-top:10%;margin-left:10%;width:80%;">
+    <p>You have a new Dj set request pending for <%= @djset.artist.name.upcase %> </p>
+    <p>The <%= @djset.start%></p>
+    <p>At <%= @djset.club.upcase %></p>
+    <p>Please, follow this <%= link_to 'LINK', djsets_url, style:"color:red" %> to confirm or reject the Dj request.</p>
+  </div>
+</div>

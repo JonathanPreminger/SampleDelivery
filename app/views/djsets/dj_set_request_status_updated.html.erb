@@ -1,0 +1,17 @@
+<!-- The mailer do not detect template who are not in the view/djsets folder-->
+
+<div class="all">
+  <div class="new-djset" style="margin-top:10%;margin-left:10%;width:80%;">
+    <p>Result receipt</p>
+    <%if @djset.confirmdjset?%>
+      <p>Congratulations ! Your request has been approuved </p>
+    <%else%>
+      <p>Sorry !  Your request has been rejected, for more information you can call our staff at any time : 0623435434, with your request ID : <%= @djset.id%> </p>
+    <%end%>
+
+    <p>for <%= @djset.artist.name.upcase%></p>
+    <p>The <%= @djset.start%></p>
+    <p>At <%= @djset.club.upcase %></p>
+    <p>You can check the status of your request <%= link_to 'here', @link_to_djset_artist%></p>
+  </div>
+</div>

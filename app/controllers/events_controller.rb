@@ -7,11 +7,9 @@
    end
 
    def new
-     puts '______________________________________before new'
-
      @event = Event.new(params[:artist])
-     puts '______________________________________after new'
    end
+
    def create
      @event = Event.create(event_params)
      @event.save

@@ -2,12 +2,8 @@ class ArtistsController < ApplicationController
 protect_from_forgery
 
   def create
-     '___________________________________________________before create'
-
   @artist = Artist.create(artist_params)
       respond_to :js
-      '___________________________________________________ after create'
-
     end
 
   def new
@@ -15,10 +11,7 @@ protect_from_forgery
     @djset = Djset.new(params[:djset])
   end
 
-
-
   def index
-    puts '_____________________________________________rechargement de la pagexxxxxxxxxxxxxxxxxxx'
     @artists = Artist.all
   end
 
@@ -69,11 +62,9 @@ end
 
   def calendar
     @artist = Artist.find(params[:id])
-
   end
 
   private
-
 
   def artist_params
     params.require(:artist).permit(:name, :image, realreleases_attributes: [:id, :name, :image, :production_year, :_destroy], djsets_attributes: [:id, :start, :club, :confirmdjset, :_destroy, :_create])

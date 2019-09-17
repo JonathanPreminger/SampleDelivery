@@ -2,23 +2,42 @@ class DjsetsController < ApplicationController
     before_action :count_djset_without_response, only: [:index]
 
   def create
-    @djset = Djset.create!(djset_params)
-    if @djset.save
-      redirect_to artist_path(@djset.artist.id)
+    if user_signed_in?
+      @djset = Djset.create!(djset_params)
+      if @djset.save
+        DjsetMailer.request_to_admin(@djset).deliver!
+        DjsetMailer.acknowledge_receipt(@djset).deliver!
+
+
+        redirect_to artist_path(@djset.artist.id)
+      else
+        flash[:alert] = "All the field must be filled for the dj set"
+      end
     else
-      flash[:alert] = "All the field must be filled for the dj set"
-    end
+      redirect_to new_user_session_path
   end
+end
 
   def edit
     @djset = Djset.find(params[:id])
   end
 
   def update
-    @djset = Djset.find(params[:id])
-    @djset.update_attributes(djset_params)
-    @artist_id = @djset.artist.id
+    if user_signed_in?
+      if current_user.admin?
+        @djset = Djset.find(params[:id])
+        @djset.update_attributes(djset_params)
+        @artist_id = @djset.artist.id
+        puts "____________________________________ deliver djset update mailer"
+        DjsetMailer.dj_set_request_status_updated(@djset).deliver!
+        puts "____________________________________ deliver djset update mailer"
+      else
+        flash[:alert] = "you're not connected as admin"
+      end
+    else
+      flash[:alert] = "you're not connected"
        redirect_to artist_path(@artist_id)
+    end
   end
 
   def new
@@ -37,6 +56,6 @@ class DjsetsController < ApplicationController
   private
 
   def djset_params
-    params.require(:djset).permit(:start, :club, :confirmdjset, :artist_id)
+    params.require(:djset).permit(:start, :club, :confirmdjset, :emailforrequest, :artist_id)
   end
 end
