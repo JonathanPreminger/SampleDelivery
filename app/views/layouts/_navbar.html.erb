@@ -28,20 +28,17 @@
           <p><%= link_to 'CONTACT', new_contact_path, class:"menu-link" %></p>
         </div>
         <!-- Display more link for Admin : Calendar, Events index-->
-        <% if user_signed_in? %>
-          <% if current_user.admin? %>
+
         <div class="part-menu">
           <p><%= link_to "CALENDAR", calendar_events_path, class:"menu-link" %></p>
         </div>
         <div class="part-menu">
           <p><%= link_to "EVENTS", events_path, class:"menu-link" %></p>
         </div>
-          <%end%>
-        <%end%>
+    
         <!-- Display more link for Admin END-->
         <!-- Display more link for Admin : Dj sets index with notifications-->
-        <% if user_signed_in? %>
-          <% if current_user.admin? %>
+
             <%= link_to djsets_path do %>
               <div class="part-menu request logo-sd">
                 <% if Djset.request_equal_zero %>
@@ -51,9 +48,8 @@
                 <div class='bell'><p class="menu-link" class="z-index10-red"><%= image_tag 'bell.png', style:'width:35px;'%></p></div>
               </div>
             <% end %>
-          <% end %>
-        <%else%>
-        <%end%>
+
+
 
 
         <!-- END Display more link for Admin : Dj sets index with notifications -->
