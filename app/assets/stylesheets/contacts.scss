@@ -1,14 +1,4 @@
-html{
-  height: 100%;
-  width: 100%;
-  margin: 0;
-  padding: 0;
-}
-body {
-  min-height: 100%;
-  margin: 0;
-  padding: 0;
-}
+
 .contact-form-text-area {
   width: 80%;
 }
@@ -17,65 +7,64 @@ body {
   font-family: 'CothamSans';
   margin-bottom: 10px;
   font-size: 18px;
-
 }
+
 // contact mailer and edit box
 .form {
   margin-top:7%;
   margin-left: 10%;
   margin-bottom: 7%;
-
 }
+
 .container-edit {
   width: 100%;
   display: flex;
+  flex-direction: row;
   align-items: center;
-  justify-content: space-around;
-  margin-bottom: 90px;
-  margin-top: 80px;}
+  justify-content: flex-start;
+  margin-top: 80px;
+}
+
 .carreblanc {
-  width: 80%;
   border-radius: 30px;
-  border: solid 3px black;
+  border: solid 1px black;
   background-color: rgba(255,255,255,0.7);
   -webkit-transition: transform 1s;
   &:hover {
-
-   box-shadow:2px 2px    10px grey;
-
+   box-shadow:2px 2px 10px grey;
   }
 }
+
 .btn-contact {
   margin-top: 20px;
   margin-bottom: 10px;
   color: purple;
-  border: purple dashed 2px;
+  border: purple dashed 1px;
   border-radius: 5px;
   width: 90%;
   height: 50px;
   &:hover {
-    border: purple dashed 3px;
-    animation: blinker 0.01s infinite;
+    border: purple solid 2px;
+    animation: blinker 0.2s infinite;
     cursor: crosshair;
     font-size: 18px;
   }
 }
 .field-contact {
   color: purple;
-  border: purple solid 2px;
+  border: purple solid 1px;
   border-radius: 5px;
   width: 90%;
-
 }
-.notice {
-  display: flex;
-  flex-direction: column;
-  width: 40%;
-  margin-left: 26%;
-  padding: 2%;
+#small-notice {
+  font-size: 18px;
+}
+.small-notice {
+  margin-left: 33%;
+  width: 30%;
 }
 @media only screen and (max-width:500px) {
-  .notice {
+  .notice-contact {
     display: flex;
     flex-direction: column;
     width: 84%;
@@ -93,13 +82,14 @@ body {
     margin-top: 5vh;
     margin-bottom: 5vh;
   }
-
 }
+
 @media screen and (min-width:500px) {
   .carreblanc {
     width: 50%;
   }
 }
+
 @media screen and (min-width:1000px) {
   .carreblanc {
     width: 30%;

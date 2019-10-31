@@ -1,29 +1,24 @@
-<div class="notice">
-
-
-  <p>Message Us !</p>
-<div class="container-edit">
-  <div class="carreblanc">
-    <div class="form">
-      <%= form_for @contact do |f| %>
-      <div class="text-mailer">
-        <p>Name</p>
-        <%= f.text_field  :name, required: true,  class: 'field-contact' %>
-
-        <p>Email</p>
-        <%= f.text_field :email, required: true,  class: 'field-contact' %>
-
-        <p>Message</p>
-        <%= f.text_area :message, rows: 8, cols: 40, required: true, class: "field-contact",
-                        placeholder: "Send me a message"%></br>
-
-        <%= f.submit 'Send Message', class: 'btn-contact' %>
+<div class="notice-contact">
+  <div class="container-edit">
+    <div class="small-column small-notice">
+      <p>Message Us !</p>
+      <p id="small-notice">Send us a message if you want to book one of our artist, you want a copy of a release, or just say hello :)</p>
+    </div>
+    <div class="carreblanc">
+      <div class="form">
+        <%= form_for @contact do |f| %>
+        <div class="text-mailer">
+          <p>Name</p>
+          <%= f.text_field  :name, required: true,  class: 'field-contact' %>
+          <p>Email</p>
+          <%= f.text_field :email, required: true,  class: 'field-contact' %>
+          <p>Message</p>
+          <%= f.text_area :message, rows: 8, cols: 40, required: true, class: "field-contact",
+                          placeholder: "Send me a message"%></br>
+          <%= f.submit 'Send Message', class: 'btn-contact' %>
+        </div>
+        <% end %>
       </div>
-      <% end %>
-
     </div>
   </div>
-</div>
-<p id="small-notice">Send us a message if you want to book one of our artist, you want a copy of a release, or just say hello</p>
-
 </div>
