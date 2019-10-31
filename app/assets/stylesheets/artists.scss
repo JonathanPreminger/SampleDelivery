@@ -1,6 +1,10 @@
-
 .artist-content {
-  width: 100%;
+  margin-left: 10%;
+  margin-right: 10%;
+  margin-top: 80px;
+  width: 80%;
+  display: flex;
+  flex-direction: row;
 }
 .artist {
   background-color: white;
@@ -13,7 +17,6 @@
   margin: 50px;
   width:25%;
 }
-
 .new-artist {
   border: solid black 2px;
   border-radius: 5px;
@@ -33,14 +36,6 @@
   }
 }
 .artist-list-content {
-  padding: 10%;
-
-  width:70%;
-  margin-left: 5%;
-  margin-right: 5%;
-  border: black solid 2px;
-  border-radius: 12px;
-  background-color: pink;
   display: flex;
   justify-content: center;
 }
@@ -152,30 +147,14 @@ font-family: 'Russo One', sans-serif!important;
   font-size: 16px;
   margin-left: 10px;
   margin-bottom: 12px;
-
 }
 .arrow-right {
   width:15%;
-
 }
 .icon-arrow {
   display: flex;
   flex-direction: column;
   background-color: red;
-}
-.new-artist-form {
-  width: 70%;
-  margin-left: 10%;
-  margin-top: 50px;
-  margin-bottom: 50px;
-  padding:5%;
-  border: black solid 2px;
-  border-radius: 8px;
-  transition: all 0.3s ease-out;
-  overflow: hidden;
-  &:hover {
-    box-shadow: black 5px 5px;
-  }
 }
 table #artist {
   width: 100%;
@@ -191,25 +170,25 @@ table #artist {
   margin-bottom: 10px;
   cursor: cell;
 }
-.new-link {
-  position: relative;
-  width: 100%;
-  height: 100%;
+.ajax-add-new-artist {
+  padding-top:25px;
+  padding-left:10px;
+  height:40px;
+  font-family: 'CothamSans';
+  letter-spacing: 5px;
+  color:#7c786f!important;
+}
+.ajax-add-new-artist p{
+  &:hover {
+    text-decoration: underline;
+  }
 }
 
-.ajax-add-new-artist {
+#ajax-add-new-artist {
   font-family: 'CothamSans';
-  width: 70%;
-  margin-left: 10%;
-  margin-top: 50px;
-  margin-bottom: 50px;
-  padding:5%;
-  border: black solid 2px;
-  border-radius: 8px;
-  transition: all 0.3s ease-out;
-  &:hover {
-    box-shadow: black 5px 5px;
-  }
+  letter-spacing: 5px;
+  color:#7c786f!important;
+  font-size: 16px;
 }
 .artist-img {
   width:10%;
@@ -227,37 +206,27 @@ table #artist {
   margin-left: 120px;
 }
 #tr-column {
+  width:500px!important;
   display: flex;
+  align-items: center;
+  justify-content: space-around;
   flex-direction: column;
-  border: black solid 3px;
-  border-radius: 8px;
-  margin-bottom: 20px;
+  border-bottom: #e8dfce solid 1px;
   overflow: hidden;
 }
 td {
   font-family: 'CothamSans';
 }
 #td-artist-name {
-  font-size: 56px;
+  font-size: 26px;
+  color: #7c786f;
+
 
 }
 .td-row {
   display: flex;
   flex-direction: row;
   overflow: hidden;
-  &:hover {
-    background-color: black;
-
-  }
-}
-.td-row a {
-  color:black;
-  &:hover {
-    color: white;
-    background-color: black;
-
-  }
-
 }
 #td-row p {
   font-size: 16px;
@@ -277,7 +246,7 @@ td {
 }
 #absolute2 {
   margin-left: 0;
-background-color: red}
+}
 
 // Artist Edit and Show Section
 .nice-button {
@@ -490,8 +459,45 @@ p {
   }
 }
 // End Artist Edit Section
+.new-artist-form p {
+  font-size: 20px;
+}
+.new-link {
+  width:40%;
+}
+.artist-list-content {
+  width: 80%;
+  overflow: hidden;
+}
+.new-artist-form {
+  width: 50%;
+}
+.td-row {
+  width: 49%;
+  display:flex;
+  flex-direction: column;
+}
+#tr-column {
+  position: relative;
+  width: 98%;
+  display: flex;
+  flex-direction: row;
+  overflow: hidden;
+  &:hover {
+  background-color: #e8dfce;
+  }
+}
+.round {
+  margin-top:18px;
+  margin-bottom: 20px;
+  min-width:50px;
+  max-width:50px;
+  min-height:50px;
+  max-height:50px;
+  border-radius:100%;
+  color: #7c786f;
 
-
+}
 @media only screen and (min-width:500px) {
     .transition1 {
       margin-left: 8%;
@@ -501,44 +507,10 @@ p {
       margin-left: 20%;
       margin-bottom: 5%;
     }
-    .artist-list-content {
-      margin-left:20%;
-      padding: 5%;
-      width: 50%;
-    }
+
     .artist-list p {
       font-size: 24px;
     }
-    .new-artist-form {
-      width: 50%;
-      margin-left: 20%;
-      padding: 5%;
-    }
-    .artist-list-content {
-      margin-left: 10%;
-      width:76%;
-      padding: 2%;
-      overflow: hidden;
-
-    }
-    #tr-column {
-      position: relative;
-      width: 80%;
-      margin-left: 10%;
-      display: flex;
-      flex-direction: row;
-      border: black solid 3px;
-      border-radius: 8px;
-      margin-bottom: 20px;
-      overflow: hidden;
-    }
-    .td-row {
-      width: 33.33%;
-
-      display:flex;
-      flex-direction: column;
-    }
-
 }
 
 @media only screen and (min-width:1000px) {
@@ -550,36 +522,9 @@ p {
       margin-left: 25%;
       margin-bottom: 5%;
     }
-    .artist-list-content {
-      margin-left: 30%;
-      width:36%;
-      padding: 2%;
-      overflow: hidden;
 
-    }
-    #tr-column {
-      position: relative;
-      width: 80%;
-      margin-left: 10%;
-      display: flex;
-      flex-direction: row;
-      border: black solid 3px;
-      border-radius: 8px;
-      margin-bottom: 20px;
-      overflow: hidden;
-    }
-    .td-row {
-      width: 33.33%;
 
-      display:flex;
-      flex-direction: column;
-    }
     .artist-list p {
       font-size: 24px;
-    }
-    .new-artist-form {
-      width: 30%;
-      margin-left: 30%;
-      padding: 5%;
     }
 }

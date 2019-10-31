@@ -16,6 +16,8 @@ module ComptabilityConcern
     # the average benefits
     def average_benefits
       Event.total_benefits / Event.count
+      rescue ZeroDivisionError
+      0.0
     end
   end
 

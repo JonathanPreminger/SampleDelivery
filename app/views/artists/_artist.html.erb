@@ -1,17 +1,12 @@
 <tr id="tr-column" >
-  <td class="td-row"><%  if artist.image.attached?  %>
+  <td class="td-row absolute2"><p><%= link_to artist.name.upcase, artist, id:"td-artist-name" %></p></td>
+  <td class="td-row round"><%  if artist.image.attached?  %>
   <%= image_tag artist.image, style:('width:100%;height:auto;'),class:'background-artist-image' %>
   <% else %>
   <% end %>
 
   </td>
-  <td class="td-row absolute2"><p><%= link_to artist.name.upcase, artist, id:"td-artist-name" %></p></td>
-  <td class="td-row then-column ">
-    <% if user_signed_in? %>
-    <p><%= link_to 'Show', artist, class:'underline' %></p>
-    <p><%= link_to 'Edit', edit_artist_path(artist), class:'underline' %></p>
-    <p><%= link_to 'destroy', artist, method: :delete, data:{confirm:"sur?"}, class:'destroy-artist underline', remote: true %></p>
-    <%end%>
-  </td>
+  <%-# commented line -%>
+
   <!-- Reveal using custom parameters. -->
 </tr>

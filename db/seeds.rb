@@ -8,7 +8,7 @@
 
 require 'faker'
 Artist.destroy_all
-3.times do |i|
+5.times do |i|
   Artist.create(
     name: Faker::Music::RockBand.name,
   )

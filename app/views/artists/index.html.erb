@@ -1,25 +1,19 @@
 <div class="artist-content ">
   <div class="new-link">
     <div class="ajax-add-new-artist">
-      <%= link_to 'ADD NEW ARTIST', new_artist_path, id:'ajax-add-new-artist', remote: true%>
+      <%= link_to new_artist_path, id:'ajax-add-new-artist', remote: true do %>
+      <div class="small-row">
+
+      <p ><%= image_tag "add2.png", :style => "width:80%;margin-top:-4px;" %></p><p id="ajax-add-new-artist" > ADD NEW ARTIST</p>
     </div>
-  </div>
-  <div class="new-artist">
-    <p>CREW</p>
+      <%end%>
+    </div>
   </div>
   <div class="artist-list-content">
     <table id="artists">
-      <thead>
-        <tr>
-
-        </tr>
-      </thead>
-
       <tbody>
       <%= render partial: 'artist', collection: @artists %>
       </tbody>
     </table>
-
-</div>
-
+  </div>
 </div>
