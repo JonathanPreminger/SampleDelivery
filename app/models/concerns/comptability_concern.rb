@@ -26,16 +26,13 @@ module ComptabilityConcern
 
   # the benefits compare to the total average benefits
   def benefits_rate
-    puts "_______________________________"
-    puts Event.average_benefits
-    puts benefits
-   result = 100 * ((benefits / Event.average_benefits.to_f) - 1)
+   result = (100 * (benefits / Event.average_benefits.to_f)) - 100
    result.round(1)
   end
 
   # the positivness of the benefits rate
   def positiv_benefits_rate
-    benefits_rate > 0
+    benefits_rate >= 0
   end
 
   # total_charge

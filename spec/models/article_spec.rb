@@ -1,4 +1,3 @@
-require 'rails_helper'
 
 # extract from the schema
 # create_table "articles", force: :cascade do |t|

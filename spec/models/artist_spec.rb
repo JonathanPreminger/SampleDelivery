@@ -1,4 +1,3 @@
-require 'rails_helper'
 
 # == schema information
 #  create_table "artists", force: :cascade do |t|

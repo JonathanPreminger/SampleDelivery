@@ -1,5 +1,4 @@
 
-require 'rails_helper'
 
 # Schema information
 #create_table "events", force: :cascade do |t|
@@ -19,9 +18,15 @@ require 'rails_helper'
 #    end
 
 RSpec.describe Event, :type => :model do
+
+  before(:each) do
+    Event.destroy_all
+    @event = Event.create(total_charge_dj: 100, charge_others: 100, charge_communication: 100, name:'eventone', revenue_figure: 500)
+  end
+
   it "is valid with valid attributes" do
     expect(Event.new).to_not be_valid
-end
+  end
 
   describe 'Database' do
     it { is_expected.to have_db_column(:id).of_type(:integer) }
@@ -41,7 +46,6 @@ end
 
   describe 'Validations' do
     it { is_expected.to validate_presence_of(:name) }
-    it { is_expected.to validate_presence_of(:revenue_figure) }
     it { is_expected.to validate_presence_of(:total_charge_dj) }
     it { is_expected.to validate_presence_of(:charge_others) }
     it { is_expected.to validate_presence_of(:charge_communication) }
@@ -50,5 +54,42 @@ end
 
   describe 'Associations' do
     # none for the moment
+  end
+
+  it "calcul the total charge" do
+    expect(Event.total_charge).to eq(300)
+  end
+
+  it "calcul the total benefits" do
+    expect(Event.sum(:revenue_figure) - Event.total_charge).to eq(200)
+  end
+
+  it "calcul the average benefits" do
+    expect(Event.total_benefits / Event.count).to eq(200)
+  end
+
+  it "calcul a single benefits" do
+    expect(@event.revenue_figure.to_i - @event.total_charge_dj.to_i - @event.charge_others.to_i - @event.charge_communication.to_i).to eq(200)
+  end
+
+  it "calcul the benefice rate" do
+    result = (100 * (@event.benefits / Event.average_benefits.to_f)) - 100
+    expect(result).to eq(0)
+  end
+
+  it "verify the positivness of the benefice rate" do
+    expect(@event.positiv_benefits_rate).to eq(true)
+  end
+
+  it "calcul the total charge individual" do
+    expect(@event.total_charge_indiv).to eq(300)
+  end
+
+  it "calcul the benefice rate" do
+    expect(((@event.benefits.to_f / @event.revenue_figure.to_f) * 100).round).to eq(40)
+  end
+
+  it "calcul the positivness of the return rate" do
+    expect(@event.positiv_return_rate).to eq(true)
   end
 end

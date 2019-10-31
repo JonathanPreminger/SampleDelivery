@@ -1,5 +1,4 @@
 
-require 'rails_helper'
 
 # Schema information
 #  create_table "users", force: :cascade do |t|
