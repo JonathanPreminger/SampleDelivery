@@ -31,6 +31,8 @@ end
         puts "____________________________________ deliver djset update mailer"
         DjsetMailer.dj_set_request_status_updated(@djset).deliver_later
         puts "____________________________________ deliver djset update mailer"
+        flash[:notice] = "Booking status updated"
+        redirect_to artist_path(@artist_id)
      #  else
       #  flash[:alert] = "you're not connected as admin"
       #{}end
