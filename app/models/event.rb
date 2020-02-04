@@ -1,11 +1,12 @@
 class Event < ApplicationRecord
   include ::ComptabilityConcern
   require 'csv'
-validates :name, presence: true
-validates :charge_communication, presence: true
-validates :charge_others, presence: true
-validates :total_charge_dj, presence: true
-validates :revenue_figure, presence: true, allow_nil: true
+  scope :last_event, -> { where(id:Event.last.id) }
+  validates :name, presence: true
+  validates :charge_communication, presence: true
+  validates :charge_others, presence: true
+  validates :total_charge_dj, presence: true
+  validates :revenue_figure, presence: true, allow_nil: true
 
   def headers
     {

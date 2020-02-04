@@ -56,40 +56,72 @@ RSpec.describe Event, :type => :model do
     # none for the moment
   end
 
-  it "calcul the total charge" do
-    expect(Event.total_charge).to eq(300)
+  context 'validations' do
+    it "ensure name presence" do
+      event = Event.new(id: 12, total_charge_dj: 300, charge_others: 100, charge_communication: 50).save
+      expect(event).to eq(false)
+    end
+
+    it "ensure total_charge_dj presence" do
+      event = Event.new(id: 12, name: "event1", charge_others: 100, charge_communication: 50).save
+      expect(event).to eq(false)
+    end
+
+    it "ensure charge_others presence" do
+      event = Event.new(id: 12, name: "event1", total_charge_dj: 300, charge_communication: 50).save
+      expect(event).to eq(false)
+    end
+
+    it "ensure charge_communication presence" do
+      event = Event.new(id: 12, name: "event1", total_charge_dj: 300, charge_others: 100).save
+      expect(event).to eq(false)
+    end
   end
 
-  it "calcul the total benefits" do
-    expect(Event.sum(:revenue_figure) - Event.total_charge).to eq(200)
+  context 'comptability module' do
+    it "calcul the total charge" do
+      expect(Event.total_charge).to eq(300)
+    end
+
+    it "calcul the total benefits" do
+      expect(Event.sum(:revenue_figure) - Event.total_charge).to eq(200)
+    end
+
+    it "calcul the average benefits" do
+      expect(Event.total_benefits / Event.count).to eq(200)
+    end
+
+    it "calcul a single benefits" do
+      expect(@event.revenue_figure.to_i - @event.total_charge_dj.to_i - @event.charge_others.to_i - @event.charge_communication.to_i).to eq(200)
+    end
+
+    it "calcul the benefice rate" do
+      result = (100 * (@event.benefits / Event.average_benefits.to_f)) - 100
+      expect(result).to eq(0)
+    end
+
+    it "verify the positivness of the benefice rate" do
+      expect(@event.positiv_benefits_rate).to eq(true)
+    end
+
+    it "calcul the total charge individual" do
+      expect(@event.total_charge_indiv).to eq(300)
+    end
+
+    it "calcul the benefice rate" do
+      expect(((@event.benefits.to_f / @event.revenue_figure.to_f) * 100).round).to eq(40)
+    end
+
+    it "calcul the positivness of the return rate" do
+      expect(@event.positiv_return_rate).to eq(true)
+    end
   end
 
-  it "calcul the average benefits" do
-    expect(Event.total_benefits / Event.count).to eq(200)
+  context 'scope tests' do
+    let (:params) {{id: 12, total_charge_dj: 300, charge_others: 100, charge_communication: 50}}
+    before(:each) do
+      User.new(params).save
+    end
   end
 
-  it "calcul a single benefits" do
-    expect(@event.revenue_figure.to_i - @event.total_charge_dj.to_i - @event.charge_others.to_i - @event.charge_communication.to_i).to eq(200)
-  end
-
-  it "calcul the benefice rate" do
-    result = (100 * (@event.benefits / Event.average_benefits.to_f)) - 100
-    expect(result).to eq(0)
-  end
-
-  it "verify the positivness of the benefice rate" do
-    expect(@event.positiv_benefits_rate).to eq(true)
-  end
-
-  it "calcul the total charge individual" do
-    expect(@event.total_charge_indiv).to eq(300)
-  end
-
-  it "calcul the benefice rate" do
-    expect(((@event.benefits.to_f / @event.revenue_figure.to_f) * 100).round).to eq(40)
-  end
-
-  it "calcul the positivness of the return rate" do
-    expect(@event.positiv_return_rate).to eq(true)
-  end
 end

@@ -47,7 +47,7 @@ Article.destroy_all
 Article.create(title:"Sample Delivery", content:"Sample Delivery est un collectif artistique et label de musique depuis 2016, il compte dans ses membres fondateurs Anton Haesendonck, Jessy Merciris, Medhy Kad, Theo Bivoul, Mael Lebriand et Jonathan Mete. ")
 puts "first article created"
 
-user = User.new(email: "jonathan.hemerling@gmail.com", password: "!Nbvc123", password_confirmation: "!Nbvc123", admin:true)
+user = User.new(email: "jonathan.mete@hotmail.fr", password: "123", password_confirmation: "123", admin:true)
 user.skip_confirmation!
 user.save
 puts " first admin user created"
