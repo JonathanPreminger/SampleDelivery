@@ -29,6 +29,7 @@ gem "simple_calendar", "~> 2.0"
 gem 'bootstrap', '~> 4.3.1'
 gem 'sidekiq'
 gem 'redis-rails'
+gem 'webpacker', '~> 4.x'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'
 # Use ActiveModel has_secure_password
@@ -69,7 +70,7 @@ group :test do
   gem 'capybara', '>= 2.15'
   gem 'selenium-webdriver'
   gem 'shoulda-matchers', '~> 3.0', require: false
-  
+
   # Easy installation and use of chromedriver to run system tests with Chrome
 end
 group :production do
