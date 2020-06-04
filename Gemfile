@@ -43,6 +43,7 @@ gem 'webpacker', '~> 4.x'
 gem 'bootstrap-sass', '~> 3.3', '>= 3.3.6'
 gem 'mail_form'
 gem 'jquery-rails', '~> 4.1', '>= 4.1.1'
+gem 'jquery-turbolinks'
 gem 'dotenv-rails', groups: [:development, :test]
 gem "scrollreveal-rails"
 gem 'faker', :git => 'https://github.com/faker-ruby/faker.git', :branch => 'master'

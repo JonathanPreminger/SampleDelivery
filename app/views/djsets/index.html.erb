@@ -1,55 +1,34 @@
-<div class="block" style="margin-top:125px;">
-
-  <% @djsets.each do |set| %>
-  <div class="just-column margin-bottom">
-    <div class="just-row cell">
-      <div style="padding-right:20px;margin-top:-4px;">
-        <% if set.confirmdjset? %>
-        <%= image_tag 'valid.png', class:'' %>
-
-        <%elsif set.confirmdjset.nil?%>
-        <%= image_tag 'new.png', class:'newpng' %>
-        <% else %>
-        <%= image_tag 'cross.png', style:'width:27px;' %>
-
-        <%end%>
-      </div>
-    <div class="block2 margin-bottom ">
-      <div class="just-column">
-      <div class="block2">
-        <div class="just-row small-margin-bottom">
-          <p class=''>For </p><p><%= link_to set.artist.name.upcase, artist_path(set.artist.id), class:'info'  %></p>
-
-        </div>
-        <div class="just-row">
-          <p>At </p><p class='info'><%= set.club.upcase %></p>
-        </div>
-        <div class="just-row">
-          <p>The </p><p class='info'><%= set.start%></p>
-        </div>
-      </div>
-
-        <div class="">
-          <%= form_for(set) do |s| %>
-          <div class="just-column small-margin-bottom">
-            <div class="just-row">
-            <p>Confirm the DjSet ?</p>
-            <p><%=s.check_box :confirmdjset %></p>
+<div class="block distance-nav">
+  <div class="">
+    <% @djsets.each do |set| %>
+      <% cache set do %>
+        <div class="just-row cell">
+          <div class="state-request request-left" id="testjs">
+            <% if set.confirmdjset? %>
+            <%= image_tag 'valid.png', class:'valid-state' %>
+            <%elsif set.confirmdjset.nil?%>
+            <%= image_tag 'new.png', class:'newpng' %>
+            <% else %>
+            <%= image_tag 'cross.png', style:'width:27px;' %>
+            <%end%>
+          </div>
+          <div class="block2 block-request">
+            <div class="just-column request-midle margin-1em">
+              <p>FOR </p><p><%= link_to set.artist.name.upcase, artist_path(set.artist.id), class:'info'  %></p>
+              <p>AT </p><p class='info'><%= set.club.upcase %></p>
+              <p>THE </p><p class='info'><%= set.start%></p>
             </div>
-            <p style="font-size:12px;">Leave the checkbox empty and save if you want to reject this date !</p>
+            <div class="just-column request-part-right margin-1em">
+              <%= form_for(set) do |s| %>
+                <p>CONFIRM THE REQUEST ?</p>
+                <p>YES : <%=s.check_box :confirmdjset %></p>
+                <p style="font-size:12px;">Leave the checkbox empty and save if you want to reject this date !</p>
+                <p><%= s.submit 'Save', class:'nicebutton box-shadow2' %></p>
+              <%end%>
+            </div>
           </div>
-          <div class="just-row small-margin-bottom">
-
-            <p><%= s.submit 'Save', class:'nicebutton box-shadow2' %></p>
-          </div>
-          <%end%>
         </div>
-      </div>
-    </div>
-  </div>
-
+      <%end%>
     <%end%>
-
   </div>
-
 </div>

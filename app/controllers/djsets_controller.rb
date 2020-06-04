@@ -1,5 +1,5 @@
 class DjsetsController < ApplicationController
-    before_action :count_djset_without_response, only: [:index]
+    
 
   def create
     #if user_signed_in?
