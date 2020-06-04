@@ -61,6 +61,12 @@ background-size: cover; /* version standardisée */
    color: rgb(140, 140, 140);
 
  }
+ .block {
+   display: flex;
+   flex-direction: row;
+   margin-left: 5em;
+   margin-right: 5em;
+ }
  .color-light-grey {
    color: rgb(220, 220, 190);
 
@@ -342,7 +348,7 @@ button {}
   display: none;
 }
 
-@media only screen and (max-width: 500px) {
+@media only screen and (max-width: 1000px) {
   label {
     display: block;
     cursor: pointer;
@@ -455,7 +461,7 @@ button {}
   display: inline-block;
   cursor: pointer;
   transition-property: opacity, filter;
-  transition-duration: 0.15s;
+  transition-duration: 0.150s;
   transition-timing-function: linear;
   font: inherit;
   color: inherit;
@@ -486,7 +492,7 @@ button {}
   .hamburger-inner, .hamburger-inner::before, .hamburger-inner::after {
     width: 40px;
     height: 4px;
-    background-color: #000;
+    background-color: rgb(100,250,222);
     border-radius: 4px;
     position: absolute;
     transition-property: transform;
@@ -508,4 +514,4 @@ button {}
   transform: translate3d(-8px, 0, 0) rotate(-45deg) scale(0.7, 1); }
 
 .hamburger--arrow.is-active .hamburger-inner::after {
-  transform: translate3d(-8px, 0, 0) rotate(45deg) scale(0.7, 1); }
+  transform: translate3d(-16px, 0, 0) rotate(45deg) scale(0.7, 1); }

@@ -29,6 +29,7 @@ gem "simple_calendar", "~> 2.0"
 gem 'bootstrap', '~> 4.3.1'
 gem 'sidekiq'
 gem 'redis-rails'
+gem 'webpacker', '~> 4.x'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'
 # Use ActiveModel has_secure_password
@@ -42,6 +43,7 @@ gem 'redis-rails'
 gem 'bootstrap-sass', '~> 3.3', '>= 3.3.6'
 gem 'mail_form'
 gem 'jquery-rails', '~> 4.1', '>= 4.1.1'
+gem 'jquery-turbolinks'
 gem 'dotenv-rails', groups: [:development, :test]
 gem "scrollreveal-rails"
 gem 'faker', :git => 'https://github.com/faker-ruby/faker.git', :branch => 'master'
@@ -69,7 +71,7 @@ group :test do
   gem 'capybara', '>= 2.15'
   gem 'selenium-webdriver'
   gem 'shoulda-matchers', '~> 3.0', require: false
-  
+
   # Easy installation and use of chromedriver to run system tests with Chrome
 end
 group :production do

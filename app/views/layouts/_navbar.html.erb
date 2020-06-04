@@ -1,3 +1,17 @@
+<canvas id="yolo" style="top:1.75em;position:fixed;z-index:-10;color:pink;">
+</canvas>
+
+<div id="top">
+  <div id="testjs" style="top:1.75em;position:fixed;z-index:10;color:pink;">
+    SD
+  </div>
+</div>
+
+<div id="testjs2" style="top:50%;position:fixed;z-index:10;color:pink;left:50%;text-shadow: 1px 1px 2px red, 0 0 1em blue, 0 0 0.2em blue;">
+  SAMPLE DELIVERY</br>
+  RECORDS
+</div>
+
 <div class="nav">
     <button class="toggle hamburger hamburger--arrow is-active" type="button">
       <label for="toggle">
@@ -8,7 +22,7 @@
     </button>
     <input type="checkbox" id="toggle"/>
 
-    <div class="menu">
+    <div class="menu" id="menu">
       <div class="left-side">
         <div class="part-menu logo-sd">
            <p><%= link_to image_tag('sampledelivery2.png'), articles_path, class:"logo-sd" %></p>
@@ -40,17 +54,16 @@
         <!-- Display more link for Admin : Dj sets index with notifications-->
             <%= link_to djsets_path do %>
               <div class="part-menu request logo-sd">
-                <% if Djset.request_equal_zero %>
-                <%else%>
+                <%if @superior_to_0 %>
                 <div class="number-of-request"><p> &nbsp; &nbsp;<%= @djset_request_pending %></p></div>
+                <%elsif @superior_to_9 %>
+                <div class="number-of-request"><p style="margin-left:15px"> 9+</p></div>
+                <% else %>
+                <div class="number-of-request"><p style="margin-left:15px"> 0</p></div>
                 <%end%>
-                <div class='bell'><p class="menu-link" class="z-index10-red"><%= image_tag 'bell.png', style:'width:35px;'%></p></div>
+                <div class='bell'><p class="menu-link z-index10-red"><%= image_tag 'bell.png', style:'width:25px;'%></p></div>
               </div>
             <% end %>
-
-
-
-
 
         <!-- END Display more link for Admin : Dj sets index with notifications -->
       </div>
@@ -113,3 +126,4 @@
     <% end %>
     <!-- Mailing success end-->
 </div>
+  <pre id="repeat"></pre>

@@ -25,8 +25,56 @@
     <%= yield %>
     <%= render 'layouts/footer' %>
 
+
     <!-- Burger menu to cross menu-->
-    <script>
+      <script>
+        function tempAlert(msg,duration)
+
+        {
+         var el = document.createElement("div");
+         el.setAttribute("style","position:absolute;top:20emleft:40em;background-color:white;");
+         el.innerHTML = msg;
+         setTimeout(function(){
+          el.parentNode.removeChild(el);
+         },duration);
+         document.body.appendChild(el);
+        }
+        tempAlert("SAMPLE DELIVERY",1000);
+        function temp2Alert(msg,duration)
+
+        {
+         var le = document.createElement("div");
+         le.setAttribute("style","position:absolute;top:10em;left:70%;background-color:white;");
+         le.innerHTML = msg;
+         setTimeout(function(){
+          le.parentNode.removeChild(le);
+         },duration);
+         document.body.appendChild(le);
+        }
+        temp2Alert("SAMPLE DELIVERY",4000);
+        setTimeout(function(){
+        $('#yolo').hide();
+      }, 2500);
+
+        setTimeout(function(){
+        $('#yolo').show();
+      }, 7500);
+
+        setTimeout(function(){
+        $('#testjs2').hide();
+      }, 5000);
+      setTimeout(function(){
+      $('#testjs2').show();
+      }, 10000);
+      setTimeout(function(){
+      $('#testjs2').hide();
+    }, 15000);
+    setTimeout(function(){
+    $('#testjs2').show();
+  }, 20000);
+  </script>
+  <script>
+
       // Look for .hamburger
       var hamburger = document.querySelector(".hamburger");
       // On click
@@ -61,6 +109,57 @@
        }(document, 'script', 'facebook-jssdk'));
     </script>
     <!-- END OmniAuth authentification-->
+    <!-- Begin nav disapear when scroll down -->
+    <script>
+      var c = document.getElementById("yolo");
+      var ctx = c.getContext("2d");
+  ctx.moveTo(130, 110);
+  ctx.lineTo(300, 100);
+  ctx.stroke();
+  ctx.beginPath();
+  ctx.moveTo(130, 110);
+  ctx.lineTo(100, 50);
+  ctx.stroke();
+  ctx.moveTo(300, 100);
+  ctx.lineTo(100, 50);
+  ctx.stroke();
+  ctx.moveTo(300, 100);
+  ctx.lineTo(80, 140);
+  ctx.stroke();
+  ctx.moveTo(300, 100);
+  ctx.lineTo(80, 140);
+  ctx.stroke();
+  ctx.moveTo(80, 140);
+  ctx.lineTo(100, 50);
+  ctx.stroke();
+  ctx.moveTo(100, 150);
+  ctx.lineTo(80, 140);
+  ctx.stroke();
+  ctx.moveTo(130, 110);
+  ctx.lineTo(80, 140);
+  ctx.stroke();
+  ctx.moveTo(300, 100);
+  ctx.lineTo(250, 150);
+  ctx.stroke();
+  ctx.moveTo(140, 130);
+  ctx.lineTo(150, 150);
+  ctx.stroke();
+  ctx.moveTo(100, 50);
+  ctx.lineTo(0, 80);
+  ctx.stroke();
+  ctx.moveTo(80, 140);
+  ctx.lineTo(0, 140);
+  ctx.stroke();
+  ctx.moveTo(85, 113);
+  ctx.lineTo(0, 118);
+  ctx.stroke();
+  ctx.beginPath();
+
+  ctx.arc(300,100,80,0,2*Math.PI)
+  ctx.lineWidth = 2;
+  ctx.stroke();
+
+    </script>
 
   </body>
 </html>

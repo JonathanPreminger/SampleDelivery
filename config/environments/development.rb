@@ -81,4 +81,7 @@ Rails.application.configure do
      port: 3000
    }
 
+  config.action_controller.perform_caching = true
+  config.cache_store = :file_store, Rails.root.join('tmp/cache/views')
+
 end

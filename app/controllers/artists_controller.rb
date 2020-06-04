@@ -4,7 +4,7 @@ protect_from_forgery
   def create
   @artist = Artist.create(artist_params)
       respond_to :js
-    end
+  end
 
   def new
     @artist = Artist.new(params[:artist])
