@@ -1,8 +1,10 @@
 Rails.application.routes.draw do
+  match "/404", :to => 'errors#not_found', :via => :all
+  match "/500", :to => 'errors#internal_server_error', :via => :all
   get 'dj_set_validates/valid'
   get 'dj_sets/create'
   devise_for :users, controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
-  
+
   resources :events do
     collection do
       post :import
