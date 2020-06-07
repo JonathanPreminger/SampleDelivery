@@ -1,31 +1,27 @@
-<div class="block distance-nav">
+<div class="block-djset distance-nav">
   <div class="">
     <% @djsets.each do |set| %>
       <% cache set do %>
         <div class="just-row cell">
-          <div class="state-request request-left" id="testjs">
+          <div class="request-left" id="testjs">
             <% if set.confirmdjset? %>
             <%= image_tag 'valid.png', class:'valid-state' %>
             <%elsif set.confirmdjset.nil?%>
             <%= image_tag 'new.png', class:'newpng' %>
             <% else %>
-            <%= image_tag 'cross.png', style:'width:27px;' %>
+            <%= image_tag 'cross.png',class:'valid-state', style:'width:27px;' %>
             <%end%>
           </div>
-          <div class="block2 block-request">
-            <div class="just-column request-midle margin-1em">
-              <p>FOR </p><p><%= link_to set.artist.name.upcase, artist_path(set.artist.id), class:'info'  %></p>
-              <p>AT </p><p class='info'><%= set.club.upcase %></p>
-              <p>THE </p><p class='info'><%= set.start%></p>
-            </div>
-            <div class="just-column request-part-right margin-1em">
-              <%= form_for(set) do |s| %>
-                <p>CONFIRM THE REQUEST ?</p>
-                <p>YES : <%=s.check_box :confirmdjset %></p>
-                <p style="font-size:12px;">Leave the checkbox empty and save if you want to reject this date !</p>
-                <p><%= s.submit 'Save', class:'nicebutton box-shadow2' %></p>
-              <%end%>
-            </div>
+          <div class="just-column request-midle">
+            <p class="hide-under-700">FOR </p><p><%= link_to set.artist.name.upcase, artist_path(set.artist.id), class:'info'  %></p>
+            <p class="hide-under-700">AT </p><p class='info'><%= set.club.upcase %></p>
+            <p class="hide-under-700">THE </p><p class='info'><%= set.start%></p>
+          </div>
+          <div class="just-column request-part-right">
+            <%= form_for(set) do |s| %>
+              <p><%= submit_tag 'Save', name: 'confirm_true', class:"nicebutton box-shadow2 marginBot33"%></p>
+              <p><%= submit_tag 'Reject', name: 'confirm_false', class:"nicebutton box-shadow2" %></p>
+            <%end%>
           </div>
         </div>
       <%end%>

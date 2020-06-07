@@ -14,7 +14,18 @@
  *= require_self
  *= require simple_calendar
  */
-
+ .just-column {
+   display: flex;
+   flex-direction: column;
+ }
+ .just-row {
+   display: flex;
+   flex-direction: row;
+ }
+ .just-column p {
+   font-family: 'Steps-Mono';
+   font-size: 18px;
+ }
  @font-face {
     font-family: 'CothamSans';
     src: url(asset-path('CothamSans.otf')) format("truetype");
@@ -511,7 +522,7 @@ button {}
    * Arrow
    */
 .hamburger--arrow.is-active .hamburger-inner::before {
-  transform: translate3d(-8px, 0, 0) rotate(-45deg) scale(0.7, 1); }
+  transform: translate3d(-16px, 0, 0) rotate(-45deg) scale(0.7, 1); }
 
 .hamburger--arrow.is-active .hamburger-inner::after {
   transform: translate3d(-16px, 0, 0) rotate(45deg) scale(0.7, 1); }

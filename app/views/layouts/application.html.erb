@@ -28,30 +28,7 @@
 
     <!-- Burger menu to cross menu-->
       <script>
-        function tempAlert(msg,duration)
-
-        {
-         var el = document.createElement("div");
-         el.setAttribute("style","position:absolute;top:20emleft:40em;background-color:white;");
-         el.innerHTML = msg;
-         setTimeout(function(){
-          el.parentNode.removeChild(el);
-         },duration);
-         document.body.appendChild(el);
-        }
-        tempAlert("SAMPLE DELIVERY",1000);
-        function temp2Alert(msg,duration)
-
-        {
-         var le = document.createElement("div");
-         le.setAttribute("style","position:absolute;top:10em;left:70%;background-color:white;");
-         le.innerHTML = msg;
-         setTimeout(function(){
-          le.parentNode.removeChild(le);
-         },duration);
-         document.body.appendChild(le);
-        }
-        temp2Alert("SAMPLE DELIVERY",4000);
+        
         setTimeout(function(){
         $('#yolo').hide();
       }, 2500);
@@ -110,6 +87,6 @@
     </script>
     <!-- END OmniAuth authentification-->
     <!-- Begin nav disapear when scroll down -->
-  
+
   </body>
 </html>

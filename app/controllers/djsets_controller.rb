@@ -1,6 +1,4 @@
 class DjsetsController < ApplicationController
-    
-
   def create
     #if user_signed_in?
       @djset = Djset.create!(djset_params)
@@ -26,7 +24,14 @@ end
     #if user_signed_in?
       #if current_user.admin?
         @djset = Djset.find(params[:id])
-        @djset.update_attributes(djset_params)
+
+        if params[:confirm_true]
+          @djset.update_attributes(:confirmdjset => 'true')
+          puts "yayayaayyayayayayayayayyayayayay"
+        elsif params[:confirm_false]
+          @djset.update_attributes(:confirmdjset => 'false')
+            puts "ouyouyouyoyuyou"
+        end
         @artist_id = @djset.artist.id
         puts "____________________________________ deliver djset update mailer"
         DjsetMailer.dj_set_request_status_updated(@djset).deliver_later
@@ -41,6 +46,7 @@ end
     #   redirect_to artist_path(@artist_id)
   #  end
   end
+
 
   def new
     @djset = Djset.new(params[:djset])

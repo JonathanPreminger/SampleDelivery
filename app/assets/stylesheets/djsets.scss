@@ -1,13 +1,7 @@
-.just-row {
-  display:flex;
-  flex-direction: row;
-}
+
 .just-row p {
   font-size: 20px;
   font-family: 'CothamSans';
-}
-.state-request{
-  width:4em;
 }
 .distance-nav{
   margin-top:5em;
@@ -28,13 +22,13 @@
 .request-part-right{
   display: flex;
   justify-content: space-around;
-  background-color: #FFA630;
+  align-items: flex-end;
+  background-color: #4ECDC4;
   padding:1em;
 }
 .valid-state{
-  margin-left: 1em;
+  margin-left: 2%;
 }
-.block-request p {}
 .small-margin-bottom {
   margin-bottom: 1em;
 }
@@ -64,6 +58,12 @@
     //text-shadow: 1px 1px 0px black,  -0.5px 0 0 black, 0 0.5px 0 black, 0 -0.5px 0 black;
   }
 }
+.block-djset {
+   display: flex;
+   flex-direction: row;
+   margin-left: 5em;
+   margin-right: 5em;
+ }
 .box-shadow2{
   transition:0.2s;
   &:hover {
@@ -190,14 +190,63 @@ background-color:black;
 margin-top: -100px;
 width:100%;
 height:100%;}
-
+.marginBot33{
+  margin-bottom: 5%;
+}
 #app-container{
   color:pink;
   background-color: red;
   height:200px;
 }
+@media only screen and (max-width:700px) {
+  .block-djset {
+    margin-left: 0em;
+    margin-right: 0em;
+   }
+   .cell {
+     max-height: 100px;
+     position: relative;
+     width:100%;
+   }
+   .cell p {
+     font-size: 10px!important;
+   }
+   .distance-nav{
+     margin-top:2%;
+   }
+   .request-midle{
+     display: flex;
+     justify-content: space-around;
+     position: relative;
+     width: 45%;
 
-// END NEW
-// request-to-admin-mailer
+   }
+   .request-left{
+     position: relative;
+     width:10%;
+     padding: 2%;
+     background-color: white;
+   }
+   .request-part-right{
+     position: relative;
 
-// END request-to-admin-mailer
+     display: flex;
+     justify-content: space-around;
+     width:45%;
+   }
+   .hide-under-700 {
+     display: none;
+   }
+   .info {
+     font-family: 'CothamSans';
+     font-weight: bold;
+     color: #3648AF  ;
+     //font-weight: bold;
+     //text-shadow: 1px 1px 0px black;
+   }
+   .just-row p {
+     font-size: 10px;
+     font-family: 'CothamSans';
+     line-height: 10px;
+   }
+}

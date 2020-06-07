@@ -319,10 +319,7 @@ td {
   width: 700px;
 
 }
-.just-column {
-  display: flex;
-  flex-direction: column;
-}
+
 .just-column-inside {
   display: flex;
   flex-direction: column;
@@ -331,10 +328,7 @@ td {
   width: 100%;
   margin-top: 70px;
 }
-.just-column p {
-  font-family: 'Steps-Mono';
-  font-size: 18px;
-}
+
 .artist-name {
   font-weight: bold;
   color:#97af90;
