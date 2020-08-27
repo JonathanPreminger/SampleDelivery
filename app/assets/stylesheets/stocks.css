@@ -1,0 +1,10 @@
+.tableau3{
+  width:666px;
+  display:flex;
+  justify-content: space-around;
+  margin-bottom: 5%;
+}
+.tableau3 p {
+  position:relative;
+  width:25%;
+}

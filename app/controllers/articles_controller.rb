@@ -3,10 +3,10 @@ class ArticlesController < ApplicationController
   def create
   @article = Article.create(article_params)
   if @article.save
-    flash[:success] = "bingo niga"
+    flash[:success] = "bingo "
     redirect_to articles_path
   else
-    flash[:error] = "failed niga"
+    flash[:error] = "failed "
     redirect_to articles_path
   end
 end

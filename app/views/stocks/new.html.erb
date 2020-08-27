@@ -1,0 +1,9 @@
+<div class="new-artist-form">
+  <%= form_for @stock do |f| %>
+    <p>price</p>
+    <p><%= f.number_field :price, placeholder:"price of realreleaseease...", id:"text-field-new-artist"%><br></p>
+    <p>quantity</p>
+    <p><%= f.number_field :quantity, class:"file-field-new-artist" %><br></p>
+    <%= f.submit class:"file-field-new-artist" %>
+  <% end %>
+</div>

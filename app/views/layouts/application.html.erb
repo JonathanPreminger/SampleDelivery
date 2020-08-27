@@ -4,64 +4,23 @@
     <title>SdApp</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
-
-
   </head>
   <body>
-    <%= render 'layouts/navbar' %>
-    <%= render 'layouts/navbarright' %>
+    <%= render "layouts/navbar" unless current_page?(root_url) %>
+    <%= favicon_link_tag asset_path('SD01.jpg') %>
+    <% if flash[:notice] %>
+      <p class="notice"> <%= notice %></p>
+    <% end %>
 
-    <p class="notice"> <%= notice %></p>
     <% if flash[:alert] %>
       <div id="alert">
          <%= flash[:alert] %>
       </div>
-<% end %>
-
+    <% end %>
     <%= yield %>
-    <%= render 'layouts/footer' %>
-
-
-    <!-- Burger menu to cross menu-->
-      <script>
-        
-        setTimeout(function(){
-        $('#yolo').hide();
-      }, 2500);
-
-        setTimeout(function(){
-        $('#yolo').show();
-      }, 7500);
-
-        setTimeout(function(){
-        $('#testjs2').hide();
-      }, 5000);
-      setTimeout(function(){
-      $('#testjs2').show();
-      }, 10000);
-      setTimeout(function(){
-      $('#testjs2').hide();
-    }, 15000);
-    setTimeout(function(){
-    $('#testjs2').show();
-  }, 20000);
-  </script>
-  <script>
-
-      // Look for .hamburger
-      var hamburger = document.querySelector(".hamburger");
-      // On click
-      hamburger.addEventListener("click", function() {
-        // Toggle class "is-active"
-        hamburger.classList.toggle("is-active");
-        // Do something else, like open/close menu
-      });
-    </script>
-    <!-- END Burger menu to cross menu-->
 
     <!-- OmniAuth authentification-->
     <script>
@@ -86,7 +45,7 @@
        }(document, 'script', 'facebook-jssdk'));
     </script>
     <!-- END OmniAuth authentification-->
-    <!-- Begin nav disapear when scroll down -->
+
 
   </body>
 </html>

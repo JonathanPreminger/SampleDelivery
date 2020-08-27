@@ -22,6 +22,21 @@ CREATE INDEX "index_djsets_on_artist_id" ON "djsets" ("artist_id");
 CREATE TABLE IF NOT EXISTS "events" ("id" integer NOT NULL PRIMARY KEY, "revenue_figure" integer DEFAULT NULL, "total_charge_dj" integer DEFAULT NULL, "charge_communication" integer DEFAULT NULL, "charge_others" integer DEFAULT NULL, "charge_others_description" text DEFAULT NULL, "number_of_dj" integer DEFAULT NULL, "line_up" text DEFAULT NULL, "place" varchar DEFAULT NULL, "name" varchar DEFAULT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "start" datetime DEFAULT NULL);
 CREATE TABLE IF NOT EXISTS "realreleases" ("id" integer NOT NULL PRIMARY KEY, "name" text DEFAULT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "artist_id" integer DEFAULT NULL, "production_year" integer);
 CREATE INDEX "index_realreleases_on_artist_id" ON "realreleases" ("artist_id");
+CREATE TABLE IF NOT EXISTS "stocks" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "quantity" float, "price" float, "realrelease_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, CONSTRAINT "fk_rails_fd70c9015f"
+FOREIGN KEY ("realrelease_id")
+  REFERENCES "realreleases" ("id")
+);
+CREATE INDEX "index_stocks_on_realrelease_id" ON "stocks" ("realrelease_id");
+CREATE TABLE IF NOT EXISTS "carts" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL);
+CREATE TABLE IF NOT EXISTS "orders" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "realrelease_id" integer, "cart_id" integer, "quantity" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, CONSTRAINT "fk_rails_b53259de44"
+FOREIGN KEY ("realrelease_id")
+  REFERENCES "realreleases" ("id")
+, CONSTRAINT "fk_rails_5cdf0e0ad4"
+FOREIGN KEY ("cart_id")
+  REFERENCES "carts" ("id")
+);
+CREATE INDEX "index_orders_on_realrelease_id" ON "orders" ("realrelease_id");
+CREATE INDEX "index_orders_on_cart_id" ON "orders" ("cart_id");
 INSERT INTO "schema_migrations" (version) VALUES
 ('20190617115626'),
 ('20190617123659'),
@@ -69,6 +84,9 @@ INSERT INTO "schema_migrations" (version) VALUES
 ('20190912005428'),
 ('20190912095311'),
 ('20190912131021'),
-('20190917112650');
+('20190917112650'),
+('20200615213827'),
+('20200616000913'),
+('20200616001013');
 
 

@@ -1,73 +1,48 @@
-<div class="content-show">
-
-  <div class="small-column small-margin" >
-    <h2><%= @realrelease.name %></h2>
-    <h2>By </h2>
-    <h2><%= @realrelease.artist.name %></h2>
-  </div>
-
-
-  <div class="small-column edit-destroy-block">
-    <div class="title-row">
-      <div class="title-name">
-        <h3>Tracklist</h3>
-      </div>
-      <div class="title-name">
-        <h3>Duration</h3>
-      </div>
-      <div class="title-name">
-        <h2></h2>
-      </div>
-    </div>
-
-    <div class="the-content">
-      <% for track in @realrelease.tracks %>
-      <div class="release-content">
-        <div class="release-column">
-          <div class="small-row">
-
-              <h3><%= image_tag 'selector.png', class:'selector-margin'%></h3><p><%= track.name %></p>
-          </div>
-        </div>
-        <div class="release-column">
-          <p><%= track.duration %></p>
-        </div>
-
-        <div class="release-column">
-
-          <%= link_to track, method: :delete do %>
-          <div class="center">
-
-            <%= image_tag 'delete.png', class:'delete-margin' %>
-          </div>
-           <%end%>
-         </div>
-        </div>
-          <% end %>
-      </div>
-    </div>
-
-
-  <div class="edit-destroy-block">
-    <div class="title-row">
-      <div class="space-small-release">
-        <%= link_to  edit_realrelease_path(@realrelease) do %>
-        <div class="border-square green">
-
-          <%= image_tag 'settings.png'%>
-        </div>
-         <%end%>
-      </div>
-      <div class=" space-small-release">
-        <%= link_to  realrelease_path(@realrelease), method: :delete, data:{confirm:"sur?"} do %>
-        <div class="border-square red">
-
-          <%= image_tag 'fire.png' %>
-        </div>
-         <%end%>
-      </div>
-    </div>
-  </div>
-
+<div class="main-title" style="margin-top:150px;">
+  <h1><%= @realrelease.artist.name %> : <%= @realrelease.name %></h1>
 </div>
+
+<div class="title-row" style="border-top:solid grey 0.5px;">
+  <div class="title-name">
+    <h2>Name</h2>
+  </div>
+  <div class="title-name">
+    <h2>Duration</h2>
+  </div>
+  <div class="title-name">
+    <h2></h2>
+  </div>
+  <div class="title-name">
+    <h2>Edit</h2>
+  </div>
+  <div class="title-name">
+    <h2>Delete</h2>
+  </div>
+</div>
+
+<div class="the-content">
+  <% for track in @realrelease.tracks %>
+    <div class="release-content border-each" >
+      <div class="release-column">
+        <p><%= track.name %></p>
+      </div>
+      <div class="release-column">
+        <p><%= track.duration %></p>
+      </div>
+      <div class="release-column">
+        <p></p>
+      </div>
+      <div class="release-column">
+        <p>
+          <%= link_to "Edit", edit_realrelease_path(@realrelease), class:"nicebutton box-shadow2" %>
+        </p>
+      </div>
+      <div class="release-column">
+        <p>
+          <%= link_to "Delete", realrelease_path(@realrelease), method: :delete, data:{confirm:"sur?"}, class:"nicebutton box-shadow2" %>
+
+        </p>
+      </div>
+    </div>
+  <% end %>
 </div>

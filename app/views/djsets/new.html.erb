@@ -1,18 +1,15 @@
 <div class="all">
-  <div class="back">
 
-  </div>
 
   <div class="new-djset" style="margin-top:10%;margin-left:10%;width:80%;">
   <%= form_for @djset do |f| %>
 
     <h1 style="margin-top:100px;">Book an Artist for your club</h1><br />
-    <div id="app-container">
-
-    </div>
       <p>Artist :</p>
-      <p><%= f.collection_select :artist_id, Artist.all, :id, :name, {prompt: "The one you want"}, class:"text-field-collection" %></p>
-      <%= f.label :club %><br />
+      <p>
+        <%= f.collection_select :artist_id, Artist.all, :id, :name, {prompt: "The one you want"}, class:"text-field-collection" %>
+      </p>
+        <%= f.label :club %><br />
       <p>Club :</p>
       <p><%= f.text_field :club, placeholder: 'The place of the party', class:"text-field-club" %></p>
       <%= f.label :start %><br />
@@ -27,4 +24,3 @@
   </div>
 
 </div>
-<%= javascript_pack_tag 'application2' %>

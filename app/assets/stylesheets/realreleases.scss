@@ -7,12 +7,9 @@
   margin-bottom: 50px;
 }
 .main-title h1{
-  font-family: 'Steps-Mono';
-  text-decoration: line-through;
   font-size: 40px;
 }
 .main-title h2, p{
-  font-family: 'Steps-Mono';
   font-size: 32px;
   margin-right:10px;
 }
@@ -30,7 +27,6 @@
   justify-content: center;
 }
 .title-name h2 {
-  font-family: 'Steps-Mono';
   font-size: 32px;
 }
 .release-content {
@@ -40,7 +36,6 @@
   justify-content: space-between;
 }
 .release-content p {
-  font-family: 'Steps-Mono';
   font-size: 18px;
 
 }
@@ -57,7 +52,6 @@
 .release-column p {
   display: flex;
   justify-content: center;
-  font-family: 'Steps-Mono';
 }
 .add-release {
   text-shadow: 1px 2px grey;
@@ -105,19 +99,16 @@
 .small-column p, h2{
   margin-top: 10px;
   margin-bottom: 20px;
-  font-family: 'Steps-Mono';
 }
 .release-edit-column p {
   font-size: 16px;
   margin-right: 10px;
 }
 .release-edit-column h3 {
-  font-family: 'Steps-Mono-Thin';
   font-size: 24px;
   font-weight:normal;
 }
 .edit-realrelease-title h2 {
-  font-family: 'Steps-Mono';
 }
 .content-show {
   width:100%;
@@ -138,13 +129,17 @@
 }
 .title-name h3 {
   font-size: 24px;
-  font-family: 'Steps-Mono';
 }
 .center {
   display: flex;
   justify-content: center;
   }
-
+.the-content p a, p, h1, h2 {
+  color:#7c786f;
+}
+.border-each{
+  border-top:solid #7c786f 0.5px;
+}
 .border-square {
   padding: 15px;
   border: black solid 2px;
@@ -175,7 +170,6 @@
   }
   .title-name h3 {
     font-size: 18px;
-    font-family: 'Steps-Mono';
   }
   .release-content p {
     font-size: 12px;
