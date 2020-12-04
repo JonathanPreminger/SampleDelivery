@@ -1,0 +1,31 @@
+.center {
+  background-image: url("mael.png")!important;
+  height:100%;
+  z-index: -10;
+}
+.container {
+  position:relative;
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-top: 12%;
+  margin-right: 15%;
+}
+.container .box{
+  width:150%;
+  position:relative;
+  background-color: #c8e7ff;
+}
+.container .box.shadow5:before
+{
+  content: 'yolo';
+  position:absolute;
+  bottom:-12%;
+  left:5%;
+  width:90%;
+  height:90%;
+  border-radius: 10%;
+  background: #85CAFF;
+  z-index:-10;
+  filter: blur(40px);
+}

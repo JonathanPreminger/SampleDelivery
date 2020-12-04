@@ -14,7 +14,8 @@ class DjsetsController < ApplicationController
     #else
     #  redirect_to new_user_session_path
   #end
-end
+
+  end
 
   def edit
     @djset = Djset.find(params[:id])
@@ -54,6 +55,14 @@ end
 
   def index
     @djsets = Djset.all.order('created_at DESC')
+    respond_to do |format|
+      format.html do
+        @djsets = Djset.all.order('created_at DESC')
+      end
+      format.json do
+        render json: {djsets_count: @djsets.count}
+      end
+    end
   end
 
 

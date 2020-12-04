@@ -12,7 +12,15 @@ protect_from_forgery
   end
 
   def index
-    @artists = Artist.all
+    respond_to do |format|
+      format.html do
+        @artists = Artist.all
+      end
+      format.json do
+        render json: {artists_count: @artists.count}
+        puts @artists.count
+      end
+    end
   end
 
   def edit

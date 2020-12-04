@@ -1,15 +1,23 @@
 class ArticlesController < ApplicationController
 
   def create
-  @article = Article.create(article_params)
-  if @article.save
-    flash[:success] = "bingo niga"
-    redirect_to articles_path
-  else
-    flash[:error] = "failed niga"
-    redirect_to articles_path
+  article = Article.create(article_params)
+    if article.save
+      respond_to do |format|
+        format.html do
+          flash[:success] = "Article created"
+          redirect_to articles_path
+        end
+        format.json do
+          render json: article
+        end
+      end
+
+    else
+      flash[:error] = "failed niga"
+      redirect_to articles_path
+    end
   end
-end
 
   def new
     @article = Article.new(params[:article])
@@ -18,6 +26,13 @@ end
 
   def index
     @articles = Article.all
+    respond_to do |format|
+      format.html do
+      end
+      format.json do
+        render json: @articles
+      end
+    end
   end
 
   def edit
